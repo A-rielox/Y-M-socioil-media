@@ -2301,10 +2301,7 @@ UserSchema.pre('save', async function () {
 
 #### Profile Page
 
-✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
-✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
-✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
-✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+✅✅✅
 
 ```js
 appContext.js
@@ -2554,7 +2551,7 @@ if (action.type === UPDATE_USER_ERROR) {
 
 #### 401 Error - Logout User
 
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
+✅✅✅
 
 ```js
 appContext.js;
@@ -2599,7 +2596,8 @@ const updateUser = async currentUser => {
 
 #### Job Model
 
-✅✅✅
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
 
 -  Job Model
 
