@@ -1,10 +1,12 @@
 import express from 'express';
-import notFoundMiddleware from './middleware/not-found.js';
-import errorHandlerMiddleware from './middleware/not-found.js';
 import 'express-async-errors';
 import dotenv from 'dotenv';
 import connectDB from './db/connect.js';
 import morgan from 'morgan';
+
+import notFoundMiddleware from './middleware/not-found.js';
+import errorHandlerMiddleware from './middleware/error-handler.js';
+import authenticateUser from './middleware/auth.js';
 
 //===== ROUTERS
 import authRouter from './routes/authRoutes.js';
@@ -14,10 +16,11 @@ const app = express();
 dotenv.config();
 
 // ▦▦▦▦▦▦▦▦▦▦ MIDDLEWARE ▦▦▦▦▦▦▦▦▦▦
+// se va a cambiar a production en heroku
 if (process.env.NODE_ENV !== 'production') {
    app.use(morgan('dev'));
 }
-app.use(express.json()); // acceso al req.body
+app.use(express.json()); // acceso a json de req.body
 
 app.get('/', (req, res) => {
    res.send('<h1>HOLI HOLA</h1>');
@@ -25,7 +28,7 @@ app.get('/', (req, res) => {
 
 //===== ROUTES
 app.use('/api/v1/auth', authRouter);
-app.use('/api/v1/recetas' /* , authenticateUser */, recetasRouter);
+app.use('/api/v1/recetas', authenticateUser, recetasRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
@@ -62,6 +65,9 @@ import styled from 'styled-components';
 npm install history@5 react-router-dom@6
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
+npm install axios
+import axios from 'axios';
+
 
 
 ▦▦▦▦▦▦▦▦▦▦ SERVER ▦▦▦▦▦▦▦▦▦▦
@@ -96,7 +102,13 @@ import bcrypt from 'bcryptjs'
 npm install jsonwebtoken
 import jwt from 'jsonwebtoken'
 
+npm install concurrently --save-dev
+
+npm install morgan
+import morgan from 'morgan';
+
+npm install react-icons
 
 
-1014
+
 */

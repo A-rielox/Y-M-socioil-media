@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../context/appContext';
 
 import { LogoBig, FormRow, Alert } from '../components';
@@ -13,13 +13,10 @@ const initialState = {
 };
 
 function Register() {
-   const {
-      isLoading,
-      showAlert,
-      displayAlert /* registerUser, user, loginUser */,
-   } = useAppContext();
+   const { isLoading, showAlert, displayAlert, registerUser, user, loginUser } =
+      useAppContext();
 
-   // const navigate = useNavigate();
+   const navigate = useNavigate();
    const [values, setValues] = useState(initialState);
 
    // global context and useNavigate later
@@ -41,22 +38,22 @@ function Register() {
          return;
       }
 
-      // const currentUser = { name, email, password };
+      const currentUser = { name, email, password };
 
-      // if (isMember) {
-      //    loginUser(currentUser);
-      // } else {
-      //    registerUser(currentUser);
-      // }
+      if (isMember) {
+         loginUser(currentUser);
+      } else {
+         registerUser(currentUser);
+      }
    };
 
-   // useEffect(() => {
-   //    if (user) {
-   //       setTimeout(() => {
-   //          navigate('/');
-   //       }, 3000);
-   //    }
-   // }, [user, navigate]);
+   useEffect(() => {
+      if (user) {
+         setTimeout(() => {
+            navigate('/');
+         }, 3000);
+      }
+   }, [user, navigate]);
 
    const toggleMember = () => {
       setValues({ ...values, isMember: !values.isMember });

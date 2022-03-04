@@ -4,82 +4,93 @@ import { BadRequestError, UnauthenticatedError } from '../errors/index.js';
 
 // '/api/v1/auth/register'
 const register = async (req, res) => {
-   res.send('<h1>Register</h1>');
-   // const { name, email, password } = req.body;
+   const { name, email, password } = req.body;
 
-   // if (!name || !email || !password) {
-   //    throw new BadRequestError('Favor rellenar todos los valores');
-   // }
+   if (!name || !email || !password) {
+      throw new BadRequestError('Favor rellenar todos los campos 😒');
+   }
 
-   // const userAlreadyExist = await User.findOne({ email });
-   // if (userAlreadyExist) {
-   //    throw new BadRequestError('Este email ya está registrado');
-   // } // como sea es Unique en el schema
+   const userAlreadyExist = await User.findOne({ email });
+   if (userAlreadyExist) {
+      throw new BadRequestError('Este email ya está registrado 🤔');
+   } // como sea es Unique en el schema
 
-   // const user = await User.create({ name, email, password });
+   const user = await User.create({ name, email, password });
 
-   // // en el payload del token { userId: this._id }
-   // const token = user.createJWT();
+   // en el payload del token { userId: this._id }
+   const token = user.createJWT();
 
-   // res.status(StatusCodes.CREATED).json({
-   //    user: {
-   //       email: user.email,
-   //       lastName: user.lastName,
-   //       location: user.location,
-   //       name: user.name,
-   //    },
-   //    token,
-   //    location: user.location,
-   // });
+   res.status(StatusCodes.CREATED).json({
+      user: {
+         email: user.email,
+         lastName: user.lastName,
+         location: user.location,
+         name: user.name,
+      },
+      token,
+      location: user.location,
+   });
 };
 
 // '/api/v1/auth/login' -- post
 const login = async (req, res) => {
-   res.send('<h1>login</h1>');
-   // const { email, password } = req.body;
+   const { email, password } = req.body;
 
-   // if (!email || !password) {
-   //    throw new BadRequestError('Favor proveer todos los campos');
-   // }
+   if (!email || !password) {
+      throw new BadRequestError('Favor proveer todos los campos 😒');
+   }
 
-   // const user = await User.findOne({ email }).select('+password');
-   // if (!user) {
-   //    throw new UnauthenticatedError('Credenciales invalidas');
-   // }
+   const user = await User.findOne({ email }).select('+password');
+   if (!user) {
+      throw new UnauthenticatedError('Credenciales invalidas 🙀');
+   }
 
-   // const isPasswordCorrect = await user.comparePassword(password);
-   // if (!isPasswordCorrect) {
-   //    throw new UnauthenticatedError('Credenciales invalidas');
-   // }
+   const isPasswordCorrect = await user.comparePassword(password);
+   if (!isPasswordCorrect) {
+      throw new UnauthenticatedError('Credenciales invalidas 🙀');
+   }
 
-   // const token = user.createJWT();
-   // user.password = undefined;
+   const token = user.createJWT();
+   user.password = undefined;
 
-   // res.status(StatusCodes.OK).json({ user, token, location: user.location });
+   res.status(StatusCodes.OK).json({ user, token, location: user.location });
 };
 
 // '/api/v1/auth'
 // .route('/updateUser').patch(authenticateUser, updateUser);
 const updateUser = async (req, res) => {
-   res.send('<h1>Update User</h1>');
-   // const { email, name, lastName, location } = req.body;
+   const { email, name, lastName, location } = req.body;
 
-   // if (!email || !name || !lastName || !location) {
-   //    throw new BadRequestError('Favor de proveer todos los valores');
-   // }
+   if (!email || !name || !lastName || !location) {
+      throw new BadRequestError('Favor de proveer todos los valores');
+   }
 
-   // const user = await User.findOne({ _id: req.user.userId });
+   const user = await User.findOne({ _id: req.user.userId });
+
+   // VER SI NO NECESITO ALGO COMO UN "checkPermissions(req.user, job.createdBy)", aunque se tiene q haber logeado para obtener el token, x lo tanto, el usuario q se va a modifivar es el q paso acá arriba, q tiene el _id del token q se logeó
 
    // user.email = email;
    // user.name = name;
    // user.lastName = lastName;
    // user.location = location;
-
    // await user.save();
 
-   // const token = user.createJWT(); // tecnicamente no cambio el id, asi q no necesito cambiar el token
+   const updatedUser = await User.findOneAndUpdate(
+      { _id: user._id },
+      req.body,
+      {
+         new: true,
+         runValidators: true,
+      }
+   );
 
-   // res.status(StatusCodes.OK).json({ user, token, location: user.location });
+   const token = updatedUser.createJWT(); // tecnicamente no cambio el id, asi q no necesito cambiar el token
+
+   res.status(StatusCodes.OK).json({
+      updatedUser,
+      token,
+      location: updatedUser.location,
+   });
 };
 
 export { register, login, updateUser };

@@ -5,7 +5,7 @@ const auth = async (req, res, next) => {
    const authHeader = req.headers.authorization; // aquí debe venir el "Bearer <token>"
 
    if (!authHeader || !authHeader.startsWith('Bearer')) {
-      throw new UnauthenticatedError('Autorización invalida');
+      throw new UnauthenticatedError('Autorización invalida 🧐');
    }
 
    const token = authHeader.split(' ')[1];
@@ -19,7 +19,7 @@ const auth = async (req, res, next) => {
 
       next();
    } catch (error) {
-      throw new UnauthenticatedError('Autorización invalida');
+      throw new UnauthenticatedError('Autorización invalida 🧐');
    }
 };
 

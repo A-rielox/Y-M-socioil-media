@@ -2,13 +2,13 @@ import Logo from './Logo';
 import LogoBig from './LogoBig';
 import FormRow from './FormRow';
 import Alert from './Alert';
-// import BigSidebar from './BigSidebar';
-// import SmallSidebar from './SmallSidebar';
-// import Navbar from './Navbar';
-// import FormRowSelect from './FormRowSelect';
+import BigSidebar from './BigSidebar';
+import SmallSidebar from './SmallSidebar';
+import Navbar from './Navbar';
+import FormRowSelect from './FormRowSelect';
 // import JobsContainer from './JobsContainer';
 // import SearchContainer from './SearchContainer';
-// import Loading from './Loading';
+import Loading from './Loading';
 // import Job from './Job';
 // import PageBtnContainer from './PageBtnContainer';
 // import JobInfo from './JobInfo';
@@ -20,13 +20,13 @@ export {
    LogoBig,
    FormRow,
    Alert,
-   // BigSidebar,
-   // SmallSidebar,
-   // Navbar,
-   // FormRowSelect,
+   BigSidebar,
+   SmallSidebar,
+   Navbar,
+   FormRowSelect,
    // JobsContainer,
    // SearchContainer,
-   // Loading,
+   Loading,
    // Job,
    // PageBtnContainer,
    // JobInfo,

@@ -2,7 +2,7 @@
 import { StatusCodes } from 'http-status-codes';
 import { BadRequestError, NotFoundError } from '../errors/index.js';
 // import checkPermissions from '../utils/checkPermissions.js';
-// import mongoose from 'mongoose';
+import mongoose from 'mongoose';
 // import { rsort } from 'semver';
 // import moment from 'moment';
 

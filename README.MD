@@ -620,12 +620,7 @@ const clearAlert = () => {
 
 #### Setup Server
 
-✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
-✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
-✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
-✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
-✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
-✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+✅✅✅
 
 -  stop the dev server in client
 -  cd ..
@@ -1013,11 +1008,7 @@ return jwt.sign({ userId: this._id }, process.env.JWT_SECRET, {
 
 #### Concurrently
 
-✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
-✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
-✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
-✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
-✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+✅✅✅
 
 -  front-end and backend (server)
 -  run separate terminals
@@ -2310,7 +2301,10 @@ UserSchema.pre('save', async function () {
 
 #### Profile Page
 
-✅✅✅
+✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
 
 ```js
 appContext.js
@@ -2560,7 +2554,7 @@ if (action.type === UPDATE_USER_ERROR) {
 
 #### 401 Error - Logout User
 
-✅✅✅
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
 
 ```js
 appContext.js;

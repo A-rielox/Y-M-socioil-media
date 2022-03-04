@@ -30,7 +30,7 @@ const UserSchema = new mongoose.Schema({
       type: String,
       trim: true,
       maxlength: 20,
-      default: 'Apellido',
+      default: 'Mi Apellido',
    },
    location: {
       type: String,
