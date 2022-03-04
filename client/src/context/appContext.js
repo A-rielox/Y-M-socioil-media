@@ -63,7 +63,6 @@ const AppProvider = ({ children }) => {
          // esta es la gracia, poder customizar para los distintos errores, y YO controlar la respuesta ente los errores
          if (error.response.status === 401) {
             logoutUser();
-            console.log('desde interceptor res: ERROR 401');
          }
          return Promise.reject(error);
       }

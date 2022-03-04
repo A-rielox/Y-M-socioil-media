@@ -16,6 +16,7 @@ const Profile = () => {
 
       if (!name || !email || !lastName || !location) {
          displayAlert();
+         // 👇    ⭐⭐⭐ para q no siga con el updateUser
          return;
       }
 

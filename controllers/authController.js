@@ -87,7 +87,7 @@ const updateUser = async (req, res) => {
    const token = updatedUser.createJWT(); // tecnicamente no cambio el id, asi q no necesito cambiar el token
 
    res.status(StatusCodes.OK).json({
-      updatedUser,
+      user: updatedUser,
       token,
       location: updatedUser.location,
    });
