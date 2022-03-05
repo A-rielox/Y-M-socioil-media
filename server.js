@@ -10,7 +10,7 @@ import authenticateUser from './middleware/auth.js';
 
 //===== ROUTERS
 import authRouter from './routes/authRoutes.js';
-import recetasRouter from './routes/recetasRoutes.js';
+import recipesRouter from './routes/recipesRoutes.js';
 
 const app = express();
 dotenv.config();
@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 
 //===== ROUTES
 app.use('/api/v1/auth', authRouter);
-app.use('/api/v1/recetas', authenticateUser, recetasRouter);
+app.use('/api/v1/recipes', authenticateUser, recipesRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);

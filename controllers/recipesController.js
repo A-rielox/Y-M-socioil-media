@@ -1,4 +1,4 @@
-// import Job from '../models/Job.js';
+import Recipe from '../models/Recipe.js';
 import { StatusCodes } from 'http-status-codes';
 import { BadRequestError, NotFoundError } from '../errors/index.js';
 // import checkPermissions from '../utils/checkPermissions.js';
@@ -6,27 +6,25 @@ import mongoose from 'mongoose';
 // import { rsort } from 'semver';
 // import moment from 'moment';
 
-//'/api/v1/recetas' -- .post(createReceta)
-const createReceta = async (req, res) => {
-   res.send('<h1>create receta</h1>');
+//'/api/v1/recipes' -- .post(createRecipe)
+const createRecipe = async (req, res) => {
+   const { title, problem, oils, desc } = req.body;
 
-   // const { position, company } = req.body;
+   if (!title || !problem || !oils || !desc) {
+      throw new BadRequestError('Favor proveer todos los valores');
+   }
 
-   // if (!position || !company) {
-   //    throw new BadRequestError('Favor proveer todos los valores');
-   // }
-
-   // req.body.createdBy = req.user.userId;
+   req.body.createdBy = req.user.userId;
 
    // // OJO q estoy pasando todo el req.body
-   // const job = await Job.create(req.body);
+   const recipe = await Recipe.create(req.body);
 
-   // res.status(StatusCodes.CREATED).json({ job });
+   res.status(StatusCodes.CREATED).json({ recipe });
 };
 
-//'/api/v1/recetas' -- .route('/:id').delete(deleteReceta)
-const deleteReceta = async (req, res) => {
-   res.send('<h1>delete receta</h1>');
+//'/api/v1/recipes' -- .route('/:id').delete(deleteRecipe)
+const deleteRecipe = async (req, res) => {
+   res.send('<h1>delete Recipe</h1>');
    // const { id: jobId } = req.params;
 
    // const job = await Job.findOne({ _id: jobId });
@@ -47,10 +45,10 @@ const deleteReceta = async (req, res) => {
 // si no fueran a estar presentes podria poner el if de la sig forma:
 //if ( status && status !== 'all') {...
 // para q se agrege solo si no es undefined
-//'/api/v1/recetas' --  .get(getAllRecetas)
+//'/api/v1/recipes' --  .get(getAllRecipes)
 // ▦▦▦▦▦▦▦▦ FILTROS ▦▦▦▦▦▦▦▦
-const getAllRecetas = async (req, res) => {
-   res.send('<h1>get all recetas</h1>');
+const getAllRecipes = async (req, res) => {
+   res.send('<h1>get all recipes</h1>');
    // const { search, status, jobType, sort } = req.query;
    // const queryObject = {
    //    createdBy: req.user.userId,
@@ -97,9 +95,9 @@ const getAllRecetas = async (req, res) => {
    // });
 };
 
-//'/api/v1/recetas' -- .route('/:id').patch(updateReceta)
-const updateReceta = async (req, res) => {
-   res.send('<h1>update receta</h1>');
+//'/api/v1/recipes' -- .route('/:id').patch(updateRecipe)
+const updateRecipe = async (req, res) => {
+   res.send('<h1>update Recipe</h1>');
    // const { id: jobId } = req.params;
    // const { company, position } = req.body;
 
@@ -124,7 +122,7 @@ const updateReceta = async (req, res) => {
    // res.status(StatusCodes.OK).json({ updatedJob });
 };
 
-//'/api/v1/recetas' -- route('/stats').get(showStats);
+//'/api/v1/recipes' -- route('/stats').get(showStats);
 const showStats = async (req, res) => {
    res.send('<h1> show stats</h1>');
 
@@ -195,4 +193,4 @@ const showStats = async (req, res) => {
    // res.status(StatusCodes.OK).json({ defaultStats, monthlyApplications });
 };
 
-export { createReceta, deleteReceta, getAllRecetas, updateReceta, showStats };
+export { createRecipe, deleteRecipe, getAllRecipes, updateRecipe, showStats };

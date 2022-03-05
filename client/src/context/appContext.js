@@ -1,6 +1,7 @@
 import React, { useReducer, useContext } from 'react';
 import reducer from './reducer';
 import axios from 'axios';
+import { oilsList } from '../utils/optionLists';
 import {
    DISPLAY_ALERT,
    CLEAR_ALERT,
@@ -33,7 +34,16 @@ export const initialState = {
    jobLocation: userLocation || '',
    //sideBar
    showSidebar: false,
+   // create recipe ( TODO LO DE RECIPESCHEMA )
+   isEditing: false,
+   editRecipeId: '',
+   title: '',
+   desc: '',
+   problem: 'general',
+   oilsOptions: oilsList,
+   oils: 'digize pal Adri',
 };
+
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {

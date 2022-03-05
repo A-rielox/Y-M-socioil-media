@@ -2596,8 +2596,7 @@ const updateUser = async currentUser => {
 
 #### Job Model
 
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
+✅✅✅
 
 -  Job Model
 
@@ -2692,7 +2691,8 @@ const initialState = {
 
 #### AddJob Page - Setup
 
-✅✅✅
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
 
 ```js
 import { FormRow, Alert } from '../../components';

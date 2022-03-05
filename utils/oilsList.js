@@ -1,6 +1,4 @@
-export const statusList = ['interview', 'declined', 'pending', 'caca'];
-
-export const oilsList = [
+const oilsList = [
    'Abeto de Vancouver (Idaho Grand Fir)',
    'Albahaca (Basil)',
    'Alcanforero (Ravintsara)',
@@ -84,6 +82,8 @@ export const oilsList = [
    'Xiang Mao',
    'Ylang Ylang',
 ];
+
+export default oilsList;
 
 /////////////////////
 ////////////////////
