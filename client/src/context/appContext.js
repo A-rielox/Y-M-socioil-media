@@ -229,38 +229,23 @@ const AppProvider = ({ children }) => {
       dispatch({ type: CLEAR_VALUES });
    };
 
-   const createRecipe = async () => {
+   const createRecipe = async ({ oilsList, problemsList }) => {
       dispatch({ type: CREATE_RECIPE_BEGIN });
+      console.log(oilsList, problemsList);
 
       try {
+         // prettier-ignore
          const {
-            title,
-            desc,
-            oil1,
-            oil2,
-            oil3,
-            oil4,
-            oil5,
-            problem1,
-            problem2,
-            problem3,
+            title,desc,oil1,oil2,oil3,oil4,oil5,problem1,problem2,problem3
          } = state;
 
+         // prettier-ignore
          await authFetch.post('/recipes', {
-            title,
-            desc,
-            oil1,
-            oil2,
-            oil3,
-            oil4,
-            oil5,
-            problem1,
-            problem2,
-            problem3,
+            oilsList, problemsList,title,desc,oil1,oil2,oil3,oil4,oil5,problem1,problem2,problem3,
          });
 
          dispatch({ type: CREATE_RECIPE_SUCCESS });
-         dispatch({ type: CLEAR_VALUES });
+         // dispatch({ type: CLEAR_VALUES });
       } catch (error) {
          if (error.response.status === 401) return;
 

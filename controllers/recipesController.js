@@ -8,26 +8,16 @@ import mongoose from 'mongoose';
 
 //'/api/v1/recipes' -- .post(createRecipe)
 const createRecipe = async (req, res) => {
-   const {
-      title,
-      oil1,
-      oil2,
-      oil3,
-      oil4,
-      oil5,
-      problem1,
-      problem2,
-      problem3,
-      desc,
-   } = req.body;
+   // prettier-ignore
+   const {oilsList, problemsList,title,desc} = req.body;
 
-   if (!title || !problem1 || !oil1 || !desc) {
+   if (!title || oilsList.length === 0 || problemsList.length === 0 || !desc) {
       throw new BadRequestError('Favor proveer todos los valores');
    }
 
    req.body.createdBy = req.user.userId;
 
-   // // OJO q estoy pasando todo el req.body
+   // OJO q estoy pasando todo el req.body
    const recipe = await Recipe.create(req.body);
 
    res.status(StatusCodes.CREATED).json({ recipe });

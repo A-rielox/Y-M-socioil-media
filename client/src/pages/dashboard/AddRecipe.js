@@ -2,7 +2,7 @@ import { FormRow, Alert, FormRowSelect } from '../../components';
 import { useAppContext } from '../../context/appContext';
 import styled from 'styled-components';
 
-// los valores los pongo en el global ( y no en la pura pag como en el register ) xq para editar y agregar job voy a ocupar la misma pag ( y la diferencia en la pag la hago con el "isEditing" )
+// los valores los pongo en el global ( y no en la pura pag como en el register ) xq para editar y agregar receta voy a ocupar la misma pag ( y la diferencia en la pag la hago con el "isEditing" )
 const AddRecipe = () => {
    const {
       isLoading,
@@ -40,18 +40,23 @@ const AddRecipe = () => {
       handleChange({ name, value });
    };
 
-   // al picarle a editar ( en Job.js ) ==> se meten los valores de ese trabajo en el state y se manda a la pag de crear-job con estos valores pre-llenados, aqui se editan y se manda el patch a la DB
+   // al picarle a editar ( en Recipe.js ) ==> se meten los valores de ese trabajo en el state y se manda a la pag de crear-recipe con estos valores pre-llenados, aqui se editan y se manda el patch a la DB
 
    const handleSubmit = e => {
       e.preventDefault();
 
+      // LISTAS -- oils y problems
+      let oilsList = [oil1, oil2, oil3, oil4, oil5];
+      let problemsList = [problem1, problem2, problem3];
+      oilsList = oilsList.filter(oil => oil.length > 1);
+      problemsList = problemsList.filter(problem => problem.length > 1);
+
       // como sea lo pruebo en la API
-      if (!title || !desc || !oil1 || !problem1) {
+      // prettier-ignore
+      if (!title || !desc || oilsList.length === 0 || problemsList.length === 0) {
          displayAlert();
          return;
       }
-
-      console.log('receta creada 👏👏👏');
 
       if (isEditing) {
          // editJob();
@@ -59,7 +64,7 @@ const AddRecipe = () => {
       }
 
       // lo manda a crear con los valores q tiene en el state
-      createRecipe();
+      createRecipe({ oilsList, problemsList });
    };
 
    //////////////////////
@@ -172,7 +177,7 @@ const AddRecipe = () => {
                      onClick={handleSubmit}
                      disabled={isLoading}
                   >
-                     submit
+                     enviar
                   </button>
 
                   {/* este tiene q ir despues del submit button  */}
@@ -184,7 +189,7 @@ const AddRecipe = () => {
                         console.log('limpiando');
                      }}
                   >
-                     clear
+                     limpiar
                   </button>
                </div>
             </div>

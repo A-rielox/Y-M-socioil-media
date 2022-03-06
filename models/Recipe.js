@@ -9,24 +9,22 @@ const RecipeSchema = new mongoose.Schema(
          minlength: 5,
          maxlength: 150,
       },
-      // problems: {
-      //    type: [String],
-      //    default: ['general'],
-      //    trim: true,
-      //    required: true,
-      // },
-      // oils: {
-      //    type: [String],
-      //    enum: oilsList,
-      //    trim: true,
-      //    default: 'digize pal Adri',
-      // },
+      problemsList: {
+         type: [String],
+         default: ['general'],
+         trim: true,
+         required: [true, 'Favor proveer al menos un problema'],
+      },
+      oilsList: {
+         type: [String],
+         enum: oilsList,
+         trim: true,
+         default: 'digize pal Adri',
+         required: [true, 'Favor proveer al menos un aceite'],
+      },
       oil1: {
          type: String,
          trim: true,
-         required: [true, 'Favor proveer un aceite'],
-         minlength: 5,
-         maxlength: 150,
       },
       oil2: {
          type: String,
@@ -47,9 +45,6 @@ const RecipeSchema = new mongoose.Schema(
       problem1: {
          type: String,
          trim: true,
-         required: [true, 'Favor proveer un aceite'],
-         minlength: 5,
-         maxlength: 150,
       },
       problem2: {
          type: String,
