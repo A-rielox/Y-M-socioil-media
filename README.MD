@@ -2691,8 +2691,7 @@ const initialState = {
 
 #### AddJob Page - Setup
 
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
+✅✅✅
 
 ```js
 import { FormRow, Alert } from '../../components';
@@ -2873,7 +2872,8 @@ return (
 
 #### Change State Values With Handle Change
 
-✅✅✅
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
 
 -  [JS Nuggets Dynamic Object Keys](https://youtu.be/_qxCYtWm0tw)
 
@@ -2975,7 +2975,9 @@ return (
 
 #### Create Job
 
-✅✅✅
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
 
 ```js
 actions.js;
@@ -3158,7 +3160,7 @@ if (action.type === GET_JOBS_SUCCESS) {
 
 #### AllJobs Page Setup
 
-✅✅✅
+✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
 
 -  create
 -  SearchContainer export

@@ -16,6 +16,13 @@ import {
    UPDATE_USER_BEGIN,
    UPDATE_USER_SUCCESS,
    UPDATE_USER_ERROR,
+   HANDLE_CHANGE,
+   CLEAR_VALUES,
+   CREATE_RECIPE_BEGIN,
+   CREATE_RECIPE_SUCCESS,
+   CREATE_RECIPE_ERROR,
+   GET_RECIPES_BEGIN,
+   GET_RECIPES_SUCCESS,
 } from './actions';
 
 const token = localStorage.getItem('token');
@@ -39,9 +46,23 @@ export const initialState = {
    editRecipeId: '',
    title: '',
    desc: '',
-   problem: 'general',
+   // problems: 'general',
    oilsOptions: oilsList,
-   oils: 'digize pal Adri',
+   // oils: 'digize pal Adri',
+   // para pasar a la lista
+   oil1: '',
+   oil2: '',
+   oil3: '',
+   oil4: '',
+   oil5: '',
+   problem1: '',
+   problem2: '',
+   problem3: '',
+   // todas las recetas
+   totalRecipes: 0,
+   numOfPages: 1,
+   recipes: [],
+   page: 1,
 };
 
 const AppContext = React.createContext();
@@ -200,6 +221,77 @@ const AppProvider = ({ children }) => {
       clearAlert();
    };
 
+   const handleChange = ({ name, value }) => {
+      dispatch({ type: HANDLE_CHANGE, payload: { name, value } });
+   };
+
+   const clearValues = () => {
+      dispatch({ type: CLEAR_VALUES });
+   };
+
+   const createRecipe = async () => {
+      dispatch({ type: CREATE_RECIPE_BEGIN });
+
+      try {
+         const {
+            title,
+            desc,
+            oil1,
+            oil2,
+            oil3,
+            oil4,
+            oil5,
+            problem1,
+            problem2,
+            problem3,
+         } = state;
+
+         await authFetch.post('/recipes', {
+            title,
+            desc,
+            oil1,
+            oil2,
+            oil3,
+            oil4,
+            oil5,
+            problem1,
+            problem2,
+            problem3,
+         });
+
+         dispatch({ type: CREATE_RECIPE_SUCCESS });
+         dispatch({ type: CLEAR_VALUES });
+      } catch (error) {
+         if (error.response.status === 401) return;
+
+         dispatch({
+            type: CREATE_RECIPE_ERROR,
+            payload: { msg: error.response.data.msg },
+         });
+      }
+      clearAlert();
+   };
+
+   const getRecipes = async () => {
+      let url = `/recipes`;
+
+      dispatch({ type: GET_RECIPES_BEGIN });
+
+      try {
+         const { data } = await authFetch(url);
+         const { totalRecipes, numOfPages, recipes } = data;
+
+         dispatch({
+            type: GET_RECIPES_SUCCESS,
+            payload: { totalRecipes, numOfPages, recipes },
+         });
+      } catch (error) {
+         console.log(error.response);
+         // logoutUser();
+      }
+      clearAlert();
+   };
+
    return (
       <AppContext.Provider
          value={{
@@ -210,6 +302,10 @@ const AppProvider = ({ children }) => {
             toggleSidebar,
             logoutUser,
             updateUser,
+            handleChange,
+            clearValues,
+            createRecipe,
+            getRecipes,
          }}
       >
          {children}

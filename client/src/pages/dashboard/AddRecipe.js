@@ -1,26 +1,6 @@
-import { useState } from 'react';
 import { FormRow, Alert, FormRowSelect } from '../../components';
 import { useAppContext } from '../../context/appContext';
 import styled from 'styled-components';
-
-const initialStateOils = {
-   oil1: '',
-   oil2: '',
-   oil3: '',
-   oil4: '',
-   oil5: '',
-   oil6: '',
-   oil7: '',
-};
-const initialStateProblems = {
-   problem1: '',
-   problem2: '',
-   problem3: '',
-   problem4: '',
-   problem5: '',
-   problem6: '',
-   problem7: '',
-};
 
 // los valores los pongo en el global ( y no en la pura pag como en el register ) xq para editar y agregar job voy a ocupar la misma pag ( y la diferencia en la pag la hago con el "isEditing" )
 const AddRecipe = () => {
@@ -31,25 +11,33 @@ const AddRecipe = () => {
       title, // position
       desc, // company
       // jobLocation residencia actual desde perfil,
-      problem, // jobType
+      // problems, // jobType
       //jobTypeOptions
-      oils, // status
+      // oils, // status
       oilsOptions, // statusOptions
-      // handleChange,
+      handleChange,
       // clearValues,
       // createJob,
       isEditing,
       // editJob,
+      clearValues,
+      createRecipe,
+      oil1,
+      oil2,
+      oil3,
+      oil4,
+      oil5,
+      problem1,
+      problem2,
+      problem3,
    } = useAppContext();
-
    // PRIMERO CAMBIO TODO EN EL STATE ( LOS DATOS DE LA RECETA ), Y LUEGO LO MANDO
 
    const handleRecipeInput = e => {
       const name = e.target.name;
       const value = e.target.value;
 
-      console.log(name, value);
-      // handleChange({ name, value });
+      handleChange({ name, value });
    };
 
    // al picarle a editar ( en Job.js ) ==> se meten los valores de ese trabajo en el state y se manda a la pag de crear-job con estos valores pre-llenados, aqui se editan y se manda el patch a la DB
@@ -58,71 +46,29 @@ const AddRecipe = () => {
       e.preventDefault();
 
       // como sea lo pruebo en la API
-      if (!title || !desc || !problem || !oils) {
+      if (!title || !desc || !oil1 || !problem1) {
          displayAlert();
          return;
       }
 
       console.log('receta creada 👏👏👏');
 
-      // if (isEditing) {
-      // editJob();
-      //    return;
-      // }
+      if (isEditing) {
+         // editJob();
+         return;
+      }
 
       // lo manda a crear con los valores q tiene en el state
-      // createJob();
+      createRecipe();
    };
 
+   //////////////////////
    //////////////////////
    // OILS
-   const [valuesOils, setValuesOils] = useState(initialStateOils);
-   const [numEntOils, setNumEntOils] = useState(1);
-
-   const inputsOils = Array.from({ length: numEntOils }, (_, index) => {
-      return index + 1;
-   });
-
-   const handleChangeOils = e => {
-      const name = e.target.name;
-      const value = e.target.value;
-
-      setValuesOils({ ...valuesOils, [name]: value.trim() });
-   };
-
-   let listOils = [];
-   for (const oilValue of Object.values(valuesOils)) {
-      if (oilValue) {
-         listOils.push(oilValue);
-      }
-   }
-   listOils.splice(Number(numEntOils));
-   console.log(listOils);
 
    //////////////////////
+   //////////////////////
    // PROBLEMS
-   const [valuesProblems, setValuesProblems] = useState(initialStateProblems);
-   const [numEntProbems, setNumEntProbems] = useState(1);
-
-   const inputsProblems = Array.from({ length: numEntProbems }, (_, index) => {
-      return index + 1;
-   });
-
-   const handleChangeProblems = e => {
-      const name = e.target.name;
-      const value = e.target.value;
-
-      setValuesProblems({ ...valuesProblems, [name]: value.trim() });
-   };
-
-   let listaProblems = [];
-   for (const molestia of Object.values(valuesProblems)) {
-      if (molestia) {
-         listaProblems.push(molestia);
-      }
-   }
-   listaProblems.splice(Number(numEntProbems));
-   console.log(listaProblems);
 
    return (
       <Wrapper>
@@ -149,51 +95,75 @@ const AddRecipe = () => {
                   handleChange={handleRecipeInput}
                />
 
-               {/* DINAMICOS */}
+               {/* ACEITES */}
 
-               {/* numero inputs OILS */}
+               <FormRowSelect
+                  labelText="aceitito 1"
+                  key="oil1"
+                  name="oil1"
+                  value={oil1}
+                  handleChange={handleRecipeInput}
+                  list={oilsOptions}
+               ></FormRowSelect>
+               <FormRowSelect
+                  labelText="aceitito 2"
+                  key="oil2"
+                  name="oil2"
+                  value={oil2}
+                  handleChange={handleRecipeInput}
+                  list={oilsOptions}
+               ></FormRowSelect>
+               <FormRowSelect
+                  labelText="aceitito 3"
+                  key="oil3"
+                  name="oil3"
+                  value={oil3}
+                  handleChange={handleRecipeInput}
+                  list={oilsOptions}
+               ></FormRowSelect>
+               <FormRowSelect
+                  labelText="aceitito 4"
+                  key="oil4"
+                  name="oil4"
+                  value={oil4}
+                  handleChange={handleRecipeInput}
+                  list={oilsOptions}
+               ></FormRowSelect>
+               <FormRowSelect
+                  labelText="aceitito 5"
+                  key="oil5"
+                  name="oil5"
+                  value={oil5}
+                  handleChange={handleRecipeInput}
+                  list={oilsOptions}
+               ></FormRowSelect>
+
+               {/* PROBLEMS */}
+
                <FormRow
-                  labelText="numero de aceites"
-                  type="number"
-                  name="_"
-                  value={numEntOils}
-                  handleChange={e => setNumEntOils(e.target.value)}
+                  labelText="molestia 1"
+                  key="problem1"
+                  type="text"
+                  name="problem1"
+                  value={problem1}
+                  handleChange={handleRecipeInput}
                ></FormRow>
-
-               {inputsOils.map(num => {
-                  return (
-                     <FormRowSelect
-                        labelText={`aceite ${num} : `}
-                        key={num}
-                        name={`oil${num}`}
-                        value={valuesOils[num]}
-                        handleChange={handleChangeOils}
-                        list={oilsOptions}
-                     ></FormRowSelect>
-                  );
-               })}
-
-               {/* numero inputs PROBLEMS */}
                <FormRow
-                  labelText="numero de problemas"
-                  type="number"
-                  name="_"
-                  value={numEntProbems}
-                  handleChange={e => setNumEntProbems(e.target.value)}
+                  labelText="molestia 2"
+                  key="problem2"
+                  type="text"
+                  name="problem2"
+                  value={problem2}
+                  handleChange={handleRecipeInput}
                ></FormRow>
-
-               {inputsProblems.map(num => {
-                  return (
-                     <FormRow
-                        labelText={`molestia ${num} : `}
-                        key={num}
-                        type="text"
-                        name={`molestia${num}`}
-                        value={valuesProblems[num]}
-                        handleChange={handleChangeProblems}
-                     ></FormRow>
-                  );
-               })}
+               <FormRow
+                  labelText="molestia 3"
+                  key="problem3"
+                  type="text"
+                  name="problem3"
+                  value={problem3}
+                  handleChange={handleRecipeInput}
+               ></FormRow>
 
                <div className="btn-container">
                   <button
@@ -210,7 +180,7 @@ const AddRecipe = () => {
                      className="btn btn-block clear-btn"
                      onClick={e => {
                         e.preventDefault();
-                        // clearValues();
+                        clearValues();
                         console.log('limpiando');
                      }}
                   >

@@ -6,25 +6,63 @@ const RecipeSchema = new mongoose.Schema(
       title: {
          type: String,
          required: [true, 'Favor proveer un titulo.'],
-         minlength: 10,
+         minlength: 5,
          maxlength: 150,
       },
-      problem: {
-         type: [String],
-         default: ['general'],
+      // problems: {
+      //    type: [String],
+      //    default: ['general'],
+      //    trim: true,
+      //    required: true,
+      // },
+      // oils: {
+      //    type: [String],
+      //    enum: oilsList,
+      //    trim: true,
+      //    default: 'digize pal Adri',
+      // },
+      oil1: {
+         type: String,
          trim: true,
-         required: true,
+         required: [true, 'Favor proveer un aceite'],
+         minlength: 5,
+         maxlength: 150,
       },
-      oils: {
-         type: [String],
-         enum: oilsList,
+      oil2: {
+         type: String,
          trim: true,
-         default: 'digize pal Adri',
+      },
+      oil3: {
+         type: String,
+         trim: true,
+      },
+      oil4: {
+         type: String,
+         trim: true,
+      },
+      oil5: {
+         type: String,
+         trim: true,
+      },
+      problem1: {
+         type: String,
+         trim: true,
+         required: [true, 'Favor proveer un aceite'],
+         minlength: 5,
+         maxlength: 150,
+      },
+      problem2: {
+         type: String,
+         trim: true,
+      },
+      problem3: {
+         type: String,
+         trim: true,
       },
       desc: {
          type: String,
          required: [true, 'Favor proveer una descripción'],
-         minlength: 10,
+         minlength: 5,
          maxlength: 1500,
       },
       createdBy: {

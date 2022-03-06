@@ -8,9 +8,20 @@ import mongoose from 'mongoose';
 
 //'/api/v1/recipes' -- .post(createRecipe)
 const createRecipe = async (req, res) => {
-   const { title, problem, oils, desc } = req.body;
+   const {
+      title,
+      oil1,
+      oil2,
+      oil3,
+      oil4,
+      oil5,
+      problem1,
+      problem2,
+      problem3,
+      desc,
+   } = req.body;
 
-   if (!title || !problem || !oils || !desc) {
+   if (!title || !problem1 || !oil1 || !desc) {
       throw new BadRequestError('Favor proveer todos los valores');
    }
 
@@ -48,7 +59,13 @@ const deleteRecipe = async (req, res) => {
 //'/api/v1/recipes' --  .get(getAllRecipes)
 // ▦▦▦▦▦▦▦▦ FILTROS ▦▦▦▦▦▦▦▦
 const getAllRecipes = async (req, res) => {
-   res.send('<h1>get all recipes</h1>');
+   const recipes = await Recipe.find();
+
+   res.status(StatusCodes.OK).json({
+      totalRecipes: recipes.length,
+      numOfPages: 1,
+      recipes,
+   });
    // const { search, status, jobType, sort } = req.query;
    // const queryObject = {
    //    createdBy: req.user.userId,

@@ -1,10 +1,10 @@
-// import { JobsContainer, SearchContainer } from '../../components';
+import { RecipesContainer, SearchContainer } from '../../components';
 
 const AllRecipes = () => {
    return (
       <>
-         {/* <SearchContainer />
-         <JobsContainer /> */}
+         <SearchContainer />
+         <RecipesContainer />
       </>
    );
 };

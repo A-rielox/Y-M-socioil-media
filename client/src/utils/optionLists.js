@@ -1,6 +1,7 @@
 export const statusList = ['interview', 'declined', 'pending', 'caca'];
 
 export const oilsList = [
+   '',
    'Abeto de Vancouver (Idaho Grand Fir)',
    'Albahaca (Basil)',
    'Alcanforero (Ravintsara)',
