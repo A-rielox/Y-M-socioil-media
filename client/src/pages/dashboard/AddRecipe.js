@@ -51,7 +51,7 @@ const AddRecipe = () => {
       oilsList = oilsList.filter(oil => oil.length > 1);
       problemsList = problemsList.filter(problem => problem.length > 1);
 
-      // como sea lo pruebo en la API
+      // como sea lo pruebo en la API y en la DB
       // prettier-ignore
       if (!title || !desc || oilsList.length === 0 || problemsList.length === 0) {
          displayAlert();
@@ -86,6 +86,7 @@ const AddRecipe = () => {
                {/* title */}
                <FormRow
                   type="text"
+                  labelText="Titulo"
                   name="title"
                   value={title}
                   handleChange={handleRecipeInput}
@@ -186,7 +187,6 @@ const AddRecipe = () => {
                      onClick={e => {
                         e.preventDefault();
                         clearValues();
-                        console.log('limpiando');
                      }}
                   >
                      limpiar

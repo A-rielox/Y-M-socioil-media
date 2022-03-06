@@ -1,8 +1,9 @@
 import { useAppContext } from '../context/appContext';
 import { useEffect } from 'react';
 import Loading from './Loading';
-// import Job from './Job';
-// import PageBtnContainer from './PageBtnContainer';
+import Recipe from './Recipe';
+
+import PageBtnContainer from './PageBtnContainer';
 import styled from 'styled-components';
 
 const RecipesContainer = () => {
@@ -24,6 +25,16 @@ const RecipesContainer = () => {
    }, [/* search, searchStatus, searchType, sort, */ page]);
 
    console.log(recipes);
+   // createdAt: "2022-03-06T18:43:51.211Z"
+   // createdBy: "62215237822281526699bee3"
+   // desc: "DESCRIPCION pepi"
+   // oil1: "Angelica" --> a 5
+   // oilsList: (3) ['Angelica', 'Cassia', 'Copaiba']
+   // problem1: "espalda" --> a 3
+   // problemsList: (2) ['espalda', 'pie']
+   // title: "TITULO pepi"
+   // updatedAt: "2022-03-06T18:43:51.211Z"
+   // _id: "622500e7d92400c2e34d395d"
 
    if (isLoading) {
       return <Loading center />;
@@ -32,7 +43,7 @@ const RecipesContainer = () => {
    if (recipes.length === 0) {
       return (
          <Wrapper>
-            <h2>No hay recetitas aún ...</h2>
+            <h2>No encontramos recetitas 😳 ...</h2>
          </Wrapper>
       );
    }
@@ -44,13 +55,13 @@ const RecipesContainer = () => {
          </h5>
 
          <div className="jobs">
-            {recipes.map((recipe, index) => {
-               // return <Job key={job._id} {...job} />;
-               return <h3 key={index}>receta</h3>;
+            {recipes.map(recipe => {
+               return <Recipe key={recipe._id} {...recipe} />;
+               // return <h3 key={index}>receta</h3>;
             })}
          </div>
 
-         {/* {numOfPages > 1 && <PageBtnContainer />} */}
+         {numOfPages > 1 && <PageBtnContainer />}
       </Wrapper>
    );
 };

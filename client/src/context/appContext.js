@@ -50,6 +50,8 @@ export const initialState = {
    oilsOptions: oilsList,
    // oils: 'digize pal Adri',
    // para pasar a la lista
+   oilsList: [],
+   problemsList: [],
    oil1: '',
    oil2: '',
    oil3: '',
