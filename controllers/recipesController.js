@@ -116,6 +116,7 @@ const updateRecipe = async (req, res) => {
       throw new NotFoundError(`No encontramos receta con id: ${recipeId}`);
    }
 
+   console.log(req.user);
    // checkPermissions(req.user, job.createdBy);
 
    // tecnicamente NO lo necesito en el front como respuesta, el updatedJob
