@@ -1,7 +1,7 @@
 import Recipe from '../models/Recipe.js';
 import { StatusCodes } from 'http-status-codes';
 import { BadRequestError, NotFoundError } from '../errors/index.js';
-// import checkPermissions from '../utils/checkPermissions.js';
+import checkPermissions from '../utils/checkPermissions.js';
 import mongoose from 'mongoose';
 // import { rsort } from 'semver';
 // import moment from 'moment';
@@ -25,19 +25,19 @@ const createRecipe = async (req, res) => {
 
 //'/api/v1/recipes' -- .route('/:id').delete(deleteRecipe)
 const deleteRecipe = async (req, res) => {
-   res.send('<h1>delete Recipe</h1>');
-   // const { id: jobId } = req.params;
+   const { id: recipeId } = req.params;
 
-   // const job = await Job.findOne({ _id: jobId });
-   // if (!job) {
-   //    throw new CustomError.NotFoundError(`No job with id : ${jobId}`);
-   // }
+   const recipe = await Recipe.findOne({ _id: recipeId });
+   if (!recipe) {
+      throw new NotFoundError(`No encontramos receta con id: ${recipeId}`);
+   }
 
-   // checkPermissions(req.user, job.createdBy);
+   checkPermissions(req.user, recipe.createdBy);
 
-   // await job.remove();
-
-   // res.status(StatusCodes.OK).json({ msg: 'Success! Job removed' });
+   await recipe.remove();
+   res.status(StatusCodes.OK).json({
+      msg: 'Receta eliminada con exito 👏👏👏',
+   });
 };
 
 // al no poner el await se obtiene solo el query ( en este caso en la variable result ) , al q despues se le puede agregar los sort'ssss
@@ -116,8 +116,7 @@ const updateRecipe = async (req, res) => {
       throw new NotFoundError(`No encontramos receta con id: ${recipeId}`);
    }
 
-   console.log(req.user);
-   // checkPermissions(req.user, job.createdBy);
+   checkPermissions(req.user, recipe.createdBy);
 
    // tecnicamente NO lo necesito en el front como respuesta, el updatedJob
    // OJO q le paso todo el req.body

@@ -21,6 +21,10 @@ import {
    GET_RECIPES_BEGIN,
    GET_RECIPES_SUCCESS,
    SET_EDIT_RECIPE,
+   DELETE_RECIPE_BEGIN,
+   EDIT_RECIPE_BEGIN,
+   EDIT_RECIPE_SUCCESS,
+   EDIT_RECIPE_ERROR,
 } from './actions';
 
 const reducer = (state, action) => {
@@ -243,6 +247,34 @@ const reducer = (state, action) => {
 
       // prettier-ignore
       return { ...state, isEditing: true, editRecipeId: _id, title, desc, oilsList, oil1, oil2, oil3, oil4, oil5, problemsList, problem1, problem2, problem3 };
+   }
+   //
+   if (action.type === DELETE_RECIPE_BEGIN) {
+      // en la fcn llamo a getRecipes() q va a poner isLoading:false
+      return { ...state, isLoading: true };
+   }
+
+   //
+   if (action.type === EDIT_RECIPE_BEGIN) {
+      return { ...state, isLoading: true };
+   }
+   if (action.type === EDIT_RECIPE_SUCCESS) {
+      return {
+         ...state,
+         isLoading: false,
+         showAlert: true,
+         alertType: 'success',
+         alertText: 'Recetita editada 🐱!',
+      };
+   }
+   if (action.type === EDIT_RECIPE_ERROR) {
+      return {
+         ...state,
+         isLoading: false,
+         showAlert: true,
+         alertType: 'danger',
+         alertText: action.payload.msg,
+      };
    }
 
    throw new Error(`no such action :${action.type}`);

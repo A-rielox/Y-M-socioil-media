@@ -3508,10 +3508,7 @@ const updateJob = async (req, res) => {
 
 #### Check Permissions
 
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
+✅✅✅
 
 ```js
 jobsController.js;
@@ -3690,6 +3687,10 @@ if (action.type === EDIT_JOB_ERROR) {
 ```
 
 #### Create More Jobs
+
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
 
 -  [Mockaroo](https://www.mockaroo.com/)
 -  setup mock-data.json in the root

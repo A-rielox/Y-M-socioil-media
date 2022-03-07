@@ -4,7 +4,9 @@ const checkPermissions = (requestUser, resourceUserId) => {
    // if (requestUser.role === 'admin') return; red red x hacer red red
    if (requestUser.userId === resourceUserId.toString()) return;
 
-   throw new UnauthenticatedError('Not authorized to access this route');
+   throw new UnauthenticatedError(
+      'No cuentas con autorización para acceder a este recurso'
+   );
 };
 
 export default checkPermissions;
