@@ -23,6 +23,7 @@ import {
    CREATE_RECIPE_ERROR,
    GET_RECIPES_BEGIN,
    GET_RECIPES_SUCCESS,
+   SET_EDIT_RECIPE,
 } from './actions';
 
 const token = localStorage.getItem('token');
@@ -279,6 +280,20 @@ const AppProvider = ({ children }) => {
       clearAlert();
    };
 
+   const setEditRecipe = id => {
+      dispatch({ type: SET_EDIT_RECIPE, payload: { id } });
+
+      console.log(`editar receta con id: ${id}`);
+   };
+
+   const editRecipe = ({ oilsList, problemsList }) => {
+      console.log('editar receta');
+   };
+
+   const deleteRecipe = id => {
+      console.log(`borrar receta con id: ${id}`);
+   };
+
    return (
       <AppContext.Provider
          value={{
@@ -293,6 +308,9 @@ const AppProvider = ({ children }) => {
             clearValues,
             createRecipe,
             getRecipes,
+            setEditRecipe,
+            deleteRecipe,
+            editRecipe,
          }}
       >
          {children}

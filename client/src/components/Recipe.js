@@ -3,7 +3,6 @@ import { ImCross } from 'react-icons/im';
 import { BsFillDropletFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { useAppContext } from '../context/appContext';
-
 import moment from 'moment';
 import RecipeInfo from './RecipeInfo';
 import styled from 'styled-components';
@@ -20,9 +19,7 @@ import styled from 'styled-components';
 // _id: "622500e7d92400c2e34d395d"
 
 const Recipe = ({ _id, oilsList, problemsList, title, desc, createdAt }) => {
-   const {
-      /* setEditJob, deleteJob */
-   } = useAppContext();
+   const { setEditRecipe, deleteRecipe } = useAppContext();
 
    let date = moment(createdAt);
    date = date.format('MMM Do, YYYY');
@@ -63,34 +60,36 @@ const Recipe = ({ _id, oilsList, problemsList, title, desc, createdAt }) => {
                   Necessitatibus quis, earum ipsa eveniet nulla ab placeat alias
                   maiores obcaecati autem!
                </p>
+
+               <RecipeInfo icon={<FaCalendarAlt />} text={date} />
             </div>
 
             <footer>
                <div className="actions">
                   <Link
-                     // to="/add-job"
-                     to="/all-recipes"
-                     // onClick={() => setEditJob(_id)}
-                     onClick={() => console.log('editar')}
+                     to="/add-recipe"
+                     onClick={() => setEditRecipe(_id)}
                      className="btn edit-btn"
                   >
-                     autor 👍
+                     editar
                   </Link>
-                  {/* <button
+                  <button
                      type="button"
                      className="btn delete-btn"
-                     // onClick={() => deleteJob(_id)}
-                     onClick={() => console.log('borrar')}
+                     onClick={() => deleteRecipe(_id)}
                   >
-                     nivel
-                  </button> */}
+                     borrar
+                  </button>
                   {/* <div className={`status ${status}`}>{status}</div> */}
+
+                  <button type="button" className={`btn status platinum`}>
+                     autor 👍
+                  </button>
+
                   <button type="button" className={`btn status silver`}>
                      silver
                   </button>
                </div>
-
-               <RecipeInfo icon={<FaCalendarAlt />} text={date} />
             </footer>
          </div>
       </Wrapper>

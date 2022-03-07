@@ -8,18 +8,13 @@ const AddRecipe = () => {
       isLoading,
       showAlert,
       displayAlert,
-      title, // position
-      desc, // company
+      title,
+      desc,
       // jobLocation residencia actual desde perfil,
-      // problems, // jobType
-      //jobTypeOptions
-      // oils, // status
-      oilsOptions, // statusOptions
+      oilsOptions,
       handleChange,
-      // clearValues,
-      // createJob,
       isEditing,
-      // editJob,
+      editRecipe,
       clearValues,
       createRecipe,
       oil1,
@@ -59,7 +54,7 @@ const AddRecipe = () => {
       }
 
       if (isEditing) {
-         // editJob();
+         editRecipe({ oilsList, problemsList });
          return;
       }
 

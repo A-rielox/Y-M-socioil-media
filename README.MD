@@ -3268,9 +3268,7 @@ export default Job;
 
 #### Job Component - Setup
 
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
+✅✅✅
 
 ```js
 appContext.js
@@ -3510,7 +3508,10 @@ const updateJob = async (req, res) => {
 
 #### Check Permissions
 
-✅✅✅
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
 
 ```js
 jobsController.js;

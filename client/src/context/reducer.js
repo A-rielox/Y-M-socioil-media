@@ -20,6 +20,7 @@ import {
    CREATE_RECIPE_ERROR,
    GET_RECIPES_BEGIN,
    GET_RECIPES_SUCCESS,
+   SET_EDIT_RECIPE,
 } from './actions';
 
 const reducer = (state, action) => {
@@ -229,6 +230,34 @@ const reducer = (state, action) => {
       };
    }
 
+   //
+   if (action.type === SET_EDIT_RECIPE) {
+      const recipe = state.recipes.find(
+         recipe => recipe._id === action.payload.id
+      );
+
+      // prettier-ignore
+      const {
+         _id,title,desc,oilsList,oil1,oil2,oil3,oil4,oil5,problemsList,problem1,problem2,problem3,
+      } = recipe;
+
+      // prettier-ignore
+      return { ...state, isEditing: true, editRecipeId: _id, title, desc, oilsList, oil1, oil2, oil3, oil4, oil5, problemsList, problem1, problem2, problem3 };
+   }
+
    throw new Error(`no such action :${action.type}`);
 };
 export default reducer;
+
+// title:
+// desc: "DESCRIPCION pepi"
+// oilsList: (3) ['Angelica', 'Cassia', 'Copaiba']
+// oil1: '',
+// oil2: '',
+// oil3: '',
+// oil4: '',
+// oil5: '',
+// problemsList: (2) ['espalda', 'pie']
+// problem1: '',
+// problem2: '',
+// problem3: '',

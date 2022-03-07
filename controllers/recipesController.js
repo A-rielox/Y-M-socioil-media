@@ -104,29 +104,32 @@ const getAllRecipes = async (req, res) => {
 
 //'/api/v1/recipes' -- .route('/:id').patch(updateRecipe)
 const updateRecipe = async (req, res) => {
-   res.send('<h1>update Recipe</h1>');
-   // const { id: jobId } = req.params;
-   // const { company, position } = req.body;
+   const { id: recipeId } = req.params;
+   const { oilsList, problemsList, title, desc } = req.body;
 
-   // // como sea lo reviso en el front
-   // if (!company || !position) {
-   //    throw new BadRequestError('Please Provide All Values');
-   // }
+   if (!title || oilsList.length === 0 || problemsList.length === 0 || !desc) {
+      throw new BadRequestError('Favor proveer todos los valores');
+   }
 
-   // const job = await Job.findOne({ _id: jobId });
-   // if (!job) {
-   //    throw new NotFoundError(`No job with id ${jobId}`);
-   // }
+   const recipe = await Recipe.findOne({ _id: recipeId });
+   if (!recipe) {
+      throw new NotFoundError(`No encontramos receta con id: ${recipeId}`);
+   }
 
    // checkPermissions(req.user, job.createdBy);
 
-   // // tecnicamente NO lo necesito en el front como respuesta, el updatedJob
-   // const updatedJob = await Job.findOneAndUpdate({ _id: jobId }, req.body, {
-   //    new: true,
-   //    runValidators: true,
-   // });
+   // tecnicamente NO lo necesito en el front como respuesta, el updatedJob
+   // OJO q le paso todo el req.body
+   const updatedRecipe = await Recipe.findOneAndUpdate(
+      { _id: recipeId },
+      req.body,
+      {
+         new: true,
+         runValidators: true,
+      }
+   );
 
-   // res.status(StatusCodes.OK).json({ updatedJob });
+   res.status(StatusCodes.OK).json({ updatedRecipe });
 };
 
 //'/api/v1/recipes' -- route('/stats').get(showStats);
