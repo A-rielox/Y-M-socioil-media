@@ -3064,9 +3064,7 @@ if (action.type === CREATE_JOB_ERROR) {
 
 #### Get All Jobs
 
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
+✅✅✅
 
 ```js
 jobsController.js;
@@ -3159,9 +3157,7 @@ if (action.type === GET_JOBS_SUCCESS) {
 
 #### AllJobs Page Setup
 
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
+✅✅✅
 
 -  create
 -  SearchContainer export
@@ -3272,7 +3268,9 @@ export default Job;
 
 #### Job Component - Setup
 
-✅✅✅
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
 
 ```js
 appContext.js

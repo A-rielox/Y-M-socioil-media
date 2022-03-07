@@ -1,4 +1,6 @@
-import { FaLocationArrow, FaBriefcase, FaCalendarAlt } from 'react-icons/fa';
+import { FaCalendarAlt } from 'react-icons/fa';
+import { ImCross } from 'react-icons/im';
+import { BsFillDropletFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { useAppContext } from '../context/appContext';
 
@@ -17,15 +19,7 @@ import styled from 'styled-components';
 // updatedAt: "2022-03-06T18:43:51.211Z"
 // _id: "622500e7d92400c2e34d395d"
 
-const Recipe = ({
-   _id,
-   // position,
-   // company,
-   // jobLocation,
-   // jobType,
-   createdAt,
-   // status,
-}) => {
+const Recipe = ({ _id, oilsList, problemsList, title, desc, createdAt }) => {
    const {
       /* setEditJob, deleteJob */
    } = useAppContext();
@@ -36,20 +30,39 @@ const Recipe = ({
    return (
       <Wrapper>
          <header>
-            {/* <div className="main-icon">{company.charAt(0)}</div> */}
-
             <div className="info">
-               {/* <h5>{position}</h5> */}
-               {/* <p>{company}</p> */}
+               <h5>{title}</h5>
+
+               <ul className="ulListProblem">
+                  {problemsList.map((problem, index) => {
+                     return (
+                        <li key={index}>
+                           <ImCross className="icon" />
+                           {problem}
+                        </li>
+                     );
+                  })}
+               </ul>
             </div>
          </header>
 
          <div className="content">
             <div className="content-center">
-               {/* <RecipeInfo icon={<FaLocationArrow />} text={jobLocation} /> */}
-               <RecipeInfo icon={<FaCalendarAlt />} text={date} />
-               {/* <RecipeInfo icon={<FaBriefcase />} text={jobType} /> */}
-               {/* <div className={`status ${status}`}>{status}</div> */}
+               <ul className="ulListOil">
+                  {oilsList.map((oil, index) => {
+                     return (
+                        <li key={index}>
+                           <BsFillDropletFill className="icon" />
+                           {oil}
+                        </li>
+                     );
+                  })}
+               </ul>
+               <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Necessitatibus quis, earum ipsa eveniet nulla ab placeat alias
+                  maiores obcaecati autem!
+               </p>
             </div>
 
             <footer>
@@ -61,17 +74,23 @@ const Recipe = ({
                      onClick={() => console.log('editar')}
                      className="btn edit-btn"
                   >
-                     Edit
+                     autor 👍
                   </Link>
-                  <button
+                  {/* <button
                      type="button"
                      className="btn delete-btn"
                      // onClick={() => deleteJob(_id)}
                      onClick={() => console.log('borrar')}
                   >
-                     Delete
+                     nivel
+                  </button> */}
+                  {/* <div className={`status ${status}`}>{status}</div> */}
+                  <button type="button" className={`btn status silver`}>
+                     silver
                   </button>
                </div>
+
+               <RecipeInfo icon={<FaCalendarAlt />} text={date} />
             </footer>
          </div>
       </Wrapper>
@@ -84,67 +103,133 @@ const Wrapper = styled.article`
    background: var(--white);
    border-radius: var(--borderRadius);
    display: grid;
-   grid-template-rows: 1fr auto;
+   grid-template-rows: 100px auto;
+
    box-shadow: var(--shadow-2);
 
    header {
       padding: 1rem 1.5rem;
       border-bottom: 1px solid var(--grey-100);
       display: grid;
-      grid-template-columns: auto 1fr;
       align-items: center;
+      height: 100px;
       h5 {
          letter-spacing: 0;
       }
    }
-   .main-icon {
-      width: 60px;
-      height: 60px;
-      display: grid;
-      place-items: center;
-      background: var(--primary-500);
-      border-radius: var(--borderRadius);
-      font-size: 1.5rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-right: 2rem;
-   }
+
    .info {
       h5 {
          margin-bottom: 0.25rem;
       }
-      p {
-         margin: 0;
-         text-transform: capitalize;
-         color: var(--grey-400);
-         letter-spacing: var(--letterSpacing);
+   }
+   .ulListProblem {
+      margin: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      text-transform: capitalize;
+
+      li {
+         list-style-type: none;
+         margin-top: 0.5rem;
+         display: flex;
+         align-items: center;
+      }
+
+      .icon {
+         font-size: 0.7rem;
+         margin-right: 0.5rem;
+         color: var(--red-dark);
       }
    }
-   .pending {
-      background: #fcefc7;
-      color: #e9b949;
+   .ulListOil {
+      margin: 0 20px;
+      /* display: flex;
+      justify-content: space-between; */
+      text-transform: capitalize;
+
+      li {
+         list-style-type: none;
+         margin-top: 0.5rem;
+         display: flex;
+         align-items: center;
+      }
+
+      .icon {
+         font-size: 0.7rem;
+         margin-right: 0.5rem;
+         color: #dfb33b;
+      }
    }
-   .interview {
-      background: #e0e8f9;
-      color: #647acb;
+
+   /* 
+   star		#b500ff
+   senior star	#c900c9
+   executive	#d70000
+   silver		#a10000
+   gold		#f3ff00
+   platinum	#00f900
+   diamond		#058210
+   crown diamond	#3f15d0
+   r.c. diamond	#6500a3
+   */
+   .star {
+      background: #b500ff;
+      color: black;
    }
-   .declined {
-      color: #d66a6a;
-      background: #ffeeee;
+   .senior {
+      background: #c900c9;
+      color: black;
    }
+   .executive {
+      color: black;
+      background: #d70000;
+   }
+   .silver {
+      color: white;
+      background: #a10000;
+   }
+   .gold {
+      color: black;
+      background: #f3ff00;
+   }
+   .platinum {
+      color: black;
+      background: #00f900;
+   }
+   .diamond {
+      color: white;
+      background: #058210;
+   }
+   .crown {
+      color: black;
+      background: #3f15d0;
+   }
+   .royal {
+      color: black;
+      background: #6500a3;
+   }
+
    .content {
       padding: 1rem 1.5rem;
+      display: grid;
+      grid-template-rows: 1fr auto;
    }
    .content-center {
       display: grid;
+      align-content: start;
       grid-template-columns: 1fr;
       row-gap: 0.5rem;
+      border-bottom: 1px solid var(--grey-100);
       @media (min-width: 576px) {
          grid-template-columns: 1fr 1fr;
       }
       @media (min-width: 992px) {
          grid-template-columns: 1fr;
+
+         .btn:first-child {
+            margin-bottom: 10px;
+         }
       }
       @media (min-width: 1120px) {
          grid-template-columns: 1fr 1fr;
@@ -161,6 +246,9 @@ const Wrapper = styled.article`
    }
    footer {
       margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
    }
    .edit-btn,
    .delete-btn {

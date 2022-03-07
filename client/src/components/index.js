@@ -9,9 +9,7 @@ import FormRowSelect from './FormRowSelect';
 import RecipesContainer from './RecipesContainer';
 import SearchContainer from './SearchContainer';
 import Loading from './Loading';
-import Recipe from './Recipe';
 import PageBtnContainer from './PageBtnContainer';
-import RecipeInfo from './RecipeInfo';
 // import StatsContainer from './StatsContainer';
 // import ChartsContainer from './ChartsContainer';
 
@@ -27,9 +25,7 @@ export {
    RecipesContainer,
    SearchContainer,
    Loading,
-   Recipe,
    PageBtnContainer,
-   RecipeInfo,
    // StatsContainer,
    // ChartsContainer,
 };

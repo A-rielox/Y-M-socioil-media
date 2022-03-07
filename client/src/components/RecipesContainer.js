@@ -2,7 +2,6 @@ import { useAppContext } from '../context/appContext';
 import { useEffect } from 'react';
 import Loading from './Loading';
 import Recipe from './Recipe';
-
 import PageBtnContainer from './PageBtnContainer';
 import styled from 'styled-components';
 
@@ -20,9 +19,14 @@ const RecipesContainer = () => {
       numOfPages,
    } = useAppContext();
 
-   useEffect(() => {
-      getRecipes();
-   }, [/* search, searchStatus, searchType, sort, */ page]);
+   useEffect(
+      () => {
+         getRecipes();
+      },
+      [
+         /* search, searchStatus, searchType, sort,  page */
+      ]
+   );
 
    console.log(recipes);
    // createdAt: "2022-03-06T18:43:51.211Z"
