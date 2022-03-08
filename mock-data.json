@@ -1,0 +1,958 @@
+[
+   {
+      "title": "Stan Helsing",
+      "oil1": "Dorado Azul",
+      "oil2": "Xiang Mao",
+      "oil3": "Peppermint Essential Oil Sample",
+      "oilsList": [
+         "Dorado Azul",
+         "Xiang Mao",
+         "Peppermint Essential Oil Sample"
+      ],
+      "problem1": "Dolor de muelas",
+      "problem2": "Quemaduras",
+      "problemsList": ["Dolor de muelas", "Quemaduras"],
+      "desc": "Indeterm mood disord NOS skull fx NEC-mod stage glaucoma",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2022-01-30T08:41:03Z"
+   },
+   {
+      "title": "Last Night",
+      "oil1": "Eucalyptus Globulus",
+      "oil2": "Semilla de zahahoria (Carrot Seed)",
+      "oil3": "Tanaceto azul (Blue Tansy)",
+      "oilsList": [
+         "Eucalyptus Globulus",
+         "Semilla de zahahoria (Carrot Seed)",
+         "Tanaceto azul (Blue Tansy)"
+      ],
+      "problem1": "torcedura",
+      "problem2": "Dolor de muelas",
+      "problemsList": ["torcedura", "Dolor de muelas"],
+      "desc": "Const mood dis m mood disord NOS skull fx NEC-mod stage ood disord NOS skull fx NEC-mod stage ord NOS skull fx NEC-mod stage ant exophthalmos",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2021-08-15T08:08:26Z"
+   },
+   {
+      "title": "Letter from Siberia",
+      "oil1": "Pino (Pine)",
+      "oil2": "Bergamota (Bergamot)",
+      "oil3": "Ciprés (Cypress)",
+      "oilsList": ["Pino (Pine)", "Bergamota (Bergamot)", "Ciprés (Cypress)"],
+      "problem1": "fiebre",
+      "problem2": "Parto",
+      "problem3": "Dolor de muelas",
+      "problemsList": ["fiebre", "Parto", "Dolor de muelas"],
+      "desc": "Sec ma mood disord NOS skull fx N mood disord NOS skull fx NEC-mod stage EC-mod stage l neo perito mood disord NOS skull fx NEC-mod stage neum",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2020-05-19T15:35:49Z"
+   },
+   {
+      "title": "Bugs Bunny's 3rd Movie: 1001 Rabbit Tales",
+      "oil1": "Pícea azul de Idaho (Idaho Blue Spruce)",
+      "oil2": "Salvia (Sage)",
+      "oil3": "Rue",
+      "oilsList": [
+         "Pícea azul de Idaho (Idaho Blue Spruce)",
+         "Salvia (Sage)",
+         "Rue"
+      ],
+      "problem1": "Ciática",
+      "problem2": "Parto",
+      "problemsList": ["Ciática", "Parto"],
+      "desc": "Fract mo mood diso mood disord NOS skull fx NEC-mod stage rd NOS skull fx NEC-mod stage od disord NOS skull fx NEC-m mood disord NOS skull fx NEC-mod stage od stage ure three ribs-open",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2020-12-27T00:47:29Z"
+   },
+   {
+      "title": "Cookie's Fortune",
+      "oil1": "Ylang Ylang",
+      "oil2": "Pimienta negra (Black Pepper)",
+      "oil3": "Sándalo sagrado (Sacred Sandalwood)",
+      "oilsList": [
+         "Ylang Ylang",
+         "Pimienta negra (Black Pepper)",
+         "Sándalo sagrado (Sacred Sandalwood)"
+      ],
+      "problem1": "Neuralgia",
+      "problem2": "Cólico",
+      "problem3": "Cólico",
+      "problemsList": ["Neuralgia", "Cólico", "Cólico"],
+      "desc": "Su mood disord NOS sk mo mood disord NOS skull fx NEC-mod stage od disord NOS skull fx NEC-mod stage ull fx NE mood disord NOS skull fx NEC-mod stage C-mod stage bj visual disturb NOS",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2021-06-17T22:08:43Z"
+   },
+   {
+      "title": "Disclosure",
+      "oil1": "Vainilla (Vanilla)",
+      "oil2": "Hierbabuena (Spearmint)",
+      "oil3": "Ylang Ylang",
+      "oilsList": [
+         "Vainilla (Vanilla)",
+         "Hierbabuena (Spearmint)",
+         "Ylang Ylang"
+      ],
+      "problem1": "fiebre",
+      "problem2": "fiebre",
+      "problemsList": ["fiebre", "fiebre"],
+      "desc": "Inj mo mood disord NOS skull fx NEC-mod stage od disord NOS skull fx NEC-mod stage ury-submers mood disord NOS skull fx NEC-mod stage ion",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2021-09-04T17:05:44Z"
+   },
+   {
+      "title": "HE Who Gets Slapped",
+      "oil1": "Geranio (Geranium)",
+      "oil2": "Valeriana (Valerian)",
+      "oil3": "Kunzea",
+      "oilsList": ["Geranio (Geranium)", "Valeriana (Valerian)", "Kunzea"],
+      "problem1": "Migraña",
+      "problem2": "Dolor de cabeza",
+      "problemsList": ["Migraña", "Dolor de cabeza"],
+      "desc": "GI inju mood di mood disord NOS skull fx NEC-mod stage sord NOS skull fx NEC-mod stage ry NEC-ope mood disord NOS skull fx NEC-mod stage n",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2020-06-09T16:48:57Z"
+   },
+   {
+      "title": "According to Spencer",
+      "oil1": "Davana",
+      "oil2": "Ledum",
+      "oil3": "Pachulí (Patchouli)",
+      "oilsList": ["Davana", "Ledum", "Pachulí (Patchouli)"],
+      "problem1": "Parto",
+      "problem2": "Neuralgia",
+      "problemsList": ["Parto", "Neuralgia"],
+      "desc": "Che m mood disord NOS skull fx NEC-mod stage ood disord NOS skull fx NEC-mod stage st pain NE mood disord NOS skull fx NEC-mod stage C",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2021-08-11T19:15:50Z"
+   },
+   {
+      "title": "Yossi & Jagger",
+      "oil1": "Jengibre (Ginger)",
+      "oil2": "Elemi",
+      "oil3": "Mandarina (Tangerine)",
+      "oilsList": ["Jengibre (Ginger)", "Elemi", "Mandarina (Tangerine)"],
+      "problem1": "Dolor de muelas",
+      "problem2": "Neuralgia",
+      "problemsList": ["Dolor de muelas", "Neuralgia"],
+      "desc": "Hx st mood disord NOS skull fx NEC-mod stage ress fracture",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2020-09-04T18:38:47Z"
+   },
+   {
+      "title": "Bambi Meets Godzilla",
+      "oil1": "Sándalo sagrado (Sacred Sandalwood)",
+      "oil2": "Limón de jade (Jade Lemon)",
+      "oil3": "Esclarea (Clary Sage)",
+      "oilsList": [
+         "Sándalo sagrado (Sacred Sandalwood)",
+         "Limón de jade (Jade Lemon)",
+         "Esclarea (Clary Sage)"
+      ],
+      "problem1": "Ciática",
+      "problem2": "Cólico",
+      "problemsList": ["Ciática", "Cólico"],
+      "desc": "Abn re mo mood disord NOS skull fx NEC-mod stage od disord NOS skull fx NEC-mod stage ac-organ rem NEC",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2020-06-05T00:19:54Z"
+   },
+   {
+      "title": "World War Z",
+      "oil1": "Manzanilla (Roman Chamomile)",
+      "oil2": "Peppermint Essential Oil Sample",
+      "oil3": "Canela (Cinnamon Bark)",
+      "oilsList": [
+         "Manzanilla (Roman Chamomile)",
+         "Peppermint Essential Oil Sample",
+         "Canela (Cinnamon Bark)"
+      ],
+      "problem1": "Neuralgia",
+      "problem2": "Dolor de muelas",
+      "problem3": "Migraña",
+      "problemsList": ["Neuralgia", "Dolor de muelas", "Migraña"],
+      "desc": "Me mood disord NOS skull fx NEC-mod stage  mood disord NOS skull fx NEC-mod stage ch pr mood disord NOS skull fx NEC-mod stage ob w inte mood disord NOS skull fx NEC-mod stage r mood disord NOS skull fx NEC-mod stage nal org",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2021-02-27T17:57:11Z"
+   },
+   {
+      "title": "Hotel Very Welcome",
+      "oil1": "Ciprés (Cypress)",
+      "oil2": "Hierbabuena (Spearmint)",
+      "oil3": "Albahaca (Basil)",
+      "oilsList": [
+         "Ciprés (Cypress)",
+         "Hierbabuena (Spearmint)",
+         "Albahaca (Basil)"
+      ],
+      "problem1": "Parto",
+      "problem2": "Parto",
+      "problemsList": ["Parto", "Parto"],
+      "desc": "Tr mood disord NOS skull fx NEC-mod stage ans art mood disord NOS skull fx NEC-mod stage hropa mood disord NOS skull fx NEC-mod stage thy NEC",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2021-09-02T02:13:55Z"
+   },
+   {
+      "title": "Yellow Handkerchief, The",
+      "oil1": "Árbol de té (Tea Tree)",
+      "oil2": "Canela (Cinnamon Bark)",
+      "oil3": "Matricaria (German",
+      "oilsList": [
+         "Árbol de té (Tea Tree)",
+         "Canela (Cinnamon Bark)",
+         "Matricaria (German"
+      ],
+      "problem1": "Dolor de muelas",
+      "problem2": "Dolor de cabeza",
+      "problem3": "Cólico",
+      "problemsList": ["Dolor de muelas", "Dolor de cabeza", "Cólico"],
+      "desc": "Ac ost mood disord NOS skull fx NEC-mod stage eomye mood disord NOS skull fx NEC-mod stage liti mood disord NOS skull fx NEC-mod stage s-hand",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2021-04-09T13:27:14Z"
+   },
+   {
+      "title": "All the Right Moves",
+      "oil1": "Valeriana (Valerian)",
+      "oil2": "Hinojo (Fennel)",
+      "oil3": "Eucalyptus Radiata",
+      "oilsList": [
+         "Valeriana (Valerian)",
+         "Hinojo (Fennel)",
+         "Eucalyptus Radiata"
+      ],
+      "problem1": "Migraña",
+      "problem2": "Quemaduras",
+      "problemsList": ["Migraña", "Quemaduras"],
+      "desc": "Hod mood disord NOS skull fx NEC-mod stage gkins di mood disord NOS skull fx NEC-mod stage s NOS mood disord NOS skull fx NEC-mod stage  thorax",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2020-12-15T20:44:26Z"
+   },
+   {
+      "title": "Out 1: Spectre",
+      "oil1": "Mirto limón (Lemon Myrtle)",
+      "oil2": "Dorado Azul",
+      "oil3": "Jara (Cistus)",
+      "oilsList": [
+         "Mirto limón (Lemon Myrtle)",
+         "Dorado Azul",
+         "Jara (Cistus)"
+      ],
+      "problem1": "Quemaduras",
+      "problem2": "Dolor de cabeza",
+      "problemsList": ["Quemaduras", "Dolor de cabeza"],
+      "desc": "Us mood disord NOS skull fx NEC-mod stage e aromatase inhibitors",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2020-10-30T03:06:10Z"
+   },
+   {
+      "title": "Jackboots on Whitehall",
+      "oil1": "Mandarina (Tangerine)",
+      "oil2": "Citronela (Citronella)",
+      "oil3": "Copaiba",
+      "oilsList": [
+         "Mandarina (Tangerine)",
+         "Citronela (Citronella)",
+         "Copaiba"
+      ],
+      "problem1": "Parto",
+      "problem2": "Dolor de muelas",
+      "problemsList": ["Parto", "Dolor de muelas"],
+      "desc": "An mood disord NOS skull fx NEC-mod stage gi mood disord NOS skull fx NEC-mod stage oneu mood disord NOS skull fx NEC-mod stage rotic edema",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2021-03-01T13:50:30Z"
+   },
+   {
+      "title": "Alice in Wonderland",
+      "oil1": "Lima (Lime)",
+      "oil2": "Vetiver",
+      "oil3": "Mandarina (Tangerine)",
+      "oilsList": ["Lima (Lime)", "Vetiver", "Mandarina (Tangerine)"],
+      "problem1": "Parto",
+      "problem2": "Parto",
+      "problemsList": ["Parto", "Parto"],
+      "desc": "3rd bur mood disord NOS skull fx NEC-mod stage n w loss-axilla",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2020-05-11T04:30:09Z"
+   },
+   {
+      "title": "Cannibal! The Musical (a.k.a. Alferd Packer: The Musical)",
+      "oil1": "Kunzea",
+      "oil2": "Esclarea (Clary Sage)",
+      "oil3": "Árbol de té (Tea Tree)",
+      "oilsList": ["Kunzea", "Esclarea (Clary Sage)", "Árbol de té (Tea Tree)"],
+      "problem1": "Parto",
+      "problem2": "fiebre",
+      "problem3": "Parto",
+      "problemsList": ["Parto", "fiebre", "Parto"],
+      "desc": "Me mood disord NOS skull fx NEC-mod stage ning in mood disord NOS skull fx NEC-mod stage  oth bact dis",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2020-07-26T09:43:28Z"
+   },
+   {
+      "title": "Irma Vep",
+      "oil1": "Tomillo (Thyme)",
+      "oil2": "Alcanforero (Ravintsara)",
+      "oil3": "Citronela (Citronella)",
+      "oilsList": [
+         "Tomillo (Thyme)",
+         "Alcanforero (Ravintsara)",
+         "Citronela (Citronella)"
+      ],
+      "problem1": "Parto",
+      "problem2": "Neuralgia",
+      "problem3": "Parto",
+      "problemsList": ["Parto", "Neuralgia", "Parto"],
+      "desc": "Oth hyp mood disord NOS skull fx NEC-mod stage rtrop mood disord NOS skull fx NEC-mod stage h mood disord NOS skull fx NEC-mod stage ic cardiomy",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2021-07-09T03:47:57Z"
+   },
+   {
+      "title": "90 Minutes (90 minutter)",
+      "oil1": "Elemi",
+      "oil2": "Eneldo (Dill)",
+      "oil3": "Ocotea",
+      "oilsList": ["Elemi", "Eneldo (Dill)", "Ocotea"],
+      "problem1": "Dolor de cabeza",
+      "problem2": "Dolor de cabeza",
+      "problemsList": ["Dolor de cabeza", "Dolor de cabeza"],
+      "desc": "Inse mood disord NOS skull fx NEC-mod stage ct  mood disord NOS skull fx NEC-mod stage bit mood disord NOS skull fx NEC-mod stage e N mood disord NOS skull fx NEC-mod stage EC",
+      "createdBy": "62218580725c4f0c40717be2",
+      "createdAt": "2021-05-02T05:50:47Z"
+   },
+   {
+      "title": "Cigarettes and Coffee (Un cartus de kent si un pachet de cafea)",
+      "oil1": "Palo Santo",
+      "oil2": "Orégano (Oregano)",
+      "oil3": "Bergamota (Bergamot)",
+      "oilsList": ["Palo Santo", "Orégano (Oregano)", "Bergamota (Bergamot)"],
+      "problem1": "Dolor de muelas",
+      "problem2": "Dolor de cabeza",
+      "problem3": "torcedura",
+      "problemsList": ["Dolor de muelas", "Dolor de cabeza", "torcedura"],
+      "desc": "Ret mood disord NOS skull fx NEC-mod stage roperitoneum inj-open",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2020-09-29T06:36:46Z"
+   },
+   {
+      "title": "Short Time",
+      "oil1": "Peppermint Essential Oil Sample",
+      "oil2": "Eucalyptus Globulus",
+      "oil3": "Jengibre (Ginger)",
+      "oilsList": [
+         "Peppermint Essential Oil Sample",
+         "Eucalyptus Globulus",
+         "Jengibre (Ginger)"
+      ],
+      "problem1": "Neuralgia",
+      "problem2": "Neuralgia",
+      "problemsList": ["Neuralgia", "Neuralgia"],
+      "desc": "Follow-up exam NOS",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2021-11-01T10:00:56Z"
+   },
+   {
+      "title": "Hugosss",
+      "oil1": "Pachulí (Patchouli)",
+      "oil2": "Menta (Peppermint)",
+      "oil3": "Naranja (Orange)",
+      "oilsList": [
+         "Pachulí (Patchouli)",
+         "Menta (Peppermint)",
+         "Naranja (Orange)"
+      ],
+      "problem1": "Cólico",
+      "problem2": "Parto",
+      "problemsList": ["Cólico", "Parto"],
+      "desc": "Chr iridocy mood disord NOS skull fx NEC-mod stage cli mood disord NOS skull fx NEC-mod stage tis NOS",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2020-12-09T04:17:11Z"
+   },
+   {
+      "title": "Men Don't Leave",
+      "oil1": "Davana",
+      "oil2": "Pomelo (Grapefruit)",
+      "oil3": "Eucalyptus Radiata",
+      "oilsList": ["Davana", "Pomelo (Grapefruit)", "Eucalyptus Radiata"],
+      "problem1": "Cólico",
+      "problem2": "Dolor de cabeza",
+      "problemsList": ["Cólico", "Dolor de cabeza"],
+      "desc": "Mitt mood disord NOS skull fx NEC-mod stage elschmerz",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2022-03-03T17:18:10Z"
+   },
+   {
+      "title": "Beyond Justice",
+      "oil1": "Eneldo (Dill)",
+      "oil2": "Jara (Cistus)",
+      "oil3": "Orégano (Oregano)",
+      "oilsList": ["Eneldo (Dill)", "Jara (Cistus)", "Orégano (Oregano)"],
+      "problem1": "Migraña",
+      "problem2": "Neuralgia",
+      "problemsList": ["Migraña", "Neuralgia"],
+      "desc": "Screening for glaucoma",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2022-01-11T15:22:55Z"
+   },
+   {
+      "title": "Premiers désirs",
+      "oil1": "Romero (Rosemary)",
+      "oil2": "Tomillo (Thyme)",
+      "oil3": "Incienso (Frankincense)",
+      "oilsList": [
+         "Romero (Rosemary)",
+         "Tomillo (Thyme)",
+         "Incienso (Frankincense)"
+      ],
+      "problem1": "Neuralgia",
+      "problem2": "Migraña",
+      "problemsList": ["Neuralgia", "Migraña"],
+      "desc": "Chr rhe mood disord NOS skull fx NEC-mod stage umatic mood disord NOS skull fx NEC-mod stage  pericard",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2021-09-27T21:23:56Z"
+   },
+   {
+      "title": "Dancing Lady",
+      "oil1": "Semilla de zahahoria (Carrot Seed)",
+      "oil2": "Cassia",
+      "oil3": "Pachulí (Patchouli)",
+      "oilsList": [
+         "Semilla de zahahoria (Carrot Seed)",
+         "Cassia",
+         "Pachulí (Patchouli)"
+      ],
+      "problem1": "Cólico",
+      "problem2": "Migraña",
+      "problem3": "Cólico",
+      "problemsList": ["Cólico", "Migraña", "Cólico"],
+      "desc": "Crushing inj trunk NEC",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2020-10-31T10:37:16Z"
+   },
+   {
+      "title": "Jonestown: The Life and Death of Peoples Temple",
+      "oil1": "Hong",
+      "oil2": "Hinojo (Fennel)",
+      "oil3": "Semilla de zahahoria (Carrot Seed)",
+      "oilsList": [
+         "Hong",
+         "Hinojo (Fennel)",
+         "Semilla de zahahoria (Carrot Seed)"
+      ],
+      "problem1": "Ciática",
+      "problem2": "torcedura",
+      "problemsList": ["Ciática", "torcedura"],
+      "desc": "Fall from commode",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2021-09-15T16:16:18Z"
+   },
+   {
+      "title": "Autumn Ball (Sügisball)",
+      "oil1": "Pomelo (Grapefruit)",
+      "oil2": "Neroli",
+      "oil3": "Peppermint Essential Oil Sample",
+      "oilsList": [
+         "Pomelo (Grapefruit)",
+         "Neroli",
+         "Peppermint Essential Oil Sample"
+      ],
+      "problem1": "torcedura",
+      "problem2": "Ciática",
+      "problemsList": ["torcedura", "Ciática"],
+      "desc": "AMI antero mood disord NOS skull fx NEC-mod stage lateral,subseq",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2021-07-04T14:49:55Z"
+   },
+   {
+      "title": "Independents",
+      "oil1": "Geranio (Geranium)",
+      "oil2": "Orégano (Oregano)",
+      "oil3": "Limón de jade (Jade Lemon)",
+      "oilsList": [
+         "Geranio (Geranium)",
+         "Orégano (Oregano)",
+         "Limón de jade (Jade Lemon)"
+      ],
+      "problem1": "Quemaduras",
+      "problem2": "Dolor de muelas",
+      "problemsList": ["Quemaduras", "Dolor de muelas"],
+      "desc": "Ch mg mood disord NOS skull fx NEC-mod stage r wo a mood disord NOS skull fx NEC-mod stage ra wo  mood disord NOS skull fx NEC-mod stage nt w st",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2021-11-28T04:02:20Z"
+   },
+   {
+      "title": "Frosty the Snowman",
+      "oil1": "Geranium Bourbon",
+      "oil2": "Hinoki",
+      "oil3": "Jara (Cistus)",
+      "oilsList": ["Geranium Bourbon", "Hinoki", "Jara (Cistus)"],
+      "problem1": "Dolor de muelas",
+      "problem2": "Dolor de cabeza",
+      "problemsList": ["Dolor de muelas", "Dolor de cabeza"],
+      "desc": "Adv eff post pituitaryAdv eff post pituitary Adv eff post pituitary Adv eff post pituitary Adv eff post pituitary Adv eff post pituitary Adv eff post pituitary Adv eff post pituitary",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2021-04-13T02:19:54Z"
+   },
+   {
+      "title": "Albuquerque",
+      "oil1": "Albahaca (Basil)",
+      "oil2": "Mandarina (Tangerine)",
+      "oil3": "Citronela (Citronella)",
+      "oilsList": [
+         "Albahaca (Basil)",
+         "Mandarina (Tangerine)",
+         "Citronela (Citronella)"
+      ],
+      "problem1": "Ciática",
+      "problem2": "Dolor de muelas",
+      "problemsList": ["Ciática", "Dolor de muelas"],
+      "desc": "Corneal dsdr contct lens dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct ",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2020-07-29T18:48:39Z"
+   },
+   {
+      "title": "Anacondas: The Hunt for the Blood Orchid",
+      "oil1": "Jazmín (Jasmine)",
+      "oil2": "Mirto limón (Lemon Myrtle)",
+      "oil3": "Ciprés (Cypress)",
+      "oilsList": [
+         "Jazmín (Jasmine)",
+         "Mirto limón (Lemon Myrtle)",
+         "Ciprés (Cypress)"
+      ],
+      "problem1": "Dolor de muelas",
+      "problem2": "torcedura",
+      "problem3": "Neuralgia",
+      "problemsList": ["Dolor de muelas", "torcedura", "Neuralgia"],
+      "desc": "Tetanic cataract dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct ",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2021-09-09T05:29:51Z"
+   },
+   {
+      "title": "Next of Kin",
+      "oil1": "Mirto limón (Lemon Myrtle)",
+      "oil2": "Abeto de Vancouver (Idaho Grand Fir)",
+      "oil3": "Sándalo Real Hawaiano (Royal Hawaiian Sandalwood)^",
+      "oilsList": [
+         "Mirto limón (Lemon Myrtle)",
+         "Abeto de Vancouver (Idaho Grand Fir)",
+         "Sándalo Real Hawaiano (Royal Hawaiian Sandalwood)^"
+      ],
+      "problem1": "Ciática",
+      "problem2": "Migraña",
+      "problemsList": ["Ciática", "Migraña"],
+      "desc": "Tracheostomy comp NEC dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct ",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2020-10-02T16:45:37Z"
+   },
+   {
+      "title": "Gorgeous Hussy, The",
+      "oil1": "Hinoki",
+      "oil2": "Geranium Bourbon",
+      "oil3": "Copaiba",
+      "oilsList": ["Hinoki", "Geranium Bourbon", "Copaiba"],
+      "problem1": "Parto",
+      "problem2": "Ciática",
+      "problemsList": ["Parto", "Ciática"],
+      "desc": "Hyperc dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct  dsdr contct alcemia",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2021-03-23T21:01:00Z"
+   },
+   {
+      "title": "Hardcore",
+      "oil1": "Hinoki",
+      "oil2": "Árbol de té (Tea Tree)",
+      "oil3": "Kunzea",
+      "oilsList": ["Hinoki", "Árbol de té (Tea Tree)", "Kunzea"],
+      "problem1": "Dolor de muelas",
+      "problem2": "torcedura",
+      "problemsList": ["Dolor de muelas", "torcedura"],
+      "desc": "Cl skull fx NEC-mod coma skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2020-10-18T05:17:19Z"
+   },
+   {
+      "title": "Ferryman, The",
+      "oil1": "Ledum",
+      "oil2": "Vetiver",
+      "oil3": "Vetiver",
+      "oilsList": ["Ledum", "Vetiver", "Vetiver"],
+      "problem1": "Cólico",
+      "problem2": "Dolor de cabeza",
+      "problem3": "fiebre",
+      "problemsList": ["Cólico", "Dolor de cabeza", "fiebre"],
+      "desc": "Sensory hear loss,unilat skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2020-05-10T09:32:15Z"
+   },
+   {
+      "title": "Fierce Creatures",
+      "oil1": "Alcanforero (Ravintsara)",
+      "oil2": "Copaiba",
+      "oil3": "Pimienta negra (Black Pepper)",
+      "oilsList": [
+         "Alcanforero (Ravintsara)",
+         "Copaiba",
+         "Pimienta negra (Black Pepper)"
+      ],
+      "problem1": "fiebre",
+      "problem2": "Ciática",
+      "problem3": "Migraña",
+      "problemsList": ["fiebre", "Ciática", "Migraña"],
+      "desc": "Burn NOS breast skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2021-09-07T10:50:50Z"
+   },
+   {
+      "title": "I Love You Too",
+      "oil1": "Abeto de Vancouver (Idaho Grand Fir)",
+      "oil2": "Manzanilla (Roman Chamomile)",
+      "oil3": "Matricaria (German",
+      "oilsList": [
+         "Abeto de Vancouver (Idaho Grand Fir)",
+         "Manzanilla (Roman Chamomile)",
+         "Matricaria (German"
+      ],
+      "problem1": "Ciática",
+      "problem2": "Dolor de cabeza",
+      "problemsList": ["Ciática", "Dolor de cabeza"],
+      "desc": "Pregnancy test negative skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2020-05-27T01:56:19Z"
+   },
+   {
+      "title": "Living Skeleton, The (Kyûketsu dokuro-sen)",
+      "oil1": "Mandarina (Tangerine)",
+      "oil2": "Eneldo (Dill)",
+      "oil3": "Gaulteria (Wintergreen)",
+      "oilsList": [
+         "Mandarina (Tangerine)",
+         "Eneldo (Dill)",
+         "Gaulteria (Wintergreen)"
+      ],
+      "problem1": "Dolor de muelas",
+      "problem2": "Dolor de muelas",
+      "problemsList": ["Dolor de muelas", "Dolor de muelas"],
+      "desc": "Need prphyl vc vrl hepat skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "622664f2a1472c7f8d671ee2",
+      "createdAt": "2020-06-26T18:56:56Z"
+   },
+   {
+      "title": "Miracle at Oxford (True Blue)",
+      "oil1": "Albahaca (Basil)",
+      "oil2": "Romero (Rosemary)",
+      "oil3": "Orégano (Oregano)",
+      "oilsList": [
+         "Albahaca (Basil)",
+         "Romero (Rosemary)",
+         "Orégano (Oregano)"
+      ],
+      "problem1": "torcedura",
+      "problem2": "Quemaduras",
+      "problemsList": ["torcedura", "Quemaduras"],
+      "desc": "Abnormal loss of weight skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2021-07-13T20:28:35Z"
+   },
+   {
+      "title": "Blankman",
+      "oil1": "Incienso sagrado (Sacred Frankincense)",
+      "oil2": "Matricaria (German",
+      "oil3": "Manzanilla (Roman Chamomile)",
+      "oilsList": [
+         "Incienso sagrado (Sacred Frankincense)",
+         "Matricaria (German",
+         "Manzanilla (Roman Chamomile)"
+      ],
+      "problem1": "Quemaduras",
+      "problem2": "Migraña",
+      "problemsList": ["Quemaduras", "Migraña"],
+      "desc": "Contusion leg NOS skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2021-10-19T07:51:52Z"
+   },
+   {
+      "title": "Ninja, A Band of Assassins (Shinobi No Mono)",
+      "oil1": "Salvia (Sage)",
+      "oil2": "Hinoki",
+      "oil3": "Limón de jade (Jade Lemon)",
+      "oilsList": ["Salvia (Sage)", "Hinoki", "Limón de jade (Jade Lemon)"],
+      "problem1": "Ciática",
+      "problem2": "torcedura",
+      "problemsList": ["Ciática", "torcedura"],
+      "desc": "Hx-major cardiovasc surg skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2021-11-10T13:05:12Z"
+   },
+   {
+      "title": "Gilda",
+      "oil1": "Mirto limón (Lemon Myrtle)",
+      "oil2": "Hinojo (Fennel)",
+      "oil3": "Ledum",
+      "oilsList": ["Mirto limón (Lemon Myrtle)", "Hinojo (Fennel)", "Ledum"],
+      "problem1": "Neuralgia",
+      "problem2": "Dolor de cabeza",
+      "problemsList": ["Neuralgia", "Dolor de cabeza"],
+      "desc": "Abn cervix NEC-postpart skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2020-07-28T11:44:13Z"
+   },
+   {
+      "title": "Pledge, The",
+      "oil1": "Rosa (Rose)",
+      "oil2": "Menta (Peppermint)",
+      "oil3": "Jazmín (Jasmine)",
+      "oilsList": ["Rosa (Rose)", "Menta (Peppermint)", "Jazmín (Jasmine)"],
+      "problem1": "Dolor de cabeza",
+      "problem2": "Cólico",
+      "problemsList": ["Dolor de cabeza", "Cólico"],
+      "desc": "Congen syph meningitis skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2020-05-20T09:39:01Z"
+   },
+   {
+      "title": "Rage of Honor",
+      "oil1": "Nuez moscada (Nutmeg)",
+      "oil2": "Orégano (Oregano)",
+      "oil3": "Limón de jade (Jade Lemon)",
+      "oilsList": [
+         "Nuez moscada (Nutmeg)",
+         "Orégano (Oregano)",
+         "Limón de jade (Jade Lemon)"
+      ],
+      "problem1": "Dolor de cabeza",
+      "problem2": "Neuralgia",
+      "problem3": "Dolor de cabeza",
+      "problemsList": ["Dolor de cabeza", "Neuralgia", "Dolor de cabeza"],
+      "desc": "Radiation scoliosis skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2021-09-16T02:32:15Z"
+   },
+   {
+      "title": "American Swing",
+      "oil1": "Pachulí (Patchouli)",
+      "oil2": "Incienso sagrado (Sacred Frankincense)",
+      "oil3": "Árbol de té (Tea Tree)",
+      "oilsList": [
+         "Pachulí (Patchouli)",
+         "Incienso sagrado (Sacred Frankincense)",
+         "Árbol de té (Tea Tree)"
+      ],
+      "problem1": "Dolor de muelas",
+      "problem2": "Dolor de muelas",
+      "problemsList": ["Dolor de muelas", "Dolor de muelas"],
+      "desc": "Blister hand skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2021-11-30T16:59:09Z"
+   },
+   {
+      "title": "Farce of the Penguins",
+      "oil1": "Eucalipto azul (Eucalyptus Blue)",
+      "oil2": "Peppermint Essential Oil Sample",
+      "oil3": "Thieves Essential Oil Sample",
+      "oilsList": [
+         "Eucalipto azul (Eucalyptus Blue)",
+         "Peppermint Essential Oil Sample",
+         "Thieves Essential Oil Sample"
+      ],
+      "problem1": "Quemaduras",
+      "problem2": "torcedura",
+      "problem3": "Parto",
+      "problemsList": ["Quemaduras", "torcedura", "Parto"],
+      "desc": "Chr duoden ulcer w hem skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2020-06-25T09:49:36Z"
+   },
+   {
+      "title": "Dracula A.D. 1972",
+      "oil1": "Alcanforero (Ravintsara)",
+      "oil2": "Davana",
+      "oil3": "Hierbabuena (Spearmint)",
+      "oilsList": [
+         "Alcanforero (Ravintsara)",
+         "Davana",
+         "Hierbabuena (Spearmint)"
+      ],
+      "problem1": "torcedura",
+      "problem2": "Migraña",
+      "problemsList": ["torcedura", "Migraña"],
+      "desc": "Intestinal fistula skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2022-01-29T06:58:49Z"
+   },
+   {
+      "title": "Righteous Kill",
+      "oil1": "Clavo (Clove)",
+      "oil2": "Sándalo sagrado (Sacred Sandalwood)",
+      "oil3": "Thieves Essential Oil Sample",
+      "oilsList": [
+         "Clavo (Clove)",
+         "Sándalo sagrado (Sacred Sandalwood)",
+         "Thieves Essential Oil Sample"
+      ],
+      "problem1": "Cólico",
+      "problem2": "torcedura",
+      "problemsList": ["Cólico", "torcedura"],
+      "desc": "Sleep related leg cramps skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2020-08-02T05:31:14Z"
+   },
+   {
+      "title": "Last Call at the Oasis",
+      "oil1": "Manzanilla (Roman Chamomile)",
+      "oil2": "Eucalyptus Globulus",
+      "oil3": "Ledum",
+      "oilsList": [
+         "Manzanilla (Roman Chamomile)",
+         "Eucalyptus Globulus",
+         "Ledum"
+      ],
+      "problem1": "Migraña",
+      "problem2": "Parto",
+      "problemsList": ["Migraña", "Parto"],
+      "desc": "Undet pois-gas/vapor NEC skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2020-05-01T13:28:11Z"
+   },
+   {
+      "title": "Critters 3",
+      "oil1": "Neroli",
+      "oil2": "Incienso sagrado (Sacred Frankincense)",
+      "oil3": "Jara (Cistus)",
+      "oilsList": [
+         "Neroli",
+         "Incienso sagrado (Sacred Frankincense)",
+         "Jara (Cistus)"
+      ],
+      "problem1": "Cólico",
+      "problem2": "Parto",
+      "problem3": "Cólico",
+      "problemsList": ["Cólico", "Parto", "Cólico"],
+      "desc": "Opn skl fx NEC-deep coma skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2021-06-11T02:40:11Z"
+   },
+   {
+      "title": "96 Minutes ",
+      "oil1": "Jara (Cistus)",
+      "oil2": "Dorado Azul",
+      "oil3": "Matricaria (German",
+      "oilsList": ["Jara (Cistus)", "Dorado Azul", "Matricaria (German"],
+      "problem1": "Cólico",
+      "problem2": "Dolor de cabeza",
+      "problemsList": ["Cólico", "Dolor de cabeza"],
+      "desc": "Loc 2nd osteoarth-up/arm skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2021-02-01T21:21:19Z"
+   },
+   {
+      "title": "House I Live In, The",
+      "oil1": "Jazmín (Jasmine)",
+      "oil2": "Sándalo Real Hawaiano (Royal Hawaiian Sandalwood)^",
+      "oil3": "Tomillo (Thyme)",
+      "oilsList": [
+         "Jazmín (Jasmine)",
+         "Sándalo Real Hawaiano (Royal Hawaiian Sandalwood)^",
+         "Tomillo (Thyme)"
+      ],
+      "problem1": "Neuralgia",
+      "problem2": "torcedura",
+      "problemsList": ["Neuralgia", "torcedura"],
+      "desc": "Ovulation bleeding skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2021-12-27T07:35:57Z"
+   },
+   {
+      "title": "We're Not Married!",
+      "oil1": "Angelica",
+      "oil2": "Jazmín (Jasmine)",
+      "oil3": "Thieves Essential Oil Sample",
+      "oilsList": [
+         "Angelica",
+         "Jazmín (Jasmine)",
+         "Thieves Essential Oil Sample"
+      ],
+      "problem1": "Parto",
+      "problem2": "torcedura",
+      "problemsList": ["Parto", "torcedura"],
+      "desc": "Hornet/wasp/bee sting skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2021-03-04T15:23:07Z"
+   },
+   {
+      "title": "Love, Wedding, Marriage",
+      "oil1": "Davana",
+      "oil2": "Jazmín (Jasmine)",
+      "oil3": "Canela (Cinnamon Bark)",
+      "oilsList": ["Davana", "Jazmín (Jasmine)", "Canela (Cinnamon Bark)"],
+      "problem1": "fiebre",
+      "problem2": "Neuralgia",
+      "problem3": "Ciática",
+      "problemsList": ["fiebre", "Neuralgia", "Ciática"],
+      "desc": "Exercise mach(cardiorsp) skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod  skull fx NEC-mod ",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2022-01-25T16:32:14Z"
+   },
+   {
+      "title": "Girl with the Dragon Tattoo, The",
+      "oil1": "Mandarina (Tangerine)",
+      "oil2": "Nuez moscada (Nutmeg)",
+      "oil3": "Gaulteria (Wintergreen)",
+      "oilsList": [
+         "Mandarina (Tangerine)",
+         "Nuez moscada (Nutmeg)",
+         "Gaulteria (Wintergreen)"
+      ],
+      "problem1": "Migraña",
+      "problem2": "Parto",
+      "problem3": "Migraña",
+      "problemsList": ["Migraña", "Parto", "Migraña"],
+      "desc": "Episodic mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2020-12-25T02:58:16Z"
+   },
+   {
+      "title": "Bad Lieutenant: Port of Call New Orleans",
+      "oil1": "Pino (Pine)",
+      "oil2": "Árbol de té (Tea Tree)",
+      "oil3": "Albahaca (Basil)",
+      "oilsList": ["Pino (Pine)", "Árbol de té (Tea Tree)", "Albahaca (Basil)"],
+      "problem1": "Ciática",
+      "problem2": "Migraña",
+      "problemsList": ["Ciática", "Migraña"],
+      "desc": "Vac-measle-mumps-rubella mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod ",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2021-06-13T00:26:45Z"
+   },
+   {
+      "title": "Death Race",
+      "oil1": "Peppermint Essential Oil Sample",
+      "oil2": "Esclarea (Clary Sage)",
+      "oil3": "Neroli",
+      "oilsList": [
+         "Peppermint Essential Oil Sample",
+         "Esclarea (Clary Sage)",
+         "Neroli"
+      ],
+      "problem1": "fiebre",
+      "problem2": "fiebre",
+      "problemsList": ["fiebre", "fiebre"],
+      "desc": "Blister shoulder/arm-inf mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod ",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2021-10-23T09:57:01Z"
+   },
+   {
+      "title": "Light Gradient",
+      "oil1": "Jara (Cistus)",
+      "oil2": "Mirto limón (Lemon Myrtle)",
+      "oil3": "Vainilla (Vanilla)",
+      "oilsList": [
+         "Jara (Cistus)",
+         "Mirto limón (Lemon Myrtle)",
+         "Vainilla (Vanilla)"
+      ],
+      "problem1": "Ciática",
+      "problem2": "Migraña",
+      "problemsList": ["Ciática", "Migraña"],
+      "desc": "Leg varicosity w inflam mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod  mood disord NOS skull fx NEC-mod ",
+      "createdBy": "62266530a1472c7f8d671ee5",
+      "createdAt": "2020-06-06T22:58:50Z"
+   }
+]

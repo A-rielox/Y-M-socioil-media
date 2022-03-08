@@ -305,7 +305,7 @@ const AppProvider = ({ children }) => {
          });
 
          dispatch({ type: EDIT_RECIPE_SUCCESS });
-         // dispatch({ type: CLEAR_VALUES });  red MIENTRAS PRUEBO red
+         dispatch({ type: CLEAR_VALUES });
       } catch (error) {
          if (error.response.status === 401) return;
          dispatch({
