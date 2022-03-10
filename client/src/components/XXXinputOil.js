@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import FormRow from './FormRow';
-import FormRowSelect from './FormRowSelect';
+import InputSelect from './InputSelect';
 import { oilsList } from './optionLists';
 
 const initialState = {
@@ -53,14 +53,14 @@ function App() {
 
                {inputs.map(num => {
                   return (
-                     <FormRowSelect
+                     <InputSelect
                         labelText={`aceite ${num} : `}
                         key={num}
                         name={`oil${num}`}
                         value={values[num]}
                         handleChange={handleChange}
                         list={oilsList}
-                     ></FormRowSelect>
+                     ></InputSelect>
                   );
                })}
             </div>

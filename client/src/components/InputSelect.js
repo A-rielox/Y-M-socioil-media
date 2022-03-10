@@ -1,4 +1,4 @@
-const FormRowSelect = ({ labelText, name, value, handleChange, list }) => {
+const InputSelect = ({ labelText, name, value, handleChange, list }) => {
    return (
       <div className="form-row">
          <label htmlFor={name} className="form-label">
@@ -23,4 +23,4 @@ const FormRowSelect = ({ labelText, name, value, handleChange, list }) => {
    );
 };
 
-export default FormRowSelect;
+export default InputSelect;

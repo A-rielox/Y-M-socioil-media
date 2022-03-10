@@ -1,4 +1,4 @@
-import { FormRow, Alert } from '../../components';
+import { InputSimple, Alert } from '../../components';
 import { useState } from 'react';
 import { useAppContext } from '../../context/appContext';
 import styled from 'styled-components';
@@ -31,21 +31,21 @@ const Profile = () => {
 
             {/* name */}
             <div className="form-center">
-               <FormRow
+               <InputSimple
                   labelText="nombre"
                   type="text"
                   name="name"
                   value={name}
                   handleChange={e => setName(e.target.value)}
                />
-               <FormRow
+               <InputSimple
                   labelText="apellido"
                   type="text"
                   name="lastName"
                   value={lastName}
                   handleChange={e => setLastName(e.target.value)}
                />
-               <FormRow
+               <InputSimple
                   labelText="correo"
                   type="email"
                   name="email"
@@ -53,7 +53,7 @@ const Profile = () => {
                   handleChange={e => setEmail(e.target.value)}
                />
 
-               <FormRow
+               <InputSimple
                   labelText="ubicación"
                   type="text"
                   name="location"

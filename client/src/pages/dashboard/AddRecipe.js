@@ -1,6 +1,6 @@
 import { useAppContext } from '../../context/appContext';
 import styled from 'styled-components';
-import { FormRow, Alert, FormRowSelect } from '../../components';
+import { InputSimple, Alert, InputSelect } from '../../components';
 
 // los valores los pongo en el global ( y no en la pura pag como en el register ) xq para editar y agregar receta voy a ocupar la misma pag ( y la diferencia en la pag la hago con el "isEditing" )
 const AddRecipe = () => {
@@ -82,7 +82,7 @@ const AddRecipe = () => {
             {/* position */}
             <div className="form-center">
                {/* title */}
-               <FormRow
+               <InputSimple
                   type="text"
                   labelText="Titulo"
                   name="title"
@@ -91,7 +91,7 @@ const AddRecipe = () => {
                />
 
                {/* description */}
-               <FormRow
+               <InputSimple
                   type="text"
                   labelText="Descripción"
                   name="desc"
@@ -101,73 +101,73 @@ const AddRecipe = () => {
 
                {/* ACEITES */}
 
-               <FormRowSelect
+               <InputSelect
                   labelText="aceitito 1"
                   key="oil1"
                   name="oil1"
                   value={oil1}
                   handleChange={handleRecipeInput}
                   list={['', ...oilsOptions]}
-               ></FormRowSelect>
-               <FormRowSelect
+               ></InputSelect>
+               <InputSelect
                   labelText="aceitito 2"
                   key="oil2"
                   name="oil2"
                   value={oil2}
                   handleChange={handleRecipeInput}
                   list={['', ...oilsOptions]}
-               ></FormRowSelect>
-               <FormRowSelect
+               ></InputSelect>
+               <InputSelect
                   labelText="aceitito 3"
                   key="oil3"
                   name="oil3"
                   value={oil3}
                   handleChange={handleRecipeInput}
                   list={['', ...oilsOptions]}
-               ></FormRowSelect>
-               <FormRowSelect
+               ></InputSelect>
+               <InputSelect
                   labelText="aceitito 4"
                   key="oil4"
                   name="oil4"
                   value={oil4}
                   handleChange={handleRecipeInput}
                   list={['', ...oilsOptions]}
-               ></FormRowSelect>
-               <FormRowSelect
+               ></InputSelect>
+               <InputSelect
                   labelText="aceitito 5"
                   key="oil5"
                   name="oil5"
                   value={oil5}
                   handleChange={handleRecipeInput}
                   list={['', ...oilsOptions]}
-               ></FormRowSelect>
+               ></InputSelect>
 
                {/* PROBLEMS */}
 
-               <FormRow
+               <InputSimple
                   labelText="molestia 1"
                   key="problem1"
                   type="text"
                   name="problem1"
                   value={problem1}
                   handleChange={handleRecipeInput}
-               ></FormRow>
-               <FormRow
+               ></InputSimple>
+               <InputSimple
                   labelText="molestia 2"
                   key="problem2"
                   type="text"
                   name="problem2"
                   value={problem2}
                   handleChange={handleRecipeInput}
-               ></FormRow>
-               <FormRow
+               ></InputSimple>
+               <InputSimple
                   labelText="molestia 3"
                   key="problem3"
                   type="text"
                   name="problem3"
                   value={problem3}
                   handleChange={handleRecipeInput}
-               ></FormRow>
+               ></InputSimple>
 
                <div className="btn-container">
                   <button

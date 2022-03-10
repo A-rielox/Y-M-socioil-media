@@ -1,5 +1,5 @@
 import { useAppContext } from '../context/appContext';
-import { FormRow, FormRowSelect } from '.';
+import { InputSimple, InputSelect } from '.';
 import styled from 'styled-components';
 
 const SearchContainer = () => {
@@ -36,40 +36,40 @@ const SearchContainer = () => {
 
             {/* search position */}
             <div className="form-center">
-               <FormRow
+               <InputSimple
                   labelText="en el titulo"
                   type="text"
                   name="search"
                   value={search}
                   handleChange={handleSearch}
-               ></FormRow>
+               ></InputSimple>
 
                {/* search by oil */}
-               <FormRowSelect
+               <InputSelect
                   labelText="que contenga el aceitito"
                   name="searchOil"
                   value={searchOil}
                   handleChange={handleSearch}
                   list={['todos', ...oilsOptions]}
-               ></FormRowSelect>
+               ></InputSelect>
 
                {/* search by problem */}
-               <FormRowSelect
+               <InputSelect
                   labelText="con problema"
                   name="searchProblem"
                   value={searchProblem}
                   handleChange={handleSearch}
                   list={['todos', ...list4Problems]}
-               ></FormRowSelect>
+               ></InputSelect>
 
                {/* sort */}
-               <FormRowSelect
+               <InputSelect
                   labelText="orden"
                   name="sort"
                   value={sort}
                   handleChange={handleSearch}
                   list={sortOptions}
-               ></FormRowSelect>
+               ></InputSelect>
 
                <button
                   className="btn btn-block btn-danger"

@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useAppContext } from '../context/appContext';
 
-import { LogoBig, FormRow, Alert } from '../components';
+import { LogoBig, InputSimple, Alert } from '../components';
 import styled from 'styled-components';
 
 const initialState = {
@@ -73,7 +73,7 @@ function Register() {
 
             {/* NOMBRE */}
             {!values.isMember && (
-               <FormRow
+               <InputSimple
                   type="text"
                   name="name"
                   value={values.name}
@@ -83,7 +83,7 @@ function Register() {
             )}
 
             {/* EMAIL */}
-            <FormRow
+            <InputSimple
                type="email"
                name="email"
                value={values.email}
@@ -91,7 +91,7 @@ function Register() {
             />
 
             {/* PASSWORD */}
-            <FormRow
+            <InputSimple
                type="password"
                name="password"
                value={values.password}

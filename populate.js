@@ -17,7 +17,7 @@ const start = async () => {
 
       await Recipe.create(jsonProducts);
 
-      console.log('Success!!!!');
+      console.log('Si funcionó jajajjaja');
       process.exit(0);
    } catch (error) {
       console.log(error);
