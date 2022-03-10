@@ -4310,9 +4310,7 @@ const getAllJobs = async (req, res) => {
 
 #### Search Context Setup
 
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
- ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
+✅✅✅
 
 ```js
 appContext.js
@@ -4760,7 +4758,7 @@ return (
 
 #### PageBtnContainer - Structure
 
-✅✅✅✅✅✅
+✅✅✅
 
 ```js
 PageBtnContainer.js;
@@ -4801,7 +4799,7 @@ export default PageButtonContainer;
 
 #### Button Container
 
-✅✅✅✅✅✅
+✅✅✅
 
 -  [Array.from] (https://youtu.be/zg1Bv4xubwo)
 
@@ -4832,7 +4830,7 @@ return (
 
 #### Change Page
 
-✅✅✅✅✅✅
+✅✅✅
 
 ```js
 actions.js;
@@ -4873,7 +4871,7 @@ return (
 
 #### Prev and Next Buttons
 
-✅✅✅✅✅✅
+✅✅✅
 
 ```js
 PageBtnContainer.js;
@@ -4899,7 +4897,7 @@ const nextPage = () => {
 
 #### Trigger New Page
 
-✅✅✅✅✅✅
+✅✅✅
 
 ```js
 appContext.js;

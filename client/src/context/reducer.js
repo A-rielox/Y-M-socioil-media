@@ -26,6 +26,7 @@ import {
    EDIT_RECIPE_SUCCESS,
    EDIT_RECIPE_ERROR,
    CLEAR_FILTERS,
+   CHANGE_PAGE,
 } from './actions';
 
 const reducer = (state, action) => {
@@ -164,10 +165,11 @@ const reducer = (state, action) => {
    if (action.type === HANDLE_CHANGE) {
       const { name, value } = action.payload;
 
-      // poner page "return { ...state, page: 1, [name]: value }"
+      // poner page
       return {
          ...state,
          [name]: value,
+         page: 1,
       };
    }
 
@@ -293,6 +295,11 @@ const reducer = (state, action) => {
          searchProblem: 'todos',
          sort: 'recientes',
       };
+   }
+
+   //
+   if (action.type === CHANGE_PAGE) {
+      return { ...state, page: action.payload.page };
    }
 
    throw new Error(`no such action :${action.type}`);

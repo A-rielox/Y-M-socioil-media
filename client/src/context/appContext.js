@@ -29,6 +29,7 @@ import {
    EDIT_RECIPE_SUCCESS,
    EDIT_RECIPE_ERROR,
    CLEAR_FILTERS,
+   CHANGE_PAGE,
 } from './actions';
 
 const token = localStorage.getItem('token');
@@ -278,9 +279,10 @@ const AppProvider = ({ children }) => {
    // aqui creo list4Problems en el reducer en GET_RECIPES_SUCCESS
    // list4Problems: [], ----  search, searchOil, searchProblem, sort
    const getRecipes = async () => {
-      const { search, searchOil, searchProblem, sort } = state;
-      let url = `/recipes?oilsList=${searchOil}&problemsList=${searchProblem}&sort=${sort}`;
+      const { search, searchOil, searchProblem, sort, page } = state;
+      let url = `/recipes?page=${page}&oilsList=${searchOil}&problemsList=${searchProblem}&sort=${sort}`;
 
+      // search lo voy a dejar separado xq es el único q puede estar vacio
       if (search) {
          url = url + `&search=${search}`;
       }
@@ -351,6 +353,10 @@ const AppProvider = ({ children }) => {
       console.log('clear filters');
    };
 
+   const changePage = page => {
+      dispatch({ type: CHANGE_PAGE, payload: { page } });
+   };
+
    return (
       <AppContext.Provider
          value={{
@@ -369,6 +375,7 @@ const AppProvider = ({ children }) => {
             deleteRecipe,
             editRecipe,
             clearFilters,
+            changePage,
          }}
       >
          {children}

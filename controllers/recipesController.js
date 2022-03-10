@@ -60,13 +60,12 @@ const getAllRecipes = async (req, res) => {
    if (problemsList && problemsList !== 'todos') {
       queryObject.problemsList = problemsList;
    }
-   // FILTRA EN titulo  Foys
+   // FILTRA EN titulo
    if (search) {
       queryObject.title = { $regex: search, $options: 'i' };
    }
 
    //SIN AWAIT
-
    let result = Recipe.find(queryObject);
 
    // chain sort conditions
@@ -83,30 +82,31 @@ const getAllRecipes = async (req, res) => {
       result = result.sort('-title');
    }
 
+   // PAGINACIÓN
+   const page = Number(req.query.page) || 1;
+   const limit = Number(req.query.limit) || 10;
+   const skip = (page - 1) * limit;
+
+   result = result.skip(skip).limit(limit);
+   // 75
+   // 10 10 10 10 10 10 10 5
+
    // RESOLVIENDO EL QUERY
    const recipes = await result;
 
+   const totalRecipes = await Recipe.countDocuments(queryObject);
+   const numOfPages = Math.ceil(totalRecipes / limit);
+
+   // res.status(StatusCodes.OK).json({
+   //    totalRecipes: recipes.length,
+   //    numOfPages: 1,
+   //    recipes,
+   // });
    res.status(StatusCodes.OK).json({
-      totalRecipes: recipes.length,
-      numOfPages: 1,
+      totalRecipes,
+      numOfPages,
       recipes,
    });
-
-   // // setup pagination
-   // const page = Number(req.query.page) || 1;
-   // const limit = Number(req.query.limit) || 10;
-   // const skip = (page - 1) * limit;
-   // result = result.skip(skip).limit(limit);
-   // // 75
-   // // 10 10 10 10 10 10 10 5
-   // const jobs = await result;
-   // const totalJobs = await Job.countDocuments(queryObject);
-   // const numOfPages = Math.ceil(totalJobs / limit);
-   // res.status(StatusCodes.OK).json({
-   //    totalJobs,
-   //    numOfPages,
-   //    jobs,
-   // });
 };
 
 //'/api/v1/recipes' -- .route('/:id').patch(updateRecipe)

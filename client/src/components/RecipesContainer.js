@@ -1,5 +1,5 @@
-import { useAppContext } from '../context/appContext';
 import { useEffect } from 'react';
+import { useAppContext } from '../context/appContext';
 import Loading from './Loading';
 import Recipe from './Recipe';
 import PageBtnContainer from './PageBtnContainer';
@@ -49,7 +49,8 @@ const RecipesContainer = () => {
    return (
       <Wrapper>
          <h5>
-            {totalRecipes} receta{recipes.length > 1 && 's'} encontradas
+            {totalRecipes} receta{recipes.length > 1 && 's'} encontrada
+            {recipes.length > 1 && 's'}
          </h5>
 
          <div className="jobs">
