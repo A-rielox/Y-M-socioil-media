@@ -279,10 +279,6 @@ const Wrapper = styled.section`
    }
    .form-row {
       margin-bottom: 0;
-
-      .title {
-         /* height: 300px; */
-      }
    }
    .form-center {
       display: grid;
@@ -344,13 +340,13 @@ const Wrapper = styled.section`
    }
    @media (min-width: 1120px) {
       .form {
-      margin: 0 auto;
-      /* border-radius: 0;
+         margin: 0 auto;
+         /* border-radius: 0;
       box-shadow: none;
       padding: 0; */
-      max-width: 80%;
-      width: 100%;
-   }
+         max-width: 80%;
+         width: 100%;
+      }
 
       .form-center {
          grid-template-columns: 1fr 1fr /* 1fr */;
@@ -362,8 +358,8 @@ const Wrapper = styled.section`
             'oil2 problem2 .'
             'oil3 problem3 .'
             'oil4 . submitBtn'
-            'oil5 . clearBtn';
-      } */
+            'oil5 . clearBtn';*/
+      }
       .form-center button {
          margin-top: 0;
       }
