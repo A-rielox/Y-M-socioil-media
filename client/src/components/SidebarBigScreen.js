@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import NavLinks from './NavLinks';
 import { useAppContext } from '../context/appContext';
-import Logo from '../components/Logo';
+import Logo from './Logo';
 
-const BigSidebar = () => {
+const SidebarBigScreen = () => {
    const { showSidebar } = useAppContext();
 
    return (
@@ -27,7 +27,7 @@ const BigSidebar = () => {
    );
 };
 
-export default BigSidebar;
+export default SidebarBigScreen;
 
 const Wrapper = styled.aside`
    display: none;

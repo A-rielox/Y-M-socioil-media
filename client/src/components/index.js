@@ -2,20 +2,20 @@ import InputSimple from './InputSimple';
 import LogoBig from './LogoBig';
 import Alert from './Alert';
 import SearchContainer from './SearchContainer';
-import BigSidebar from './BigSidebar';
+import SidebarBigScreen from './SidebarBigScreen';
 import RecipesContainer from './RecipesContainer';
 import PageBtnContainer from './PageBtnContainer';
 import Logo from './Logo';
 import InputSelect from './InputSelect';
-import SmallSidebar from './SmallSidebar';
+import SidebarSmallScreen from './SidebarSmallScreen';
 import Loading from './Loading';
 import Navbar from './Navbar';
 
 export {
    PageBtnContainer,
    Alert,
-   SmallSidebar,
-   BigSidebar,
+   SidebarSmallScreen,
+   SidebarBigScreen,
    LogoBig,
    Logo,
    Navbar,

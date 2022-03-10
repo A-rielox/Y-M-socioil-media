@@ -4,7 +4,7 @@ import NavLinks from './NavLinks';
 import { useAppContext } from '../context/appContext';
 import styled from 'styled-components';
 
-const SmallSidebar = () => {
+const SidebarSmallScreen = () => {
    const { showSidebar, toggleSidebar } = useAppContext();
 
    return (
@@ -30,7 +30,7 @@ const SmallSidebar = () => {
    );
 };
 
-export default SmallSidebar;
+export default SidebarSmallScreen;
 
 const Wrapper = styled.aside`
    @media (min-width: 992px) {
