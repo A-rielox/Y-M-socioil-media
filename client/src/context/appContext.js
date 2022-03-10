@@ -53,7 +53,6 @@ export const initialState = {
    desc: '',
    // problems: 'general',
    oilsOptions: oilsList,
-   // oils: 'digize pal Adri',
    // para pasar a la lista
    oilsList: [],
    problemsList: [],
@@ -70,7 +69,18 @@ export const initialState = {
    numOfPages: 1,
    recipes: [],
    page: 1,
+   // para busqueda y sort
+   list4Problems: [],
+   search: '',
+   searchOil: 'todos',
+   searchProblem: 'todos',
+   sort: 'latest',
+   sortOptions: ['latest', 'oldest', 'a-z', 'z-a'],
 };
+
+// search (en title) - searchOil  - searchProblem - sort
+// poner default en searchOil y searchProblem
+// necesito la lista de posibles oils ( q ya la tengo ) y la de los distintos problems ( q la voy a poner en list4Problems )
 
 const AppContext = React.createContext();
 
@@ -264,6 +274,7 @@ const AppProvider = ({ children }) => {
       clearAlert();
    };
 
+   // aqui creo list4Problems en el reducer en GET_RECIPES_SUCCESS
    const getRecipes = async () => {
       let url = `/recipes`;
 
@@ -328,6 +339,10 @@ const AppProvider = ({ children }) => {
       }
    };
 
+   const clearFilters = () => {
+      console.log('clear filters');
+   };
+
    return (
       <AppContext.Provider
          value={{
@@ -345,6 +360,7 @@ const AppProvider = ({ children }) => {
             setEditRecipe,
             deleteRecipe,
             editRecipe,
+            clearFilters,
          }}
       >
          {children}

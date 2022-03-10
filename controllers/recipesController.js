@@ -54,10 +54,10 @@ const getAllRecipes = async (req, res) => {
 
    const queryObject = {};
 
-   if (oilsList !== 'all') {
+   if (oilsList && oilsList !== 'all') {
       queryObject.oilsList = oilsList;
    }
-   if (problemsList !== 'all') {
+   if (problemsList && problemsList !== 'all') {
       queryObject.problemsList = problemsList;
    }
    // FILTRA EN titulo  Foys
@@ -66,6 +66,7 @@ const getAllRecipes = async (req, res) => {
    }
 
    //SIN AWAIT
+
    let result = Recipe.find(queryObject);
 
    // chain sort conditions

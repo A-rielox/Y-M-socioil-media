@@ -225,12 +225,18 @@ const reducer = (state, action) => {
    if (action.type === GET_RECIPES_SUCCESS) {
       const { totalRecipes, numOfPages, recipes } = action.payload;
 
+      let tempRecipes = [...recipes];
+      let list4Problems = tempRecipes.map(recipe => recipe.problemsList);
+      list4Problems = [...new Set(list4Problems.flat())];
+      console.log(list4Problems);
+
       return {
          ...state,
          isLoading: false,
          recipes,
          totalRecipes,
          numOfPages,
+         list4Problems,
       };
    }
 

@@ -180,6 +180,17 @@ export const oilsList = [
 
 // Neuralgia, Cólico, Parto, Migraña, Dolor de muelas, Quemaduras, Ciática, Dolor de cabeza, fiebre, torcedura
 
+// Dolor de cabeza
+// Neuralgia
+// Cólico
+// torcedura
+// Dolor de muelas
+// Quemaduras
+// Parto
+// fiebre
+// Migraña
+// Ciática
+
 /////////////////////
 //////////////////////
 ////////////////////
