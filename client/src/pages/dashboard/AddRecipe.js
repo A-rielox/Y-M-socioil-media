@@ -107,7 +107,7 @@ const AddRecipe = () => {
                   name="oil1"
                   value={oil1}
                   handleChange={handleRecipeInput}
-                  list={oilsOptions}
+                  list={['', ...oilsOptions]}
                ></FormRowSelect>
                <FormRowSelect
                   labelText="aceitito 2"
@@ -115,7 +115,7 @@ const AddRecipe = () => {
                   name="oil2"
                   value={oil2}
                   handleChange={handleRecipeInput}
-                  list={oilsOptions}
+                  list={['', ...oilsOptions]}
                ></FormRowSelect>
                <FormRowSelect
                   labelText="aceitito 3"
@@ -123,7 +123,7 @@ const AddRecipe = () => {
                   name="oil3"
                   value={oil3}
                   handleChange={handleRecipeInput}
-                  list={oilsOptions}
+                  list={['', ...oilsOptions]}
                ></FormRowSelect>
                <FormRowSelect
                   labelText="aceitito 4"
@@ -131,7 +131,7 @@ const AddRecipe = () => {
                   name="oil4"
                   value={oil4}
                   handleChange={handleRecipeInput}
-                  list={oilsOptions}
+                  list={['', ...oilsOptions]}
                ></FormRowSelect>
                <FormRowSelect
                   labelText="aceitito 5"
@@ -139,7 +139,7 @@ const AddRecipe = () => {
                   name="oil5"
                   value={oil5}
                   handleChange={handleRecipeInput}
-                  list={oilsOptions}
+                  list={['', ...oilsOptions]}
                ></FormRowSelect>
 
                {/* PROBLEMS */}

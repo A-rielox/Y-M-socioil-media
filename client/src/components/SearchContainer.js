@@ -5,17 +5,15 @@ import styled from 'styled-components';
 const SearchContainer = () => {
    const {
       isLoading,
-
-      // search,
-      // searchStatus,
-      // searchType,
-      // sort,
-      // sortOptions,
-      // statusOptions,
-      // jobTypeOptions,
-
+      list4Problems,
+      oilsOptions,
+      search,
+      searchOil,
+      searchProblem,
+      sort,
+      sortOptions,
       handleChange,
-      // clearFilters,
+      clearFilters,
    } = useAppContext();
 
    const handleSearch = e => {
@@ -28,7 +26,7 @@ const SearchContainer = () => {
 
    const handleSubmit = e => {
       e.preventDefault();
-      // clearFilters();
+      clearFilters();
    };
 
    return (
@@ -39,44 +37,46 @@ const SearchContainer = () => {
             {/* search position */}
             <div className="form-center">
                <FormRow
+                  labelText="en el titulo"
                   type="text"
                   name="search"
-                  // value={search}
+                  value={search}
                   handleChange={handleSearch}
                ></FormRow>
 
-               {/* search by status */}
-               {/* <FormRowSelect
-                  labelText="job status"
-                  name="searchStatus"
-                  value={searchStatus}
+               {/* search by oil */}
+               <FormRowSelect
+                  labelText="que contenga el aceitito"
+                  name="searchOil"
+                  value={searchOil}
                   handleChange={handleSearch}
-                  list={['all', ...statusOptions]}
-               ></FormRowSelect> */}
+                  list={['todos', ...oilsOptions]}
+               ></FormRowSelect>
 
-               {/* search by type */}
-               {/* <FormRowSelect
-                  labelText="job type"
-                  name="searchType"
-                  value={searchType}
+               {/* search by problem */}
+               <FormRowSelect
+                  labelText="con problema"
+                  name="searchProblem"
+                  value={searchProblem}
                   handleChange={handleSearch}
-                  list={['all', ...jobTypeOptions]}
-               ></FormRowSelect> */}
+                  list={['todos', ...list4Problems]}
+               ></FormRowSelect>
 
                {/* sort */}
-               {/* <FormRowSelect
+               <FormRowSelect
+                  labelText="orden"
                   name="sort"
                   value={sort}
                   handleChange={handleSearch}
                   list={sortOptions}
-               ></FormRowSelect> */}
+               ></FormRowSelect>
 
                <button
                   className="btn btn-block btn-danger"
                   disabled={isLoading}
                   onClick={handleSubmit}
                >
-                  clear filters
+                  limpiar filtros
                </button>
             </div>
          </form>

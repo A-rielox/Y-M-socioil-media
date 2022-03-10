@@ -54,10 +54,10 @@ const getAllRecipes = async (req, res) => {
 
    const queryObject = {};
 
-   if (oilsList && oilsList !== 'all') {
+   if (oilsList && oilsList !== 'todos') {
       queryObject.oilsList = oilsList;
    }
-   if (problemsList && problemsList !== 'all') {
+   if (problemsList && problemsList !== 'todos') {
       queryObject.problemsList = problemsList;
    }
    // FILTRA EN titulo  Foys
@@ -70,10 +70,10 @@ const getAllRecipes = async (req, res) => {
    let result = Recipe.find(queryObject);
 
    // chain sort conditions
-   if (sort === 'latest') {
+   if (sort === 'recientes') {
       result = result.sort('-createdAt');
    }
-   if (sort === 'oldest') {
+   if (sort === 'viejos') {
       result = result.sort('createdAt');
    }
    if (sort === 'a-z') {

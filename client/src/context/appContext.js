@@ -74,8 +74,8 @@ export const initialState = {
    search: '',
    searchOil: 'todos',
    searchProblem: 'todos',
-   sort: 'latest',
-   sortOptions: ['latest', 'oldest', 'a-z', 'z-a'],
+   sort: 'recientes',
+   sortOptions: ['recientes', 'viejos', 'a-z', 'z-a'],
 };
 
 // search (en title) - searchOil  - searchProblem - sort
