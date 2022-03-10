@@ -40,7 +40,7 @@ const deleteRecipe = async (req, res) => {
    });
 };
 
-// al no poner el await se obtiene solo el query ( en este caso en la variable result ) , al q despues se le puede agregar los sort'ssss
+// al no poner el await se obtiene solo el query ( en este caso en la variable result ) , al q despues se le puede agregar los sort'ssss y demas filtros, para despues, al poner el await se pase todo lo q se quiera buscar o filtrar.
 // cuando se ponga 'all' lo q quiero es q no se filtre en relación a ese, xeso para ese no se va a poner en el queryObject. ( al poner 'all' lo q hace es NO buscar con ese filtro )
 //status, type y sort SIEMPRE tienen algo x default, NO pueden estar vacios
 // si no fueran a estar presentes podria poner el if de la sig forma:
@@ -49,42 +49,48 @@ const deleteRecipe = async (req, res) => {
 //'/api/v1/recipes' --  .get(getAllRecipes)
 // ▦▦▦▦▦▦▦▦ FILTROS ▦▦▦▦▦▦▦▦
 const getAllRecipes = async (req, res) => {
-   const recipes = await Recipe.find();
+   // para buscar es: ?status=pending&jobType=boss
+   const { search, oilsList, problemsList, sort } = req.query;
+
+   const queryObject = {};
+
+   if (oilsList !== 'all') {
+      queryObject.oilsList = oilsList;
+   }
+   if (problemsList !== 'all') {
+      queryObject.problemsList = problemsList;
+   }
+   // FILTRA EN titulo  Foys
+   if (search) {
+      queryObject.title = { $regex: search, $options: 'i' };
+   }
+
+   //SIN AWAIT
+   let result = Recipe.find(queryObject);
+
+   // chain sort conditions
+   if (sort === 'latest') {
+      result = result.sort('-createdAt');
+   }
+   if (sort === 'oldest') {
+      result = result.sort('createdAt');
+   }
+   if (sort === 'a-z') {
+      result = result.sort('title');
+   }
+   if (sort === 'z-a') {
+      result = result.sort('-title');
+   }
+
+   // RESOLVIENDO EL QUERY
+   const recipes = await result;
 
    res.status(StatusCodes.OK).json({
       totalRecipes: recipes.length,
       numOfPages: 1,
       recipes,
    });
-   // const { search, status, jobType, sort } = req.query;
-   // const queryObject = {
-   //    createdBy: req.user.userId,
-   // };
-   // if (status !== 'all') {
-   //    queryObject.status = status;
-   // }
-   // if (jobType !== 'all') {
-   //    queryObject.jobType = jobType;
-   // }
-   // // FILTRA POSITION
-   // if (search) {
-   //    queryObject.position = { $regex: search, $options: 'i' };
-   // }
-   // // SIN AWAIT
-   // let result = Job.find(queryObject);
-   // // chain sort conditions
-   // if (sort === 'latest') {
-   //    result = result.sort('-createdAt');
-   // }
-   // if (sort === 'oldest') {
-   //    result = result.sort('createdAt');
-   // }
-   // if (sort === 'a-z') {
-   //    result = result.sort('position');
-   // }
-   // if (sort === 'z-a') {
-   //    result = result.sort('-position');
-   // }
+
    // // setup pagination
    // const page = Number(req.query.page) || 1;
    // const limit = Number(req.query.limit) || 10;

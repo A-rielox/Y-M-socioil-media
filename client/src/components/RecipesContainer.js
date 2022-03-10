@@ -28,7 +28,6 @@ const RecipesContainer = () => {
       ]
    );
 
-   console.log(recipes);
    // createdAt: "2022-03-06T18:43:51.211Z"
    // createdBy: "62215237822281526699bee3"
    // desc: "DESCRIPCION pepi"
@@ -61,7 +60,6 @@ const RecipesContainer = () => {
          <div className="jobs">
             {recipes.map(recipe => {
                return <Recipe key={recipe._id} {...recipe} />;
-               // return <h3 key={index}>receta</h3>;
             })}
          </div>
 

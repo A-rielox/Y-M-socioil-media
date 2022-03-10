@@ -43,7 +43,10 @@ const AddRecipe = () => {
       // LISTAS -- oils y problems
       let oilsList = [oil1, oil2, oil3, oil4, oil5];
       let problemsList = [problem1, problem2, problem3];
+      console.log(oilsList);
+      console.log(problemsList);
       oilsList = oilsList.filter(oil => oil.length > 1);
+
       problemsList = problemsList.filter(problem => problem.length > 1);
 
       // como sea lo pruebo en la API y en la DB

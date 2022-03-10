@@ -3730,11 +3730,11 @@ const start = async () => {
 start();
 ```
 
+✅✅✅ ✅✅✅
+
 #### Show Stats - Structure
 
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
-✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
+✅✅✅ ✅✅✅
 
 -  aggregation pipeline
 -  step by step
@@ -4156,6 +4156,10 @@ const AreaChartComponent = ({ data }) => {
 };
 ```
 
+✅✅✅ ✅✅✅
+
+✅✅✅ ✅✅✅
+
 #### Filter
 
 #### Get All Jobs - Initial Setup
@@ -4306,7 +4310,9 @@ const getAllJobs = async (req, res) => {
 
 #### Search Context Setup
 
-✅✅✅
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
+ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
 
 ```js
 appContext.js

@@ -18,8 +18,16 @@ import styled from 'styled-components';
 // updatedAt: "2022-03-06T18:43:51.211Z"
 // _id: "622500e7d92400c2e34d395d"
 
-const Recipe = ({ _id, oilsList, problemsList, title, desc, createdAt }) => {
-   const { setEditRecipe, deleteRecipe } = useAppContext();
+const Recipe = ({
+   _id,
+   oilsList,
+   problemsList,
+   title,
+   desc,
+   createdAt,
+   createdBy,
+}) => {
+   const { setEditRecipe, deleteRecipe, user } = useAppContext();
 
    let date = moment(createdAt);
    date = date.format('MMM Do, YYYY');
@@ -55,31 +63,32 @@ const Recipe = ({ _id, oilsList, problemsList, title, desc, createdAt }) => {
                      );
                   })}
                </ul>
-               <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Necessitatibus quis, earum ipsa eveniet nulla ab placeat alias
-                  maiores obcaecati autem!
-               </p>
+               <p>{desc}</p>
 
                <RecipeInfo icon={<FaCalendarAlt />} text={date} />
             </div>
 
             <footer>
                <div className="actions">
-                  <Link
-                     to="/add-recipe"
-                     onClick={() => setEditRecipe(_id)}
-                     className="btn edit-btn"
-                  >
-                     editar
-                  </Link>
-                  <button
-                     type="button"
-                     className="btn delete-btn"
-                     onClick={() => deleteRecipe(_id)}
-                  >
-                     borrar
-                  </button>
+                  {user._id === createdBy && (
+                     <Link
+                        to="/add-recipe"
+                        onClick={() => setEditRecipe(_id)}
+                        className="btn edit-btn"
+                     >
+                        editar
+                     </Link>
+                  )}
+                  {user._id === createdBy && (
+                     <button
+                        type="button"
+                        className="btn delete-btn"
+                        onClick={() => deleteRecipe(_id)}
+                     >
+                        borrar
+                     </button>
+                  )}
+
                   {/* <div className={`status ${status}`}>{status}</div> */}
 
                   <button type="button" className={`btn status platinum`}>
