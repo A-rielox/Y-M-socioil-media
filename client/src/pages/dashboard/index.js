@@ -1,7 +1,7 @@
+import Stats from './Stats';
 import AddRecipe from './AddRecipe';
-import AllRecipes from './AllRecipes';
 import Profile from './Profile';
 import SharedLayout from './SharedLayout';
-import Stats from './Stats';
+import AllRecipes from './AllRecipes';
 
-export { AddRecipe, AllRecipes, Profile, SharedLayout, Stats };
+export { Profile, Stats, AllRecipes, AddRecipe, SharedLayout };

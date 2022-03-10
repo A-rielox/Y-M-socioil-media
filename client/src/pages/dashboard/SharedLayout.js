@@ -1,7 +1,7 @@
-import { Outlet } from 'react-router-dom';
 import { useAppContext } from '../../context/appContext';
-import { Navbar, SmallSidebar, BigSidebar } from '../../components';
+import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
+import { SmallSidebar, BigSidebar, Navbar } from '../../components';
 
 const SharedLayout = () => {
    const { user } = useAppContext();

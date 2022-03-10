@@ -1,8 +1,6 @@
-import { useEffect } from 'react';
 import { useAppContext } from '../../context/appContext';
-import {
-   /* StatsContainer, */ Loading /* , ChartsContainer */,
-} from '../../components';
+import { Loading } from '../../components';
+import { useEffect } from 'react';
 
 const Stats = () => {
    const { /* showStats, */ isLoading /* , monthlyApplications */ } =
