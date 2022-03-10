@@ -32,8 +32,6 @@ const AddRecipe = () => {
       const name = e.target.name;
       const value = e.target.value;
 
-      console.log(e.target.name);
-
       changeStateValues({ name, value });
    };
 
@@ -81,10 +79,10 @@ const AddRecipe = () => {
             <h3>{isEditing ? 'editar recetita' : 'añadir recetita'} </h3>
             {showAlert && <Alert />}
 
+            {/* position */}
             <div className="form-center">
                {/* title */}
                <InputSimple
-                  inputClass={'title'}
                   type="text"
                   labelText="Titulo"
                   name="title"
@@ -93,34 +91,18 @@ const AddRecipe = () => {
                />
 
                {/* description */}
-               {/* <InputSimple
-                  type="text-area"
+               <InputSimple
+                  type="text"
                   labelText="Descripción"
                   name="desc"
                   value={desc}
                   changeStateValues={handleRecipeInput}
-               /> */}
-
-               <div className="form-row description">
-                  <label htmlFor="description" className="form-label">
-                     descripción
-                  </label>
-
-                  <textarea
-                     className="form-textarea"
-                     type="text"
-                     rows="5"
-                     name="desc"
-                     value={desc}
-                     onChange={handleRecipeInput}
-                  />
-               </div>
+               />
 
                {/* ACEITES */}
 
                <InputSelect
                   labelText="aceitito 1"
-                  inputClass={'classOil1'}
                   key="oil1"
                   name="oil1"
                   value={oil1}
@@ -129,7 +111,6 @@ const AddRecipe = () => {
                ></InputSelect>
                <InputSelect
                   labelText="aceitito 2"
-                  inputClass={'classOil2'}
                   key="oil2"
                   name="oil2"
                   value={oil2}
@@ -138,7 +119,6 @@ const AddRecipe = () => {
                ></InputSelect>
                <InputSelect
                   labelText="aceitito 3"
-                  inputClass={'classOil3'}
                   key="oil3"
                   name="oil3"
                   value={oil3}
@@ -147,7 +127,6 @@ const AddRecipe = () => {
                ></InputSelect>
                <InputSelect
                   labelText="aceitito 4"
-                  inputClass={'classOil4'}
                   key="oil4"
                   name="oil4"
                   value={oil4}
@@ -156,7 +135,6 @@ const AddRecipe = () => {
                ></InputSelect>
                <InputSelect
                   labelText="aceitito 5"
-                  inputClass={'classOil5'}
                   key="oil5"
                   name="oil5"
                   value={oil5}
@@ -168,7 +146,6 @@ const AddRecipe = () => {
 
                <InputSimple
                   labelText="molestia 1"
-                  inputClass={'classProblem1'}
                   key="problem1"
                   type="text"
                   name="problem1"
@@ -177,7 +154,6 @@ const AddRecipe = () => {
                ></InputSimple>
                <InputSimple
                   labelText="molestia 2"
-                  inputClass={'classProblem2'}
                   key="problem2"
                   type="text"
                   name="problem2"
@@ -186,7 +162,6 @@ const AddRecipe = () => {
                ></InputSimple>
                <InputSimple
                   labelText="molestia 3"
-                  inputClass={'classProblem3'}
                   key="problem3"
                   type="text"
                   name="problem3"
@@ -194,26 +169,27 @@ const AddRecipe = () => {
                   changeStateValues={handleRecipeInput}
                ></InputSimple>
 
-               {/* <div className="btn-container"></div> */}
-               <button
-                  className="btn btn-block submit-btn"
-                  type="submit"
-                  onClick={handleSubmit}
-                  disabled={isLoading}
-               >
-                  enviar
-               </button>
+               <div className="btn-container">
+                  <button
+                     className="btn btn-block submit-btn"
+                     type="submit"
+                     onClick={handleSubmit}
+                     disabled={isLoading}
+                  >
+                     enviar
+                  </button>
 
-               {/* este tiene q ir despues del submit button  */}
-               <button
-                  className="btn btn-block clear-btn"
-                  onClick={e => {
-                     e.preventDefault();
-                     clearValues();
-                  }}
-               >
-                  limpiar
-               </button>
+                  {/* este tiene q ir despues del submit button  */}
+                  <button
+                     className="btn btn-block clear-btn"
+                     onClick={e => {
+                        e.preventDefault();
+                        clearValues();
+                     }}
+                  >
+                     limpiar
+                  </button>
+               </div>
             </div>
          </form>
       </Wrapper>
@@ -229,43 +205,6 @@ const Wrapper = styled.section`
    padding: 3rem 2rem 4rem;
    box-shadow: var(--shadow-2);
 
-   .title {
-      grid-area: title;
-   }
-   .description {
-      grid-area: description;
-   }
-   .classOil1 {
-      grid-area: oil1;
-   }
-   .classOil2 {
-      grid-area: oil2;
-   }
-   .classOil3 {
-      grid-area: oil3;
-   }
-   .classOil4 {
-      grid-area: oil4;
-   }
-   .classOil5 {
-      grid-area: oil5;
-   }
-   .classProblem1 {
-      grid-area: problem1;
-   }
-   .classProblem2 {
-      grid-area: problem2;
-   }
-   .classProblem3 {
-      grid-area: problem3;
-   }
-   .submit-btn {
-      grid-area: submitBtn;
-   }
-   .clear-btn {
-      grid-area: clearBtn;
-   }
-
    h3 {
       margin-top: 0;
    }
@@ -279,34 +218,17 @@ const Wrapper = styled.section`
    }
    .form-row {
       margin-bottom: 0;
-
-      .title {
-         /* height: 300px; */
-      }
    }
    .form-center {
       display: grid;
       row-gap: 0.5rem;
-      grid-template-areas:
-         'title'
-         'description'
-         'oil1'
-         'oil2'
-         'oil3'
-         'oil4'
-         'oil5'
-         'problem1'
-         'problem2'
-         ' problem3'
-         'submitBtn'
-         'clearBtn';
    }
    .form-center button {
       align-self: end;
       height: 35px;
       margin-top: 1rem;
    }
-   /* .btn-container {
+   .btn-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
       column-gap: 1rem;
@@ -315,7 +237,7 @@ const Wrapper = styled.section`
       button {
          height: 35px;
       }
-   } */
+   }
    .clear-btn {
       background: var(--grey-500);
    }
@@ -327,57 +249,17 @@ const Wrapper = styled.section`
          grid-template-columns: 1fr 1fr;
          align-items: center;
          column-gap: 1rem;
-
-         grid-template-areas:
-            'title title'
-            'description description'
-            'oil1 problem1'
-            'oil2 problem2'
-            'oil3 problem3'
-            'oil4 submitBtn'
-            'oil5 clearBtn';
       }
-
       .btn-container {
          margin-top: 0;
       }
    }
    @media (min-width: 1120px) {
-      .form {
-      margin: 0 auto;
-      /* border-radius: 0;
-      box-shadow: none;
-      padding: 0; */
-      max-width: 80%;
-      width: 100%;
-   }
-
       .form-center {
-         grid-template-columns: 1fr 1fr /* 1fr */;
-
-         /* grid-template-areas:
-            'title title .'
-            'description description .'
-            'oil1 problem1 .'
-            'oil2 problem2 .'
-            'oil3 problem3 .'
-            'oil4 . submitBtn'
-            'oil5 . clearBtn';
-      } */
+         grid-template-columns: 1fr 1fr 1fr;
+      }
       .form-center button {
          margin-top: 0;
-      }
-
-      .btn-container {
-         display: grid;
-         grid-template-columns: 1fr;
-         row-gap: 1rem;
-         align-self: flex-end;
-         /* margin-top: 0.5rem; */
-         /* padding-top: 2rem; */
-         button {
-            height: 35px;
-         }
       }
    }
 `;

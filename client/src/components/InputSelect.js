@@ -1,6 +1,14 @@
-const InputSelect = ({ labelText, name, value, changeStateValues, list }) => {
+const InputSelect = ({
+   labelText,
+   name,
+   value,
+   changeStateValues,
+   list,
+   inputClass,
+}) => {
    return (
-      <div className="form-row">
+      // <div className="form-row">
+      <div className={`form-row ${inputClass ? inputClass : null}`}>
          <label htmlFor={name} className="form-label">
             {labelText || name}
          </label>
@@ -10,6 +18,7 @@ const InputSelect = ({ labelText, name, value, changeStateValues, list }) => {
             value={value}
             onChange={changeStateValues}
             className="form-select"
+            // className={`form-select ${inputClass ? inputClass : null}`}
          >
             {list.map((itemValue, index) => {
                return (
