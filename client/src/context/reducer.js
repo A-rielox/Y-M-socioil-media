@@ -25,6 +25,7 @@ import {
    EDIT_RECIPE_BEGIN,
    EDIT_RECIPE_SUCCESS,
    EDIT_RECIPE_ERROR,
+   CLEAR_FILTERS,
 } from './actions';
 
 const reducer = (state, action) => {
@@ -280,6 +281,17 @@ const reducer = (state, action) => {
          showAlert: true,
          alertType: 'danger',
          alertText: action.payload.msg,
+      };
+   }
+
+   //
+   if (action.type === CLEAR_FILTERS) {
+      return {
+         ...state,
+         search: '',
+         searchOil: 'todos',
+         searchProblem: 'todos',
+         sort: 'recientes',
       };
    }
 

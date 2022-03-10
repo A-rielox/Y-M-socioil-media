@@ -4572,7 +4572,9 @@ const JobsContainer = () => {
 
 #### Limit and Skip
 
-✅✅✅
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
+ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅  
+✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅ ✅✅✅
 
 ```js
 jobsController.js;

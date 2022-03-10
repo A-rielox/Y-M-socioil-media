@@ -12,21 +12,16 @@ const RecipesContainer = () => {
       isLoading,
       page,
       totalRecipes,
-      // search,
-      // searchStatus,
-      // searchType,
-      // sort,
+      search,
+      searchOil,
+      searchProblem,
+      sort,
       numOfPages,
    } = useAppContext();
 
-   useEffect(
-      () => {
-         getRecipes();
-      },
-      [
-         /* search, searchStatus, searchType, sort,  page */
-      ]
-   );
+   useEffect(() => {
+      getRecipes();
+   }, [search, searchOil, searchProblem, sort, page]);
 
    // createdAt: "2022-03-06T18:43:51.211Z"
    // createdBy: "62215237822281526699bee3"

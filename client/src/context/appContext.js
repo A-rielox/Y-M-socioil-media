@@ -28,6 +28,7 @@ import {
    EDIT_RECIPE_BEGIN,
    EDIT_RECIPE_SUCCESS,
    EDIT_RECIPE_ERROR,
+   CLEAR_FILTERS,
 } from './actions';
 
 const token = localStorage.getItem('token');
@@ -275,8 +276,14 @@ const AppProvider = ({ children }) => {
    };
 
    // aqui creo list4Problems en el reducer en GET_RECIPES_SUCCESS
+   // list4Problems: [], ----  search, searchOil, searchProblem, sort
    const getRecipes = async () => {
-      let url = `/recipes`;
+      const { search, searchOil, searchProblem, sort } = state;
+      let url = `/recipes?oilsList=${searchOil}&problemsList=${searchProblem}&sort=${sort}`;
+
+      if (search) {
+         url = url + `&search=${search}`;
+      }
 
       dispatch({ type: GET_RECIPES_BEGIN });
 
@@ -340,6 +347,7 @@ const AppProvider = ({ children }) => {
    };
 
    const clearFilters = () => {
+      dispatch({ type: CLEAR_FILTERS });
       console.log('clear filters');
    };
 
