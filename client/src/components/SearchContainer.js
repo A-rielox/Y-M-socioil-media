@@ -12,7 +12,7 @@ const SearchContainer = () => {
       searchProblem,
       sort,
       sortOptions,
-      handleChange,
+      changeStateValues,
       clearFilters,
    } = useAppContext();
 
@@ -21,7 +21,7 @@ const SearchContainer = () => {
       const name = e.target.name;
       const value = e.target.value;
       // la fcn q cambia dinámicamente los valores en el state
-      handleChange({ name, value });
+      changeStateValues({ name, value });
    };
 
    const handleSubmit = e => {
@@ -41,7 +41,7 @@ const SearchContainer = () => {
                   type="text"
                   name="search"
                   value={search}
-                  handleChange={handleSearch}
+                  changeStateValues={handleSearch}
                ></InputSimple>
 
                {/* search by oil */}
@@ -49,7 +49,7 @@ const SearchContainer = () => {
                   labelText="que contenga el aceitito"
                   name="searchOil"
                   value={searchOil}
-                  handleChange={handleSearch}
+                  changeStateValues={handleSearch}
                   list={['todos', ...oilsOptions]}
                ></InputSelect>
 
@@ -58,7 +58,7 @@ const SearchContainer = () => {
                   labelText="con problema"
                   name="searchProblem"
                   value={searchProblem}
-                  handleChange={handleSearch}
+                  changeStateValues={handleSearch}
                   list={['todos', ...list4Problems]}
                ></InputSelect>
 
@@ -67,7 +67,7 @@ const SearchContainer = () => {
                   labelText="orden"
                   name="sort"
                   value={sort}
-                  handleChange={handleSearch}
+                  changeStateValues={handleSearch}
                   list={sortOptions}
                ></InputSelect>
 

@@ -21,7 +21,7 @@ function Register() {
 
    // global context and useNavigate later
 
-   const handleChange = e => {
+   const changeStateValues = e => {
       const name = e.target.name;
       const value = e.target.value;
 
@@ -77,7 +77,7 @@ function Register() {
                   type="text"
                   name="name"
                   value={values.name}
-                  handleChange={handleChange}
+                  changeStateValues={changeStateValues}
                   labelText="Nombre"
                />
             )}
@@ -87,7 +87,7 @@ function Register() {
                type="email"
                name="email"
                value={values.email}
-               handleChange={handleChange}
+               changeStateValues={changeStateValues}
             />
 
             {/* PASSWORD */}
@@ -95,7 +95,7 @@ function Register() {
                type="password"
                name="password"
                value={values.password}
-               handleChange={handleChange}
+               changeStateValues={changeStateValues}
             />
 
             <button

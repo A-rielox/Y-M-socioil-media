@@ -12,7 +12,7 @@ const AddRecipe = () => {
       desc,
 
       oilsOptions,
-      handleChange,
+      changeStateValues,
       isEditing,
       editRecipe,
       clearValues,
@@ -32,7 +32,7 @@ const AddRecipe = () => {
       const name = e.target.name;
       const value = e.target.value;
 
-      handleChange({ name, value });
+      changeStateValues({ name, value });
    };
 
    // al picarle a editar ( en Recipe.js ) ==> se meten los valores de ese trabajo en el state y se manda a la pag de crear-recipe con estos valores pre-llenados, aqui se editan y se manda el patch a la DB
@@ -87,7 +87,7 @@ const AddRecipe = () => {
                   labelText="Titulo"
                   name="title"
                   value={title}
-                  handleChange={handleRecipeInput}
+                  changeStateValues={handleRecipeInput}
                />
 
                {/* description */}
@@ -96,7 +96,7 @@ const AddRecipe = () => {
                   labelText="Descripción"
                   name="desc"
                   value={desc}
-                  handleChange={handleRecipeInput}
+                  changeStateValues={handleRecipeInput}
                />
 
                {/* ACEITES */}
@@ -106,7 +106,7 @@ const AddRecipe = () => {
                   key="oil1"
                   name="oil1"
                   value={oil1}
-                  handleChange={handleRecipeInput}
+                  changeStateValues={handleRecipeInput}
                   list={['', ...oilsOptions]}
                ></InputSelect>
                <InputSelect
@@ -114,7 +114,7 @@ const AddRecipe = () => {
                   key="oil2"
                   name="oil2"
                   value={oil2}
-                  handleChange={handleRecipeInput}
+                  changeStateValues={handleRecipeInput}
                   list={['', ...oilsOptions]}
                ></InputSelect>
                <InputSelect
@@ -122,7 +122,7 @@ const AddRecipe = () => {
                   key="oil3"
                   name="oil3"
                   value={oil3}
-                  handleChange={handleRecipeInput}
+                  changeStateValues={handleRecipeInput}
                   list={['', ...oilsOptions]}
                ></InputSelect>
                <InputSelect
@@ -130,7 +130,7 @@ const AddRecipe = () => {
                   key="oil4"
                   name="oil4"
                   value={oil4}
-                  handleChange={handleRecipeInput}
+                  changeStateValues={handleRecipeInput}
                   list={['', ...oilsOptions]}
                ></InputSelect>
                <InputSelect
@@ -138,7 +138,7 @@ const AddRecipe = () => {
                   key="oil5"
                   name="oil5"
                   value={oil5}
-                  handleChange={handleRecipeInput}
+                  changeStateValues={handleRecipeInput}
                   list={['', ...oilsOptions]}
                ></InputSelect>
 
@@ -150,7 +150,7 @@ const AddRecipe = () => {
                   type="text"
                   name="problem1"
                   value={problem1}
-                  handleChange={handleRecipeInput}
+                  changeStateValues={handleRecipeInput}
                ></InputSimple>
                <InputSimple
                   labelText="molestia 2"
@@ -158,7 +158,7 @@ const AddRecipe = () => {
                   type="text"
                   name="problem2"
                   value={problem2}
-                  handleChange={handleRecipeInput}
+                  changeStateValues={handleRecipeInput}
                ></InputSimple>
                <InputSimple
                   labelText="molestia 3"
@@ -166,7 +166,7 @@ const AddRecipe = () => {
                   type="text"
                   name="problem3"
                   value={problem3}
-                  handleChange={handleRecipeInput}
+                  changeStateValues={handleRecipeInput}
                ></InputSimple>
 
                <div className="btn-container">

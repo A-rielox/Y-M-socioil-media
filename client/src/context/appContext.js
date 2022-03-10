@@ -240,7 +240,7 @@ const AppProvider = ({ children }) => {
       clearAlert();
    };
 
-   const handleChange = ({ name, value }) => {
+   const changeStateValues = ({ name, value }) => {
       dispatch({ type: HANDLE_CHANGE, payload: { name, value } });
    };
 
@@ -367,7 +367,7 @@ const AppProvider = ({ children }) => {
             toggleSidebar,
             logoutUser,
             updateUser,
-            handleChange,
+            changeStateValues,
             clearValues,
             createRecipe,
             getRecipes,

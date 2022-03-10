@@ -22,7 +22,7 @@ function App() {
       return index + 1;
    });
 
-   const handleChange = e => {
+   const changeStateValues = e => {
       const name = e.target.name;
       const value = e.target.value;
 
@@ -48,7 +48,7 @@ function App() {
                   type="number"
                   name="search"
                   value={numEnt}
-                  handleChange={e => setNumEnt(e.target.value)}
+                  changeStateValues={e => setNumEnt(e.target.value)}
                ></FormRow>
 
                {inputs.map(num => {
@@ -58,7 +58,7 @@ function App() {
                         key={num}
                         name={`oil${num}`}
                         value={values[num]}
-                        handleChange={handleChange}
+                        changeStateValues={changeStateValues}
                         list={oilsList}
                      ></InputSelect>
                   );

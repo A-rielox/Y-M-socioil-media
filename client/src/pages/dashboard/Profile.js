@@ -36,21 +36,21 @@ const Profile = () => {
                   type="text"
                   name="name"
                   value={name}
-                  handleChange={e => setName(e.target.value)}
+                  changeStateValues={e => setName(e.target.value)}
                />
                <InputSimple
                   labelText="apellido"
                   type="text"
                   name="lastName"
                   value={lastName}
-                  handleChange={e => setLastName(e.target.value)}
+                  changeStateValues={e => setLastName(e.target.value)}
                />
                <InputSimple
                   labelText="correo"
                   type="email"
                   name="email"
                   value={email}
-                  handleChange={e => setEmail(e.target.value)}
+                  changeStateValues={e => setEmail(e.target.value)}
                />
 
                <InputSimple
@@ -58,7 +58,7 @@ const Profile = () => {
                   type="text"
                   name="location"
                   value={location}
-                  handleChange={e => setLocation(e.target.value)}
+                  changeStateValues={e => setLocation(e.target.value)}
                />
 
                <button

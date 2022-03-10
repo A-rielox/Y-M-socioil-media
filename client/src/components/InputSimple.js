@@ -1,4 +1,4 @@
-const InputSimple = ({ type, name, value, handleChange, labelText }) => {
+const InputSimple = ({ type, name, value, changeStateValues, labelText }) => {
    return (
       <div className="form-row">
          <label htmlFor={name} className="form-label">
@@ -10,7 +10,7 @@ const InputSimple = ({ type, name, value, handleChange, labelText }) => {
             className="form-input"
             name={name}
             value={value}
-            onChange={handleChange}
+            onChange={changeStateValues}
          />
       </div>
    );
