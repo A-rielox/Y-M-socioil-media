@@ -8,15 +8,6 @@ import {
    Stats,
 } from './pages/dashboard';
 
-/* 
-
-
-v151
-r4573
-
-
-*/
-
 function App() {
    return (
       <BrowserRouter>

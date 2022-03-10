@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { useAppContext } from '../context/appContext';
 import NavLinks from './NavLinks';
+import { useAppContext } from '../context/appContext';
 import Logo from '../components/Logo';
 
 const BigSidebar = () => {

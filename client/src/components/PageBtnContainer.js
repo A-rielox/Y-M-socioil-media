@@ -1,5 +1,5 @@
-import { HiChevronDoubleLeft, HiChevronDoubleRight } from 'react-icons/hi';
 import { useAppContext } from '../context/appContext';
+import { HiChevronDoubleLeft, HiChevronDoubleRight } from 'react-icons/hi';
 import styled from 'styled-components';
 
 const PageBtnContainer = () => {

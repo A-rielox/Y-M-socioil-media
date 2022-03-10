@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
 import { useAppContext } from '../context/appContext';
 import Loading from './Loading';
-import Recipe from './Recipe';
+import { useEffect } from 'react';
 import PageBtnContainer from './PageBtnContainer';
+import Recipe from './Recipe';
 import styled from 'styled-components';
 
 const RecipesContainer = () => {
@@ -53,7 +53,7 @@ const RecipesContainer = () => {
             {recipes.length > 1 && 's'}
          </h5>
 
-         <div className="jobs">
+         <div className="recipes">
             {recipes.map(recipe => {
                return <Recipe key={recipe._id} {...recipe} />;
             })}
@@ -74,13 +74,13 @@ const Wrapper = styled.section`
    & > h5 {
       font-weight: 700;
    }
-   .jobs {
+   .recipes {
       display: grid;
       grid-template-columns: 1fr;
       row-gap: 2rem;
    }
    @media (min-width: 992px) {
-      .jobs {
+      .recipes {
          display: grid;
          grid-template-columns: 1fr 1fr;
          gap: 1rem;

@@ -1,5 +1,5 @@
-import { FormRow, FormRowSelect } from '.';
 import { useAppContext } from '../context/appContext';
+import { FormRow, FormRowSelect } from '.';
 import styled from 'styled-components';
 
 const SearchContainer = () => {

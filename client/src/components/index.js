@@ -1,31 +1,27 @@
-import Logo from './Logo';
-import LogoBig from './LogoBig';
 import FormRow from './FormRow';
+import LogoBig from './LogoBig';
 import Alert from './Alert';
-import BigSidebar from './BigSidebar';
-import SmallSidebar from './SmallSidebar';
-import Navbar from './Navbar';
-import FormRowSelect from './FormRowSelect';
-import RecipesContainer from './RecipesContainer';
 import SearchContainer from './SearchContainer';
-import Loading from './Loading';
+import BigSidebar from './BigSidebar';
+import RecipesContainer from './RecipesContainer';
 import PageBtnContainer from './PageBtnContainer';
-// import StatsContainer from './StatsContainer';
-// import ChartsContainer from './ChartsContainer';
+import Logo from './Logo';
+import FormRowSelect from './FormRowSelect';
+import SmallSidebar from './SmallSidebar';
+import Loading from './Loading';
+import Navbar from './Navbar';
 
 export {
-   Logo,
-   LogoBig,
-   FormRow,
+   PageBtnContainer,
    Alert,
-   BigSidebar,
    SmallSidebar,
+   BigSidebar,
+   LogoBig,
+   Logo,
    Navbar,
-   FormRowSelect,
    RecipesContainer,
+   FormRow,
    SearchContainer,
    Loading,
-   PageBtnContainer,
-   // StatsContainer,
-   // ChartsContainer,
+   FormRowSelect,
 };

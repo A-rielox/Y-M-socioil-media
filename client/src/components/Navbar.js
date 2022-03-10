@@ -1,7 +1,7 @@
-import { useState } from 'react';
 import { FaAlignLeft, FaUserCircle, FaCaretDown } from 'react-icons/fa';
-import { useAppContext } from '../context/appContext';
+import { useState } from 'react';
 import Logo from './Logo';
+import { useAppContext } from '../context/appContext';
 import styled from 'styled-components';
 
 const Navbar = () => {
