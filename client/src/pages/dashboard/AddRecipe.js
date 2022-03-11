@@ -316,7 +316,7 @@ const Wrapper = styled.section`
       background: var(--grey-500);
    }
    .clear-btn:hover {
-      background: var(--black);
+      background: var(--grey-700);
    }
    @media (min-width: 992px) {
       .form-center {

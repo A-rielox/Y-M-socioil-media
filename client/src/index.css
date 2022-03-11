@@ -13,7 +13,7 @@ html {
 
 :root {
    /* colores principales */
-   --primary-50: #e0fcff;
+   /* --primary-50: #e0fcff;
    --primary-100: #bef8fd;
    --primary-200: #87eaf2;
    --primary-300: #54d1db;
@@ -22,10 +22,21 @@ html {
    --primary-600: #14919b;
    --primary-700: #0e7c86;
    --primary-800: #0a6c74;
-   --primary-900: #044e54;
+   --primary-900: #044e54; */
+
+   --primary-50: #dddff2;
+   --primary-100: #c9cbea;
+   --primary-200: #b5b8e2;
+   --primary-300: #a1a5db;
+   --primary-400: #8c91d3;
+   --primary-500: #787ecb;
+   --primary-600: #666bad;
+   --primary-700: #54588e;
+   --primary-800: #424570;
+   --primary-900: #303251;
 
    /* PLOMOS */
-   --grey-50: #f0f4f8;
+   /* --grey-50: #f0f4f8;
    --grey-100: #d9e2ec;
    --grey-200: #bcccdc;
    --grey-300: #9fb3c8;
@@ -34,7 +45,22 @@ html {
    --grey-600: #486581;
    --grey-700: #334e68;
    --grey-800: #243b53;
-   --grey-900: #102a43;
+   --grey-900: #102a43; */
+   /* https://noeldelgado.github.io/shadowlord/#8678a7 */
+   --grey-10: #f3f2f6;
+   /* --grey-50: #e1dde9; */
+   --grey-50: #f3f2f6;
+   --grey-100: #cfc9dc;
+   --grey-200: #bcb5cf;
+   --grey-300: #aaa1c1;
+   --grey-400: #988cb4;
+   --grey-500: #8678a7;
+   --grey-600: #72668e;
+   --grey-700: #5e5475;
+   --grey-800: #4a425c;
+   --grey-900: #363043;
+   --grey-1000: #221e2a;
+
    /* RESTO DE COLORES */
    --black: #222;
    --white: #fff;
