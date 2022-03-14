@@ -9,12 +9,14 @@ import mongoose from 'mongoose';
 //'/api/v1/recipes' -- .post(createRecipe)
 const createRecipe = async (req, res) => {
    // prettier-ignore
-   const {oilsList, problemsList,title,desc} = req.body;
+   const {oilsList, problemsList, title, desc} = req.body;
+   console.log(req.body);
 
    if (!title || oilsList.length === 0 || problemsList.length === 0 || !desc) {
       throw new BadRequestError('Favor proveer todos los valores');
    }
 
+   // en lugar de mandar el nombre y level por el front ( q allá lo saco del user cuando se logea, lo podría poner en el token y sacar de acá del req.user )
    req.body.createdBy = req.user.userId;
 
    // OJO q estoy pasando todo el req.body

@@ -26,8 +26,16 @@ const Recipe = ({
    desc,
    createdAt,
    createdBy,
+   userNane,
+   userLevel,
 }) => {
    const { setEditRecipe, deleteRecipe, user } = useAppContext();
+   console.log(userNane, userLevel);
+   let colorLevel = userLevel.split(' ');
+   console.log(colorLevel[colorLevel.length - 1]);
+
+   console.log(colorLevel);
+   colorLevel = colorLevel[colorLevel.length - 1];
 
    let date = moment(createdAt);
    date = date.format('MMM Do, YYYY');
@@ -78,7 +86,7 @@ const Recipe = ({
                      </Link>
                   ) : (
                      <button type="button" className={`btn status diamond`}>
-                        autor
+                        {userNane}
                      </button>
                   )}
                   {user._id === createdBy ? (
@@ -90,8 +98,11 @@ const Recipe = ({
                         borrar
                      </button>
                   ) : (
-                     <button type="button" className={`btn status silver`}>
-                        silver
+                     <button
+                        type="button"
+                        className={`btn status ${colorLevel}`}
+                     >
+                        {userLevel}
                      </button>
                   )}
 
@@ -171,6 +182,7 @@ const Wrapper = styled.article`
    }
 
    /* 
+   distribuidor silver
    star		#b500ff
    senior star	#c900c9
    executive	#d70000
@@ -181,39 +193,45 @@ const Wrapper = styled.article`
    crown diamond	#3f15d0
    r.c. diamond	#6500a3
    */
-   .star {
+
+   .distribuidor {
+      background: rgba(191, 191, 191, 0.3);
+      color: var(--textColor);
+   }
+
+   .estrella {
       background: rgba(181, 0, 255, 0.3);
       color: var(--textColor);
    }
-   .senior {
+   .mayor {
       background: rgba(201, 0, 201, 0.3);
       color: var(--textColor);
    }
-   .executive {
+   .ejecutivo {
       color: var(--textColor);
       background: rgba(215, 0, 0, 0.3);
    }
-   .silver {
+   .plata {
       color: var(--textColor);
       background: rgba(161, 0, 0, 0.3);
    }
-   .gold {
+   .oro {
       color: var(--textColor);
       background: rgba(243, 255, 0, 0.3);
    }
-   .platinum {
+   .platino {
       color: var(--textColor);
       background: rgba(0, 249, 0, 0.3);
    }
-   .diamond {
+   .diamante {
       color: var(--textColor);
       background: rgba(5, 130, 16, 0.3);
    }
-   .crown {
+   .corona {
       color: var(--textColor);
       background: rgba(63, 21, 208, 0.3);
    }
-   .royal {
+   .real {
       color: var(--textColor);
       background: rgba(101, 0, 163, 0.3);
    }

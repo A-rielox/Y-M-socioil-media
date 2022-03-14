@@ -176,7 +176,7 @@ const AppProvider = ({ children }) => {
 
       clearAlert();
    };
-   
+
    const loginUser = async currentUser => {
       dispatch({ type: LOGIN_USER_BEGIN });
 
@@ -255,12 +255,12 @@ const AppProvider = ({ children }) => {
       try {
          // prettier-ignore
          const {
-            title,desc,oil1,oil2,oil3,oil4,oil5,problem1,problem2,problem3
+            title,desc,oil1,oil2,oil3,oil4,oil5,problem1,problem2,problem3,user:{ name: userNane }, user:{ level: userLevel }
          } = state;
 
          // prettier-ignore
          await authFetch.post('/recipes', {
-            oilsList, problemsList,title,desc,oil1,oil2,oil3,oil4,oil5,problem1,problem2,problem3,
+            oilsList, problemsList,title, desc, oil1, oil2, oil3, oil4, oil5, problem1, problem2, problem3, userNane, userLevel
          });
 
          dispatch({ type: CREATE_RECIPE_SUCCESS });
@@ -279,6 +279,9 @@ const AppProvider = ({ children }) => {
    // aqui creo list4Problems en el reducer en GET_RECIPES_SUCCESS
    // list4Problems: [], ----  search, searchOil, searchProblem, sort
    const getRecipes = async () => {
+      console.log(user);
+      console.log(state.user);
+      
       const { search, searchOil, searchProblem, sort, page } = state;
       let url = `/recipes?page=${page}&oilsList=${searchOil}&problemsList=${searchProblem}&sort=${sort}`;
 
