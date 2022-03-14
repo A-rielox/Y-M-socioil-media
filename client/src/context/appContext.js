@@ -211,6 +211,7 @@ const AppProvider = ({ children }) => {
       removeUserFromLocalStorage();
    };
 
+   // al hacer el updateUser se me actualiza altiro el state xq acá los meto con la respuesta
    const updateUser = async currentUser => {
       dispatch({ type: UPDATE_USER_BEGIN });
 
@@ -279,9 +280,6 @@ const AppProvider = ({ children }) => {
    // aqui creo list4Problems en el reducer en GET_RECIPES_SUCCESS
    // list4Problems: [], ----  search, searchOil, searchProblem, sort
    const getRecipes = async () => {
-      console.log(user);
-      console.log(state.user);
-      
       const { search, searchOil, searchProblem, sort, page } = state;
       let url = `/recipes?page=${page}&oilsList=${searchOil}&problemsList=${searchProblem}&sort=${sort}`;
 

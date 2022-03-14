@@ -30,15 +30,32 @@ const Recipe = ({
    userLevel,
 }) => {
    const { setEditRecipe, deleteRecipe, user } = useAppContext();
-   console.log(userNane, userLevel);
    let colorLevel = userLevel.split(' ');
-   console.log(colorLevel[colorLevel.length - 1]);
 
-   console.log(colorLevel);
+   // arreglo para class del color del nivel
    colorLevel = colorLevel[colorLevel.length - 1];
 
+   // arreglo del string del nivel
+
+   const newStr = userLevel.split(' ');
+   let levelToDisplay = [];
+   for (let i = 0; i < 3; i++) {
+      if (i === 0) {
+         levelToDisplay.push(newStr[i]);
+      } else if (i === 1) {
+         if (newStr[i]) {
+            levelToDisplay.push(` ${newStr[i][0]}.`);
+         }
+      } else if (i === 2) {
+         if (newStr[i]) {
+            levelToDisplay.push(` ${newStr[i][0]}.`);
+         }
+      }
+   }
+   levelToDisplay = levelToDisplay.join('');
+
    let date = moment(createdAt);
-   date = date.format('MMM Do, YYYY');
+   date = date.format('MMM, YYYY');
 
    return (
       <Wrapper>
@@ -85,7 +102,7 @@ const Recipe = ({
                         editar
                      </Link>
                   ) : (
-                     <button type="button" className={`btn status diamond`}>
+                     <button type="button" className={`btn btn-user`}>
                         {userNane}
                      </button>
                   )}
@@ -102,7 +119,7 @@ const Recipe = ({
                         type="button"
                         className={`btn status ${colorLevel}`}
                      >
-                        {userLevel}
+                        {levelToDisplay}
                      </button>
                   )}
 
@@ -267,11 +284,21 @@ const Wrapper = styled.article`
       text-transform: capitalize;
       letter-spacing: var(--letterSpacing);
       text-align: center;
-      width: 100px;
+      width: auto;
       height: 30px;
+      font-size: 0.8rem;
 
-      margin-right: 0.5rem;
+      margin-left: 0.5rem;
    }
+
+   .actions {
+      .btn-user {
+         font-size: 0.8rem;
+         /* margin-left: 0.5rem; */
+         font-weight: bold;
+      }
+   }
+
    footer {
       margin-top: 1rem;
       display: flex;
@@ -283,6 +310,7 @@ const Wrapper = styled.article`
       letter-spacing: var(--letterSpacing);
       cursor: pointer;
       height: 30px;
+      font-size: 0.8rem;
    }
    .edit-btn {
       color: var(--green-dark);

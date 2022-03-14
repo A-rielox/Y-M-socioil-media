@@ -1,4 +1,4 @@
-import { InputSimple, Alert } from '../../components';
+import { InputSimple, InputSelect, Alert } from '../../components';
 import { useState } from 'react';
 import { useAppContext } from '../../context/appContext';
 import styled from 'styled-components';
@@ -10,6 +10,20 @@ const Profile = () => {
    const [email, setEmail] = useState(user?.email);
    const [lastName, setLastName] = useState(user?.lastName);
    const [location, setLocation] = useState(user?.location);
+   const [level, setLevel] = useState(user?.level);
+
+   const levelList = [
+      'distribuidor',
+      'estrella',
+      'estrella mayor',
+      'ejecutivo',
+      'plata',
+      'oro',
+      'platino',
+      'diamante',
+      'diamante corona',
+      'diamante corona real',
+   ];
 
    const handleSubmit = e => {
       e.preventDefault();
@@ -20,7 +34,7 @@ const Profile = () => {
          return;
       }
 
-      updateUser({ name, email, lastName, location });
+      updateUser({ name, email, lastName, location, level });
    };
 
    return (
@@ -60,6 +74,15 @@ const Profile = () => {
                   value={location}
                   changeStateValues={e => setLocation(e.target.value)}
                />
+
+               <InputSelect
+                  labelText="nivel"
+                  key="nivel"
+                  name="level"
+                  value={level}
+                  changeStateValues={e => setLevel(e.target.value)}
+                  list={levelList}
+               ></InputSelect>
 
                <button
                   className="btn btn-block"

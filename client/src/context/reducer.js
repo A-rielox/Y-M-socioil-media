@@ -136,6 +136,7 @@ const reducer = (state, action) => {
    }
    if (action.type === UPDATE_USER_SUCCESS) {
       const { user, token, location } = action.payload;
+      console.log(user);
 
       return {
          ...state,
@@ -231,7 +232,6 @@ const reducer = (state, action) => {
       let tempRecipes = [...recipes];
       let list4Problems = tempRecipes.map(recipe => recipe.problemsList);
       list4Problems = [...new Set(list4Problems.flat())];
-      console.log(list4Problems);
 
       return {
          ...state,
