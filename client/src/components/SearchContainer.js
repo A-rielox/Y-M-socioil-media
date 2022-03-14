@@ -46,7 +46,7 @@ const SearchContainer = () => {
 
                {/* search by oil */}
                <InputSelect
-                  labelText="que contenga el aceitito"
+                  labelText="con aceitito"
                   name="searchOil"
                   value={searchOil}
                   changeStateValues={handleSearch}

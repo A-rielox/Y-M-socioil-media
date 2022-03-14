@@ -65,7 +65,7 @@ const reducer = (state, action) => {
          jobLocation: location,
          showAlert: true,
          alertType: 'success',
-         alertText: 'Usuario creado 👍, redirigiendo ...',
+         alertText: 'Usuario creado 👍 ...',
       };
    }
    if (action.type === REGISTER_USER_ERROR) {
@@ -97,7 +97,7 @@ const reducer = (state, action) => {
          jobLocation: location,
          showAlert: true,
          alertType: 'success',
-         alertText: 'Usuario ingresado 👍, redirigiendo ...',
+         alertText: 'Usuario ingresado 👍 ...',
       };
    }
    if (action.type === LOGIN_USER_ERROR) {

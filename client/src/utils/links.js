@@ -12,7 +12,7 @@ const links = [
    },
    {
       id: 2,
-      text: 'todas las recetitas',
+      text: 'las recetitas',
       path: 'all-recipes',
       icon: <GiHealthPotion />,
    },

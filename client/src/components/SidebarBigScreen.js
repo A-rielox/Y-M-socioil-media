@@ -101,7 +101,7 @@ const Wrapper = styled.aside`
       .nav-link {
          display: flex;
          align-items: center;
-         color: var(--primary-500);
+         color: var(--grey-text);
          padding: 1rem 0;
          padding-left: 2.5rem;
          text-transform: capitalize;
@@ -121,6 +121,8 @@ const Wrapper = styled.aside`
          display: grid;
          place-items: center;
          transition: var(--transition);
+
+         color: var(--primary-500);
       }
       .active {
          background: var(--primary-500);

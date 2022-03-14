@@ -5,7 +5,8 @@
 }
 
 /* FUENTES IMPORT */
-@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Roboto+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap');
+/* font-family: 'Nunito Sans', sans-serif; */
 
 html {
    font-size: 100%;
@@ -13,17 +14,6 @@ html {
 
 :root {
    /* colores principales */
-   /* --primary-50: #e0fcff;
-   --primary-100: #bef8fd;
-   --primary-200: #87eaf2;
-   --primary-300: #54d1db;
-   --primary-400: #38bec9;
-   --primary-500: #2cb1bc;
-   --primary-600: #14919b;
-   --primary-700: #0e7c86;
-   --primary-800: #0a6c74;
-   --primary-900: #044e54; */
-
    --primary-50: #dddff2;
    --primary-100: #c9cbea;
    --primary-200: #b5b8e2;
@@ -36,20 +26,10 @@ html {
    --primary-900: #303251;
 
    /* PLOMOS */
-   /* --grey-50: #f0f4f8;
-   --grey-100: #d9e2ec;
-   --grey-200: #bcccdc;
-   --grey-300: #9fb3c8;
-   --grey-400: #829ab1;
-   --grey-500: #627d98;
-   --grey-600: #486581;
-   --grey-700: #334e68;
-   --grey-800: #243b53;
-   --grey-900: #102a43; */
    /* https://noeldelgado.github.io/shadowlord/#8678a7 */
    --grey-10: #f3f2f6;
    /* --grey-50: #e1dde9; */
-   --grey-50: #f3f2f6;
+   --grey-50: #fbfbff;
    --grey-100: #cfc9dc;
    --grey-200: #bcb5cf;
    --grey-300: #aaa1c1;
@@ -63,6 +43,7 @@ html {
 
    /* RESTO DE COLORES */
    --black: #222;
+   --grey-text: #9da9bb;
    --white: #fff;
    --red-light: #f8d7da;
    --red-dark: #842029;
@@ -70,13 +51,13 @@ html {
    --green-dark: #0f5132;
 
    /* FUENTES  */
-   --headingFont: 'Roboto Condensed', Sans-Serif;
-   --bodyFont: 'Cabin', Sans-Serif;
+   --headingFont: 'Nunito Sans', sans-serif;
+   --bodyFont: 'Nunito Sans', sans-serif;
    --small-text: 0.875rem;
    --extra-small-text: 0.7em;
    /* MAS VARS */
    --backgroundColor: var(--grey-50);
-   --textColor: var(--grey-900);
+   --textColor: #1c2f50;
    --borderRadius: 0.25rem;
    --letterSpacing: 1px;
    --transition: 0.3s ease-in-out all;
@@ -106,6 +87,7 @@ body {
 p {
    margin-bottom: 1.5rem;
    max-width: 40em;
+   color: #6e7785;
 }
 
 h1,
@@ -326,7 +308,7 @@ ul {
 .full-page {
    min-height: 100vh;
 }
-
+/* 
 .coffee-info {
    text-align: center;
    text-transform: capitalize;
@@ -348,4 +330,4 @@ ul {
       display: inline-block;
       margin-right: 0.5rem;
    }
-}
+} */

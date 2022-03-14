@@ -108,7 +108,7 @@ const Wrapper = styled.aside`
    .nav-link {
       display: flex;
       align-items: center;
-      color: var(--primary-500);
+      color: var(--grey-text);
       padding: 1rem 3rem;
       padding-left: 2.5rem;
       text-transform: capitalize;
@@ -116,8 +116,8 @@ const Wrapper = styled.aside`
    }
    .nav-link:hover {
       background: var(--primary-300);
-      /* padding-left: 3rem;
-      color: var(--white); */
+      /* padding-left: 3rem; */
+      color: var(--white);
    }
    .nav-link:hover .icon {
       color: var(--white);
@@ -128,6 +128,8 @@ const Wrapper = styled.aside`
       display: grid;
       place-items: center;
       transition: var(--transition);
+
+      color: var(--primary-500);
    }
    .active {
       background: var(--primary-500);

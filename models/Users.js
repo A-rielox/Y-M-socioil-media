@@ -38,6 +38,42 @@ const UserSchema = new mongoose.Schema({
       maxlength: 20,
       default: 'Mi Ciudad',
    },
+   // agregados
+   role: {
+      type: String,
+      enum: ['admin', 'user'],
+      default: 'user',
+   },
+   // isAdmin: {
+   //    type: Boolean,
+   //    default: false,
+   // },
+   level: {
+      type: String,
+      required: [true, 'Favor de proveer un rango'],
+      enum: [
+         'distribuidor',
+         'estrella',
+         'estrella mayor',
+         'ejecutivo',
+         'plata',
+         'oro',
+         'platino',
+         'diamante',
+         'diamante corona',
+         'diamante corona real',
+      ],
+
+      default: 'distribuidor',
+   },
+   profilePicture: {
+      type: String,
+      default: '',
+   },
+   coverPicture: {
+      type: String,
+      default: '',
+   },
 });
 
 // 📑 PRE-HOOK

@@ -64,13 +64,11 @@ const Recipe = ({
                   })}
                </ul>
                <p>{desc}</p>
-
-               <RecipeInfo icon={<FaCalendarAlt />} text={date} />
             </div>
 
             <footer>
                <div className="actions">
-                  {user._id === createdBy && (
+                  {user._id === createdBy ? (
                      <Link
                         to="/add-recipe"
                         onClick={() => setEditRecipe(_id)}
@@ -78,8 +76,12 @@ const Recipe = ({
                      >
                         editar
                      </Link>
+                  ) : (
+                     <button type="button" className={`btn status diamond`}>
+                        autor
+                     </button>
                   )}
-                  {user._id === createdBy && (
+                  {user._id === createdBy ? (
                      <button
                         type="button"
                         className="btn delete-btn"
@@ -87,18 +89,16 @@ const Recipe = ({
                      >
                         borrar
                      </button>
+                  ) : (
+                     <button type="button" className={`btn status silver`}>
+                        silver
+                     </button>
                   )}
 
                   {/* <div className={`status ${status}`}>{status}</div> */}
-
-                  <button type="button" className={`btn status platinum`}>
-                     autor 👍
-                  </button>
-
-                  <button type="button" className={`btn status silver`}>
-                     silver
-                  </button>
                </div>
+
+               <RecipeInfo icon={<FaCalendarAlt />} text={date} />
             </footer>
          </div>
       </Wrapper>
@@ -182,40 +182,40 @@ const Wrapper = styled.article`
    r.c. diamond	#6500a3
    */
    .star {
-      background: #b500ff;
-      color: black;
+      background: rgba(181, 0, 255, 0.3);
+      color: var(--textColor);
    }
    .senior {
-      background: #c900c9;
-      color: black;
+      background: rgba(201, 0, 201, 0.3);
+      color: var(--textColor);
    }
    .executive {
-      color: black;
-      background: #d70000;
+      color: var(--textColor);
+      background: rgba(215, 0, 0, 0.3);
    }
    .silver {
-      color: white;
-      background: #a10000;
+      color: var(--textColor);
+      background: rgba(161, 0, 0, 0.3);
    }
    .gold {
-      color: black;
-      background: #f3ff00;
+      color: var(--textColor);
+      background: rgba(243, 255, 0, 0.3);
    }
    .platinum {
-      color: black;
-      background: #00f900;
+      color: var(--textColor);
+      background: rgba(0, 249, 0, 0.3);
    }
    .diamond {
-      color: white;
-      background: #058210;
+      color: var(--textColor);
+      background: rgba(5, 130, 16, 0.3);
    }
    .crown {
-      color: black;
-      background: #3f15d0;
+      color: var(--textColor);
+      background: rgba(63, 21, 208, 0.3);
    }
    .royal {
-      color: black;
-      background: #6500a3;
+      color: var(--textColor);
+      background: rgba(101, 0, 163, 0.3);
    }
 
    .content {
@@ -251,6 +251,8 @@ const Wrapper = styled.article`
       text-align: center;
       width: 100px;
       height: 30px;
+
+      margin-right: 0.5rem;
    }
    footer {
       margin-top: 1rem;

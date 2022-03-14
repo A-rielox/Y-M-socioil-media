@@ -176,7 +176,7 @@ const AppProvider = ({ children }) => {
 
       clearAlert();
    };
-
+   
    const loginUser = async currentUser => {
       dispatch({ type: LOGIN_USER_BEGIN });
 
