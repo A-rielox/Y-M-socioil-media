@@ -1,9 +1,21 @@
+import { useEffect } from 'react';
+
 import { useAppContext } from '../../context/appContext';
 import styled from 'styled-components';
 import { InputSimple, Alert, InputSelect } from '../../components';
 
 // los valores los pongo en el global ( y no en la pura pag como en el register ) xq para editar y agregar receta voy a ocupar la misma pag ( y la diferencia en la pag la hago con el "isEditing" )
 const AddRecipe = () => {
+   // red red PRUEBA red red
+   useEffect(() => {
+      // Anything in here is fired on component mount.
+      return () => {
+         // Anything in here is fired on component unmount.
+         console.log('desmontado');
+         clearValues();
+      };
+   }, []);
+
    const {
       isLoading,
       showAlert,
