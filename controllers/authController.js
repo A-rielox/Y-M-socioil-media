@@ -93,7 +93,39 @@ const updateUser = async (req, res) => {
    });
 };
 
-export { register, login, updateUser };
+// '/api/v1/auth'
+// ('/getUser').get(authenticateUser, getUser);
+const getUser = async (req, res) => {
+   if (!req.query.userId) {
+      throw new BadRequestError('Favor introducir userId');
+   }
+   const userId = req.query.userId;
+
+   const user = await User.findById(userId);
+   if (!user) {
+      throw new NotFoundError(`No encontramos usuario con id: ${userId}`);
+   }
+
+   const { _id, name, lastName, role, level, profilePicture } = user;
+
+   const queryUser = { _id, name, lastName, role, level, profilePicture };
+
+   // user:
+   // "_id": "622f4542a381cb0d141b2e5a",
+   //   "name": "pepi",
+   //   "email": "pepi@mail.com",
+   //   "lastName": "Mi Apellido",
+   //   "location": "Mi Ciudad",
+   //   "role": "user",
+   //   "level": "ejecutivo",
+   //   "profilePicture": "",
+   //   "coverPicture": "",
+   //   "__v": 0
+
+   res.status(StatusCodes.OK).json({ queryUser });
+};
+
+export { register, login, updateUser, getUser };
 
 //
 // en el blog q hice, para hacer update ponia, lo de abajo para actualizar todo lo q se pusiera en el req.body, pero me arriesgo a q ponga algo ( de alguna forma ) como si es admin o algo q no debe, DE LA FORMA DE AQUI ARRIBA SOLO ACTUALIZO LAS Q YO PONGO ACÁ 😭😭😭😭😭.
