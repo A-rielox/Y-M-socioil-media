@@ -1,3 +1,7 @@
+import { useEffect, useState } from 'react';
+// import axios from 'axios';
+import Loading from './Loading';
+
 import { FaCalendarAlt } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
 import { BsFillDropletFill } from 'react-icons/bs';
@@ -26,18 +30,41 @@ const Recipe = ({
    desc,
    createdAt,
    createdBy,
-   userNane,
-   userLevel,
+   userNane, // quitar
+   userLevel, // quitar
 }) => {
-   const { setEditRecipe, deleteRecipe, user } = useAppContext();
-   let colorLevel = userLevel.split(' ');
+   const { setEditRecipe, deleteRecipe, user, authFetch } = useAppContext();
+   const [recipeUser, setRecipeUser] = useState(null);
+
+   useEffect(() => {
+      const fetchUser = async () => {
+         const {
+            data: { queryUser },
+         } = await authFetch.get(`/auth/getUser?userId=${createdBy}`);
+
+         setRecipeUser(queryUser);
+      };
+
+      // lastName: "Mi Apellido"
+      // level: "ejecutivo"
+      // name: "pepi"
+      // profilePicture: ""
+      // role: "user"
+      // _id: "622f4542a381cb0d141b2e5a"
+
+      fetchUser();
+   }, [_id]);
+
+   if (!recipeUser) {
+      return <Loading center />;
+   }
 
    // arreglo para class del color del nivel
+   let colorLevel = recipeUser.level.split(' ');
    colorLevel = colorLevel[colorLevel.length - 1];
 
    // arreglo del string del nivel
-
-   const newStr = userLevel.split(' ');
+   const newStr = recipeUser.level.split(' ');
    let levelToDisplay = [];
    for (let i = 0; i < 3; i++) {
       if (i === 0) {
@@ -54,6 +81,9 @@ const Recipe = ({
    }
    levelToDisplay = levelToDisplay.join('');
 
+   // arreglo para nombre a desplegar red red pendiente cortar a 1er nombre red red
+
+   // fecha a despegar
    let date = moment(createdAt);
    date = date.format('MMM, YYYY');
 
@@ -103,7 +133,7 @@ const Recipe = ({
                      </Link>
                   ) : (
                      <button type="button" className={`btn btn-user`}>
-                        {userNane}
+                        {recipeUser.name}
                      </button>
                   )}
                   {user._id === createdBy ? (
