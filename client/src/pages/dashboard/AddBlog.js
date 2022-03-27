@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { Alert } from '../../components';
+import { Alert, Editor } from '../../components';
 
 const AddBlog = () => {
    const isEditing = false;
    const showAlert = false;
    const isLoading = false;
+
+   const [content, setContent] = useState('');
+   const testContent =
+      '<h2>El titulazo</h2><p><img src="https://images.pexels.com/photos/161599/scent-sticks-fragrance-aromatic-161599.jpeg?cs=srgb&amp;dl=pexels-pixabay-161599.jpg&amp;fm=jpg" width="400px" style="width: 400px; height: 266px; display: block; margin-left: auto; margin-right: auto;"></p><p>Como dijo Gary</p><blockquote>Abundance for me</blockquote><p>Las props:</p><ul><li>2 gotas de limon</li><li>2 gotas sandalo</li></ul><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique neque sed a minima minus necessitatibus dolorem blanditiis inventore. Ducimus molestias excepturi repudiandae error repellendus sed qui sunt harum optio earum!</p>';
+
+   console.log(content);
 
    return (
       <Wrapper>
@@ -15,28 +21,33 @@ const AddBlog = () => {
             {showAlert && <Alert />}
 
             <div className="form-center">
-               {/*     */}
+               {/* <Editor initialValue="" setContent={setContent} /> */}
+               <Editor initialValue={testContent} setContent={setContent} />
 
-               <button
-                  className="btn btn-block submit-btn"
-                  type="submit"
-                  onClick={() => console.log('click en enviar')}
-                  disabled={isLoading}
-               >
-                  enviar
-               </button>
+               <div className="btn-container">
+                  <button
+                     className="btn btn-block submit-btn"
+                     type="submit"
+                     onClick={() => console.log('click en enviar')}
+                     disabled={isLoading}
+                  >
+                     enviar
+                  </button>
 
-               {/* este tiene q ir despues del submit button  */}
-               <button
-                  className="btn btn-block clear-btn"
-                  // onClick={e => {
-                  //    e.preventDefault();
-                  //    clearValues();
-                  // }}
-                  onClick={() => console.log('click en limpiar')}
-               >
-                  limpiar
-               </button>
+                  {/* este tiene q ir despues del submit button  */}
+                  <button
+                     className="btn btn-block clear-btn"
+                     // onClick={e => {
+                     //    e.preventDefault();
+                     //    clearValues();
+                     // }}
+                     onClick={() => console.log('click en limpiar')}
+                  >
+                     limpiar
+                  </button>
+               </div>
+
+               <div className="XXXXXX">{content}</div>
             </div>
          </form>
       </Wrapper>
@@ -63,71 +74,66 @@ const Wrapper = styled.section`
       max-width: 100%;
       width: 100%;
    }
-   .form-row {
-      margin-bottom: 0;
-   }
+
    .form-center {
-      display: grid;
-      row-gap: 0.5rem;
+      display: flex;
+      flex-direction: column;
    }
+
+   .jodit-react-container {
+      width: 100%;
+
+      p {
+         margin-bottom: 0.5rem;
+         max-width: 40em;
+         color: #6e7785;
+      }
+
+      ul {
+         list-style-type: disc;
+         /* padding: 1rem; */
+         margin-top: 0;
+         padding-top: 0;
+         padding-bottom: 0.5rem;
+         padding-left: 2rem;
+      }
+   }
+
+   .jodit-status-bar {
+      visibility: collapse;
+   }
+
    .form-center button {
       align-self: end;
       height: 35px;
       margin-top: 1rem;
    }
-   /* .btn-container {
+   .btn-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
       column-gap: 1rem;
       align-self: flex-end;
       margin-top: 0.5rem;
-      button {
-         height: 35px;
-      }
-   } */
+   }
    .clear-btn {
       background: var(--grey-500);
    }
    .clear-btn:hover {
       background: var(--grey-700);
    }
-   @media (min-width: 992px) {
-      .form-center {
-         grid-template-columns: 1fr 1fr;
-         align-items: center;
-         column-gap: 1rem;
-      }
 
-      .btn-container {
-         margin-top: 0;
-      }
-   }
    @media (min-width: 1120px) {
       .form {
          margin: 0 auto;
-         /* border-radius: 0;
-      box-shadow: none;
-      padding: 0; */
-         max-width: 80%;
-         width: 100%;
-      }
-
-      .form-center {
-         grid-template-columns: 1fr 1fr /* 1fr */;
-      }
-      .form-center button {
-         margin-top: 0;
+         max-width: 740px;
       }
 
       .btn-container {
-         display: grid;
-         grid-template-columns: 1fr;
          row-gap: 1rem;
-         align-self: flex-end;
-         /* margin-top: 0.5rem; */
-         /* padding-top: 2rem; */
+
          button {
-            height: 35px;
+            height: auto;
+            padding: 1rem 2.5rem;
          }
       }
    }

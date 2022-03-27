@@ -13,6 +13,7 @@ import Navbar from './Navbar';
 
 import BlogsContainer from './BlogsContainer';
 import SearchBlogsContainer from './SearchBlogsContainer';
+import Editor from './Editor';
 
 export {
    PageBtnContainer,
@@ -29,4 +30,5 @@ export {
    InputSelect,
    BlogsContainer,
    SearchBlogsContainer,
+   Editor,
 };

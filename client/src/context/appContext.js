@@ -358,6 +358,10 @@ const AppProvider = ({ children }) => {
       dispatch({ type: CHANGE_PAGE, payload: { page } });
    };
 
+   // yellow yellow //  // yellow yellow //
+   // yellow ======= BLOG ======= yellow //
+   // yellow yellow //  // yellow yellow //
+
    return (
       <AppContext.Provider
          value={{
