@@ -6,8 +6,10 @@ import {
    Profile,
    SharedLayout,
    Stats,
+   AllBlogs,
+   AddBlog,
 } from './pages/dashboard';
-   
+
 function App() {
    return (
       <BrowserRouter>
@@ -23,6 +25,10 @@ function App() {
                <Route index element={<Stats />} />
                <Route path="all-recipes" element={<AllRecipes />} />
                <Route path="add-recipe" element={<AddRecipe />} />
+
+               <Route path="all-blogs" element={<AllBlogs />} />
+               <Route path="add-blog" element={<AddBlog />} />
+
                <Route path="profile" element={<Profile />} />
             </Route>
 

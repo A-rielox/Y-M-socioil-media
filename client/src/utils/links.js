@@ -1,3 +1,4 @@
+import { HiOutlineClipboardList } from 'react-icons/hi';
 import { IoBarChartSharp } from 'react-icons/io5';
 import { GiHealthPotion } from 'react-icons/gi';
 import { GiPotionBall } from 'react-icons/gi';
@@ -6,9 +7,9 @@ import { ImProfile } from 'react-icons/im';
 const links = [
    {
       id: 1,
-      text: 'estadísticas',
+      text: 'Principal',
       path: '/',
-      icon: <IoBarChartSharp />,
+      icon: <HiOutlineClipboardList />,
    },
    {
       id: 2,
