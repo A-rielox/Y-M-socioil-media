@@ -11,6 +11,9 @@ import SidebarSmallScreen from './SidebarSmallScreen';
 import Loading from './Loading';
 import Navbar from './Navbar';
 
+import BlogsContainer from './BlogsContainer';
+import SearchBlogsContainer from './SearchBlogsContainer';
+
 export {
    PageBtnContainer,
    Alert,
@@ -24,4 +27,6 @@ export {
    SearchContainer,
    Loading,
    InputSelect,
+   BlogsContainer,
+   SearchBlogsContainer,
 };

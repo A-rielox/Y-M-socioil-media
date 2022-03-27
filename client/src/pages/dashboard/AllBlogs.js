@@ -1,7 +1,12 @@
-import React from 'react';
+import { SearchBlogsContainer, BlogsContainer } from '../../components';
 
 const AllBlogs = () => {
-   return <div>AllBlogs</div>;
+   return (
+      <>
+         <SearchBlogsContainer />
+         <BlogsContainer />
+      </>
+   );
 };
 
 export default AllBlogs;

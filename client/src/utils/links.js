@@ -1,7 +1,8 @@
 import { HiOutlineClipboardList } from 'react-icons/hi';
 import { IoBarChartSharp } from 'react-icons/io5';
 import { GiHealthPotion } from 'react-icons/gi';
-import { GiPotionBall } from 'react-icons/gi';
+import { GiPotionBall, GiBookmark } from 'react-icons/gi';
+import { BiEditAlt } from 'react-icons/bi';
 import { ImProfile } from 'react-icons/im';
 
 const links = [
@@ -25,6 +26,18 @@ const links = [
    },
    {
       id: 4,
+      text: 'los blogs',
+      path: 'all-blogs',
+      icon: <GiBookmark />,
+   },
+   {
+      id: 5,
+      text: 'añadir blog',
+      path: 'add-blog',
+      icon: <BiEditAlt />,
+   },
+   {
+      id: 6,
       text: 'perfil',
       path: 'profile',
       icon: <ImProfile />,
@@ -32,3 +45,6 @@ const links = [
 ];
 
 export default links;
+
+/* BiEditAlt */
+/* GiBookmark */
