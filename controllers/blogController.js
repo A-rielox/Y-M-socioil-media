@@ -24,17 +24,18 @@ const createBlog = async (req, res) => {
 };
 
 //'/api/v1/blogs' -- .route('/:id').delete(deleteBlog)
-const deleteRecipe = async (req, res) => {
+const deleteBlog = async (req, res) => {
    const { id: blogId } = req.params;
 
    const blog = await Blog.findOne({ _id: blogId });
    if (!blog) {
-      throw new NotFoundError(`No encontramos receta con id: ${blogId}`);
+      throw new NotFoundError(`No encontramos blog con id: ${blogId}`);
    }
 
    checkPermissions(req.user, blog.createdBy);
 
    await blog.remove();
+
    res.status(StatusCodes.OK).json({
       msg: 'Blog eliminado con exito 👏👏👏',
    });
@@ -116,9 +117,9 @@ const updateBlog = async (req, res) => {
       throw new BadRequestError('Favor proveer todos los valores');
    }
 
-   const blog = await Recipe.findOne({ _id: blogId });
+   const blog = await Blog.findOne({ _id: blogId });
    if (!blog) {
-      throw new NotFoundError(`No encontramos receta con id: ${blogId}`);
+      throw new NotFoundError(`No encontramos blog con id: ${blogId}`);
    }
 
    checkPermissions(req.user, blog.createdBy);
@@ -138,4 +139,4 @@ const showStats = async (req, res) => {
    res.send('<h1> show stats</h1>');
 };
 
-export { createBlog, deleteRecipe, getAllBlogs, updateBlog, showStats };
+export { createBlog, deleteBlog, getAllBlogs, updateBlog, showStats };
