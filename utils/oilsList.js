@@ -80,6 +80,8 @@ const oilsList = [
    'Ylang Ylang',
 ];
 
+export default oilsList;
+
 // const oilsList = [
 //    'Abeto de Vancouver (Idaho Grand Fir)',
 //    'Albahaca (Basil)',
@@ -164,8 +166,6 @@ const oilsList = [
 //    'Xiang Mao',
 //    'Ylang Ylang',
 // ];
-
-export default oilsList;
 
 /////////////////////
 ////////////////////

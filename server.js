@@ -71,6 +71,8 @@ import axios from 'axios';
 npm install moment
 import moment from 'moment';
 
+npm i jodit-react
+
 
 
 
