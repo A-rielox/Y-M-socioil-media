@@ -16,7 +16,7 @@ const createRecipe = async (req, res) => {
       throw new BadRequestError('Favor proveer todos los valores');
    }
 
-   // en lugar de mandar el nombre y level por el front ( q allá lo saco del user cuando se logea, lo podría poner en el token y sacar de acá del req.user )
+   // en lugar de mandar el nombre y level por el front ( q allá lo saco del user cuando se logea, lo podría poner en el token y sacar de acá del req.user ) -- YA NO LOS MANDO, HAY Q BORRARLOS DEL MODEL
    req.body.createdBy = req.user.userId;
 
    // OJO q estoy pasando todo el req.body
