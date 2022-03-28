@@ -53,6 +53,8 @@ const getAllBlogs = async (req, res) => {
    // para buscar es: ?status=pending&jobType=boss
    const { search, category, sort } = req.query;
 
+   console.log('getAllBlogs controller');
+
    const queryObject = {};
 
    if (category && category !== 'todas') {

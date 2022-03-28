@@ -31,6 +31,8 @@ import {
    CREATE_BLOG_BEGIN,
    CREATE_BLOG_SUCCESS,
    CREATE_BLOG_ERROR,
+   GET_BLOGS_BEGIN,
+   GET_BLOGS_SUCCESS,
 } from './actions';
 
 const reducer = (state, action) => {
@@ -337,6 +339,26 @@ const reducer = (state, action) => {
          showAlert: true,
          alertType: 'danger',
          alertText: action.payload.msg,
+      };
+   }
+
+   //
+   if (action.type === GET_BLOGS_BEGIN) {
+      return { ...state, isLoading: true, showAlert: false };
+   }
+   if (action.type === GET_BLOGS_SUCCESS) {
+      const { totalBlogs, numOfBlogPages, blogs } = action.payload;
+
+      // let tempRecipes = [...recipes];
+      // let list4Problems = tempRecipes.map(recipe => recipe.problemsList);
+      // list4Problems = [...new Set(list4Problems.flat())];
+
+      return {
+         ...state,
+         isLoading: false,
+         blogs,
+         totalBlogs,
+         numOfBlogPages,
       };
    }
 

@@ -34,6 +34,8 @@ import {
    CREATE_BLOG_BEGIN,
    CREATE_BLOG_SUCCESS,
    CREATE_BLOG_ERROR,
+   GET_BLOGS_BEGIN,
+   GET_BLOGS_SUCCESS,
 } from './actions';
 
 const token = localStorage.getItem('token');
@@ -407,6 +409,33 @@ const AppProvider = ({ children }) => {
       clearAlert();
    };
 
+   const getBlogs = async () => {
+      const { searchBlog, searchCategory, sort, pageBlogs } = state;
+
+      let url = `/blogs?page=${pageBlogs}&category=${searchCategory}&sort=${sort}`;
+
+      // search lo voy a dejar separado xq es el único q puede estar vacio
+      if (searchBlog) {
+         url = url + `&search=${searchBlog}`;
+      }
+
+      dispatch({ type: GET_BLOGS_BEGIN });
+
+      try {
+         const { data } = await authFetch(url);
+         const { totalBlogs, numOfBlogPages, blogs } = data;
+
+         dispatch({
+            type: GET_BLOGS_SUCCESS,
+            payload: { totalBlogs, numOfBlogPages, blogs },
+         });
+      } catch (error) {
+         console.log(error.response);
+         // logoutUser();  red MIENTRAS PRUEBO red
+      }
+      clearAlert();
+   };
+
    return (
       <AppContext.Provider
          value={{
@@ -429,6 +458,7 @@ const AppProvider = ({ children }) => {
             changePage,
             // ====== BLOG
             createBlog,
+            getBlogs,
          }}
       >
          {children}

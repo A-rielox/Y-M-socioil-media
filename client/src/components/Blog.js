@@ -1,27 +1,26 @@
-// import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Loading from './Loading';
 
 import { FaCalendarAlt } from 'react-icons/fa';
-// import { ImCross } from 'react-icons/im';
-// import { BsFillDropletFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-// import { useAppContext } from '../context/appContext';
+import { useAppContext } from '../context/appContext';
 import moment from 'moment';
 import RecipeInfo from './RecipeInfo';
 import styled from 'styled-components';
 
-const Recipe = ({
-   _id,
-   // oilsList,
-   // problemsList,
-   // title,
-   // desc,
-   // createdAt,
-   // createdBy,
-   // userNane, // quitar
-   // userLevel, // quitar
-}) => {
-   // const { setEditRecipe, deleteRecipe, user, authFetch } = useAppContext();
+// category: "malestares"
+// createdAt: "2022-03-28T03:30:41.586Z"
+// createdBy: "622f5b68b8796847b28a315f"
+// desc: "<h2>titulo 1</h2> ... 4 gotas de crema</li></ul>"
+// title: "titulo desde front 1"
+// updatedAt: "2022-03-28T03:30:41.586Z"
+// __v: 0
+// _id: "62412be1794a849b90d3ccb0"
+
+const Blog = ({ _id, title, desc, category, createdAt, createdBy }) => {
+   const { /* setEditRecipe, */ /* deleteRecipe, */ user /* authFetch */ } =
+      useAppContext();
+
    // const [recipeUser, setRecipeUser] = useState(null);
 
    // useEffect(() => {
@@ -65,64 +64,60 @@ const Recipe = ({
    // arreglo para nombre a desplegar red red pendiente cortar a 1er nombre red red
 
    // fecha a despegar
-   let date = moment(new Date());
+   let date = moment(createdAt);
    date = date.format('MMM, YYYY');
 
    return (
       <Wrapper>
          <header>
             <div className="info">
-               <h5>El Blog</h5>
+               <h5>{title}</h5>
 
-               {/* <ul className="ulListProblem">
-                  {problemsList.map((problem, index) => {
-                     return (
-                        <li key={index}>
-                           <ImCross className="icon" />
-                           {problem}
-                        </li>
-                     );
-                  })}
-               </ul> */}
+               <ul className="ulListProblem">
+                  <li># {category}</li>
+               </ul>
             </div>
          </header>
 
          <div className="content">
-            <div className="content-center">
-               {/* <ul className="ulListOil">
-                  {oilsList.map((oil, index) => {
-                     return (
-                        <li key={index}>
-                           <BsFillDropletFill className="icon" />
-                           {oil}
-                        </li>
-                     );
-                  })}
-               </ul> */}
-               <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Eveniet error quam eius nam minus ipsam vitae et facere
-                  possimus eum?
-               </p>
-            </div>
+            <div className="content-center">{desc}</div>
 
             <footer>
                <div className="actions">
-                  <Link
-                     to="/add-recipe"
-                     onClick={() => console.log('click en editar')}
-                     className="btn edit-btn"
-                  >
-                     editar
-                  </Link>
-
-                  <button
-                     type="button"
-                     className="btn delete-btn"
-                     onClick={() => console.log('click en borrar')}
-                  >
-                     borrar
-                  </button>
+                  {user._id === createdBy ? (
+                     <Link
+                        to="/add-blog"
+                        // onClick={() => setEditRecipe(_id)}
+                        onClick={() => console.log('editar ', _id)}
+                        className="btn edit-btn"
+                     >
+                        editar
+                     </Link>
+                  ) : (
+                     <button type="button" className={`btn btn-user`}>
+                        {/* {recipeUser.name} */}
+                        nombre autor
+                     </button>
+                  )}
+                  {user._id === createdBy ? (
+                     <button
+                        type="button"
+                        className="btn delete-btn"
+                        // onClick={() => deleteRecipe(_id)}
+                        onClick={() => console.log('borrar ', _id)}
+                     >
+                        borrar
+                     </button>
+                  ) : (
+                     <button
+                        type="button"
+                        // className={`btn status ${colorLevel}`}
+                        className={`btn status platino`}
+                     >
+                        {/* {levelToDisplay} */}
+                        nivel autor
+                     </button>
+                  )}
 
                   {/* <div className={`status ${status}`}>{status}</div> */}
                </div>
@@ -136,35 +131,12 @@ const Recipe = ({
    /* return (
       <Wrapper>
          <header>
-            <div className="info">
-               <h5>{title}</h5>
-
-               <ul className="ulListProblem">
-                  {problemsList.map((problem, index) => {
-                     return (
-                        <li key={index}>
-                           <ImCross className="icon" />
-                           {problem}
-                        </li>
-                     );
-                  })}
-               </ul>
-            </div>
+            ...
          </header>
 
          <div className="content">
             <div className="content-center">
-               <ul className="ulListOil">
-                  {oilsList.map((oil, index) => {
-                     return (
-                        <li key={index}>
-                           <BsFillDropletFill className="icon" />
-                           {oil}
-                        </li>
-                     );
-                  })}
-               </ul>
-               <p>{desc}</p>
+               ...
             </div>
 
             <footer>
@@ -209,7 +181,7 @@ const Recipe = ({
    ); */
 };
 
-export default Recipe;
+export default Blog;
 
 const Wrapper = styled.article`
    background: var(--white);

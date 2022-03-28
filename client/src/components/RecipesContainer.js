@@ -23,17 +23,6 @@ const RecipesContainer = () => {
       getRecipes();
    }, [search, searchOil, searchProblem, sort, page]);
 
-   // createdAt: "2022-03-06T18:43:51.211Z"
-   // createdBy: "62215237822281526699bee3"
-   // desc: "DESCRIPCION pepi"
-   // oil1: "Angelica" --> a 5
-   // oilsList: (3) ['Angelica', 'Cassia', 'Copaiba']
-   // problem1: "espalda" --> a 3
-   // problemsList: (2) ['espalda', 'pie']
-   // title: "TITULO pepi"
-   // updatedAt: "2022-03-06T18:43:51.211Z"
-   // _id: "622500e7d92400c2e34d395d"
-
    if (isLoading) {
       return <Loading center />;
    }
@@ -65,6 +54,17 @@ const RecipesContainer = () => {
 };
 
 export default RecipesContainer;
+
+// createdAt: "2022-03-06T18:43:51.211Z"
+// createdBy: "62215237822281526699bee3"
+// desc: "DESCRIPCION pepi"
+// oil1: "Angelica" --> a 5
+// oilsList: (3) ['Angelica', 'Cassia', 'Copaiba']
+// problem1: "espalda" --> a 3
+// problemsList: (2) ['espalda', 'pie']
+// title: "TITULO pepi"
+// updatedAt: "2022-03-06T18:43:51.211Z"
+// _id: "622500e7d92400c2e34d395d"
 
 const Wrapper = styled.section`
    margin-top: 4rem;

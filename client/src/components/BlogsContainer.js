@@ -1,31 +1,29 @@
-// import { useAppContext } from '../context/appContext';
+import { useAppContext } from '../context/appContext';
 import Loading from './Loading';
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 // import PageBtnContainer from './PageBtnContainer';
 import Blog from './Blog';
 import styled from 'styled-components';
 
 const BlogsContainer = () => {
-   const isLoading = false;
-   const blogs = [];
-   const totalBlogs = 10;
+   const {
+      getBlogs,
+      blogs,
+      isLoading,
+      pageBlogs,
+      totalBlogs,
 
-   // const {
-   // getRecipes,
-   // recipes,
-   // isLoading,
-   // page,
-   // totalRecipes,
-   // search,
-   // searchOil,
-   // searchProblem,
-   // sort,
-   // numOfPages,
-   // } = useAppContext();
+      searchBlog,
+      searchCategory,
+      sort,
+      numOfBlogPages,
+   } = useAppContext();
 
-   // useEffect(() => {
-   // getRecipes();
-   // }, [search, searchOil, searchProblem, sort, page]);
+   useEffect(() => {
+      getBlogs();
+   }, [searchBlog, searchCategory, sort, pageBlogs]);
+
+   console.log(blogs);
 
    if (isLoading) {
       return <Loading center />;
@@ -42,19 +40,13 @@ const BlogsContainer = () => {
    return (
       <Wrapper>
          <h5>
-            {/* {totalRecipes} receta{recipes.length > 1 && 's'} encontrada */}
-            {/* {recipes.length > 1 && 's'} */}
-            {totalBlogs} receta{blogs.length > 1 && 's'} encontrados
+            {totalBlogs} blog{blogs.length > 1 && 's'} encontrado
             {blogs.length > 1 && 's'}
          </h5>
 
          <div className="recipes">
-            {/* {recipes.map(recipe => {
-               return <Recipe key={recipe._id} {...recipe} />;
-            })} */}
-
-            {blogs.map(recipe => {
-               return <Blog key={recipe._id} {...recipe} />;
+            {blogs.map(blog => {
+               return <Blog key={blog._id} {...blog} />;
             })}
          </div>
 
