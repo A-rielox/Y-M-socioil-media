@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Loading from './Loading';
 
 import { FaCalendarAlt } from 'react-icons/fa';
@@ -27,16 +27,22 @@ import styled from 'styled-components';
 // _id: "622f5b68b8796847b28a315f"
 
 const Blog = ({ _id, title, desc, category, createdAt, createdBy }) => {
-   const { /* setEditRecipe, */ deleteBlog, user, authFetch } = useAppContext();
-
+   const { setEditBlog, deleteBlog, user, authFetch } = useAppContext();
    const [blogUser, setBlogUser] = useState(null);
+
+   // prueba red red To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
+   const mountedRef = useRef(true);
 
    useEffect(() => {
       const fetchUser = async () => {
+         // prueba red red
+         if (!mountedRef.current) return null;
+
          const {
             data: { queryUser },
          } = await authFetch.get(`/auth/getUser?userId=${createdBy}`);
 
+         // creo q debe ir aca el red
          setBlogUser(queryUser);
       };
 
@@ -98,8 +104,7 @@ const Blog = ({ _id, title, desc, category, createdAt, createdBy }) => {
                   {user._id === createdBy ? (
                      <Link
                         to="/add-blog"
-                        // onClick={() => setEditRecipe(_id)}
-                        onClick={() => console.log('editar ', _id)}
+                        onClick={() => setEditBlog(_id)}
                         className="btn edit-btn"
                      >
                         editar

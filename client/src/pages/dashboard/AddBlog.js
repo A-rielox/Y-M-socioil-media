@@ -35,21 +35,22 @@ const AddBlog = () => {
    // PRIMERO CAMBIO TODO EN EL STATE ( LOS DATOS DE LA RECETA ), Y LUEGO LO MANDO
 
    const handleBlogInput = e => {
-      const name = e.target.name;
-      const value = e.target.value;
+      // console.log(e.target);
+      // console.log(e);
+      if (!e.target) {
+         const name = 'descBlog';
+         const value = e;
 
-      console.log(e.target.name);
+         changeStateValues({ name, value });
+      } else {
+         const name = e.target.name;
+         const value = e.target.value;
 
-      changeStateValues({ name, value });
+         // console.log(e.target.name);
+
+         changeStateValues({ name, value });
+      }
    };
-
-   // handle-Input para el editor
-   useEffect(() => {
-      const name = 'descBlog';
-      const value = content;
-
-      changeStateValues({ name, value });
-   }, [content]);
 
    // al picarle a editar ( en Recipe.js ) ==> se meten los valores de ese trabajo en el state y se manda a la pag de crear-recipe con estos valores pre-llenados, aqui se editan y se manda el patch a la DB
 
@@ -104,7 +105,7 @@ const AddBlog = () => {
                   list={categoryOptions}
                ></InputSelect>
 
-               <Editor initialValue={descBlog} setContent={setContent} />
+               <Editor initialValue={descBlog} setContent={handleBlogInput} />
 
                <div className="btn-container">
                   <button

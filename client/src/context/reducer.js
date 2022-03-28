@@ -34,6 +34,7 @@ import {
    GET_BLOGS_BEGIN,
    GET_BLOGS_SUCCESS,
    DELETE_BLOG_BEGIN,
+   SET_EDIT_BLOG,
 } from './actions';
 
 const reducer = (state, action) => {
@@ -362,6 +363,26 @@ const reducer = (state, action) => {
    if (action.type === DELETE_BLOG_BEGIN) {
       // en la fcn llamo a getRecipes() q va a poner isLoading:false
       return { ...state, isLoading: true };
+   }
+
+   //
+   if (action.type === SET_EDIT_BLOG) {
+      const blog = state.blogs.find(blog => blog._id === action.payload.id);
+
+      // category: "piel"
+      // createdAt: "2022-03-28T01:03:38.853Z"
+      // createdBy: "622f5b68b8796847b28a315f"
+      // desc: "descripcion blog 3 ayi"
+      // title: "A titulo blog 3 ayi"
+      // updatedAt: "2022-03-28T01:03:38.853Z"
+      // __v: 0
+      // _id: "6241096a63d29665be92d110"
+
+      // prettier-ignore
+      const { _id, category, desc, title } = blog;
+
+      // prettier-ignore
+      return { ...state, isEditingBlog: true, editBlogId: _id, titleBlog: title, descBlog: desc, category  };
    }
 
    throw new Error(`no such action :${action.type}`);
