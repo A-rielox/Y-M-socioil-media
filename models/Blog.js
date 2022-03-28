@@ -15,8 +15,16 @@ const BlogSchema = new mongoose.Schema(
          minlength: 5,
          maxlength: 3500,
       },
+      // category: {
+      //    type: [String],
+      //    enum: categoryList,
+      //    default: 'general',
+      //    trim: true,
+      //    required: [true, 'Favor proveer una categoria'],
+      // },
+
       category: {
-         type: [String],
+         type: String,
          enum: categoryList,
          default: 'general',
          trim: true,

@@ -1,4 +1,4 @@
-import Blog from '../models/Recipe.js';
+import Blog from '../models/Blog.js';
 import { StatusCodes } from 'http-status-codes';
 import { BadRequestError, NotFoundError } from '../errors/index.js';
 import checkPermissions from '../utils/checkPermissions.js';

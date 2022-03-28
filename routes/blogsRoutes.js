@@ -7,7 +7,7 @@ import {
    getAllBlogs,
    updateBlog,
    showStats,
-} from '../controllers/blogsController';
+} from '../controllers/blogsController.js';
 
 //'/api/v1/blogs'
 router.route('/').post(createBlog).get(getAllBlogs);
