@@ -48,8 +48,6 @@ const AddBlog = () => {
       const name = 'descBlog';
       const value = content;
 
-      console.log(content);
-
       changeStateValues({ name, value });
    }, [content]);
 

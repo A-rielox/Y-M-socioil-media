@@ -142,7 +142,6 @@ const reducer = (state, action) => {
    }
    if (action.type === UPDATE_USER_SUCCESS) {
       const { user, token, location } = action.payload;
-      console.log(user);
 
       return {
          ...state,

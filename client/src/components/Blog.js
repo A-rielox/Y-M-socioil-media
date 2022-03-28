@@ -8,6 +8,7 @@ import moment from 'moment';
 import RecipeInfo from './RecipeInfo';
 import styled from 'styled-components';
 
+// BLOG
 // category: "malestares"
 // createdAt: "2022-03-28T03:30:41.586Z"
 // createdBy: "622f5b68b8796847b28a315f"
@@ -17,49 +18,57 @@ import styled from 'styled-components';
 // __v: 0
 // _id: "62412be1794a849b90d3ccb0"
 
+// BLOGUSER
+// lastName: "Mi Apellido"
+// level: "distribuidor"
+// name: "ayi nicolas godoy"
+// profilePicture: ""
+// role: "user"
+// _id: "622f5b68b8796847b28a315f"
+
 const Blog = ({ _id, title, desc, category, createdAt, createdBy }) => {
-   const { /* setEditRecipe, */ /* deleteRecipe, */ user /* authFetch */ } =
+   const { /* setEditRecipe, */ /* deleteRecipe, */ user, authFetch } =
       useAppContext();
 
-   // const [recipeUser, setRecipeUser] = useState(null);
+   const [blogUser, setBlogUser] = useState(null);
 
-   // useEffect(() => {
-   // const fetchUser = async () => {
-   // const {
-   // data: { queryUser },
-   // } = await authFetch.get(`/auth/getUser?userId=${createdBy}`);
-   //
-   // setRecipeUser(queryUser);
-   // };
-   //
-   // fetchUser();
-   // }, [_id]);
+   useEffect(() => {
+      const fetchUser = async () => {
+         const {
+            data: { queryUser },
+         } = await authFetch.get(`/auth/getUser?userId=${createdBy}`);
 
-   // if (!recipeUser) {
-   // return <Loading center />;
-   // }
+         setBlogUser(queryUser);
+      };
+
+      fetchUser();
+   }, [_id]);
+
+   if (!blogUser) {
+      return <Loading center />;
+   }
 
    // arreglo para class del color del nivel
-   // let colorLevel = recipeUser.level.split(' ');
-   // colorLevel = colorLevel[colorLevel.length - 1];
+   let colorLevel = blogUser.level.split(' ');
+   colorLevel = colorLevel[colorLevel.length - 1];
 
    // arreglo del string del nivel
-   // const newStr = recipeUser.level.split(' ');
-   // let levelToDisplay = [];
-   // for (let i = 0; i < 3; i++) {
-   // if (i === 0) {
-   // levelToDisplay.push(newStr[i]);
-   // } else if (i === 1) {
-   // if (newStr[i]) {
-   // levelToDisplay.push(` ${newStr[i][0]}.`);
-   // }
-   // } else if (i === 2) {
-   // if (newStr[i]) {
-   // levelToDisplay.push(` ${newStr[i][0]}.`);
-   // }
-   // }
-   // }
-   // levelToDisplay = levelToDisplay.join('');
+   const newStr = blogUser.level.split(' ');
+   let levelToDisplay = [];
+   for (let i = 0; i < 3; i++) {
+      if (i === 0) {
+         levelToDisplay.push(newStr[i]);
+      } else if (i === 1) {
+         if (newStr[i]) {
+            levelToDisplay.push(` ${newStr[i][0]}.`);
+         }
+      } else if (i === 2) {
+         if (newStr[i]) {
+            levelToDisplay.push(` ${newStr[i][0]}.`);
+         }
+      }
+   }
+   levelToDisplay = levelToDisplay.join('');
 
    // arreglo para nombre a desplegar red red pendiente cortar a 1er nombre red red
 
@@ -80,7 +89,10 @@ const Blog = ({ _id, title, desc, category, createdAt, createdBy }) => {
          </header>
 
          <div className="content">
-            <div className="content-center">{desc}</div>
+            <div
+               className="content-center"
+               dangerouslySetInnerHTML={{ __html: desc }}
+            ></div>
 
             <footer>
                <div className="actions">
@@ -95,8 +107,7 @@ const Blog = ({ _id, title, desc, category, createdAt, createdBy }) => {
                      </Link>
                   ) : (
                      <button type="button" className={`btn btn-user`}>
-                        {/* {recipeUser.name} */}
-                        nombre autor
+                        {blogUser.name}
                      </button>
                   )}
                   {user._id === createdBy ? (
@@ -111,15 +122,11 @@ const Blog = ({ _id, title, desc, category, createdAt, createdBy }) => {
                   ) : (
                      <button
                         type="button"
-                        // className={`btn status ${colorLevel}`}
-                        className={`btn status platino`}
+                        className={`btn status ${colorLevel}`}
                      >
-                        {/* {levelToDisplay} */}
-                        nivel autor
+                        {levelToDisplay}
                      </button>
                   )}
-
-                  {/* <div className={`status ${status}`}>{status}</div> */}
                </div>
 
                <RecipeInfo icon={<FaCalendarAlt />} text={date} />
@@ -127,58 +134,6 @@ const Blog = ({ _id, title, desc, category, createdAt, createdBy }) => {
          </div>
       </Wrapper>
    );
-
-   /* return (
-      <Wrapper>
-         <header>
-            ...
-         </header>
-
-         <div className="content">
-            <div className="content-center">
-               ...
-            </div>
-
-            <footer>
-               <div className="actions">
-                  {user._id === createdBy ? (
-                     <Link
-                        to="/add-recipe"
-                        onClick={() => setEditRecipe(_id)}
-                        className="btn edit-btn"
-                     >
-                        editar
-                     </Link>
-                  ) : (
-                     <button type="button" className={`btn btn-user`}>
-                        {recipeUser.name}
-                     </button>
-                  )}
-                  {user._id === createdBy ? (
-                     <button
-                        type="button"
-                        className="btn delete-btn"
-                        onClick={() => deleteRecipe(_id)}
-                     >
-                        borrar
-                     </button>
-                  ) : (
-                     <button
-                        type="button"
-                        className={`btn status ${colorLevel}`}
-                     >
-                        {levelToDisplay}
-                     </button>
-                  )}
-
-                  
-               </div>
-
-               <RecipeInfo icon={<FaCalendarAlt />} text={date} />
-            </footer>
-         </div>
-      </Wrapper>
-   ); */
 };
 
 export default Blog;
@@ -218,31 +173,6 @@ const Wrapper = styled.article`
          margin-top: 0.5rem;
          display: flex;
          align-items: center;
-      }
-
-      .icon {
-         font-size: 0.7rem;
-         margin-right: 0.5rem;
-         color: var(--red-dark);
-      }
-   }
-   .ulListOil {
-      margin: 0 20px;
-      /* display: flex;
-      justify-content: space-between; */
-      text-transform: capitalize;
-
-      li {
-         list-style-type: none;
-         margin-top: 0.5rem;
-         display: flex;
-         align-items: center;
-      }
-
-      .icon {
-         font-size: 0.7rem;
-         margin-right: 0.5rem;
-         color: #dfb33b;
       }
    }
 
@@ -307,24 +237,12 @@ const Wrapper = styled.article`
       grid-template-rows: 1fr auto;
    }
    .content-center {
-      display: grid;
-      align-content: start;
-      grid-template-columns: 1fr;
-      row-gap: 0.5rem;
       border-bottom: 1px solid var(--grey-100);
-      @media (min-width: 576px) {
-         grid-template-columns: 1fr 1fr;
-      }
-      @media (min-width: 992px) {
-         grid-template-columns: 1fr;
+   }
 
-         .btn:first-child {
-            margin-bottom: 10px;
-         }
-      }
-      @media (min-width: 1120px) {
-         grid-template-columns: 1fr 1fr;
-      }
+   .content-center > p > img {
+      width: 100% !important;
+      height: auto !important;
    }
 
    .status {

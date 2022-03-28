@@ -23,8 +23,6 @@ const BlogsContainer = () => {
       getBlogs();
    }, [searchBlog, searchCategory, sort, pageBlogs]);
 
-   console.log(blogs);
-
    if (isLoading) {
       return <Loading center />;
    }
@@ -59,6 +57,7 @@ export default BlogsContainer;
 
 const Wrapper = styled.section`
    margin-top: 4rem;
+
    h2 {
       text-transform: none;
    }
