@@ -136,7 +136,7 @@ const updateBlog = async (req, res) => {
 
 //'/api/v1/blogs' -- route('/stats').get(showStats);
 const showStats = async (req, res) => {
-   res.send('<h1> show stats</h1>');
+   res.send('<h1> show stats blogs</h1>');
 };
 
 export { createBlog, deleteBlog, getAllBlogs, updateBlog, showStats };

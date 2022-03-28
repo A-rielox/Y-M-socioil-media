@@ -58,6 +58,8 @@ const Wrapper = styled.nav`
 
    background: var(--grey-50) !important;
 
+   z-index: 99; // necesario por jodit-react
+
    .logo {
       display: flex;
       align-items: center;
