@@ -30,6 +30,10 @@ import {
    EDIT_RECIPE_ERROR,
    CLEAR_FILTERS,
    CHANGE_PAGE,
+   // ===== BLOG
+   CREATE_BLOG_BEGIN,
+   CREATE_BLOG_SUCCESS,
+   CREATE_BLOG_ERROR,
 } from './actions';
 
 const token = localStorage.getItem('token');
@@ -379,7 +383,28 @@ const AppProvider = ({ children }) => {
    // yellow yellow //  // yellow yellow //
 
    const createBlog = async () => {
-      console.log('blog creado');
+      dispatch({ type: CREATE_BLOG_BEGIN });
+
+      try {
+         const { titleBlog, descBlog, category } = state;
+
+         await authFetch.post('/blogs', {
+            title: titleBlog,
+            desc: descBlog,
+            category,
+         });
+
+         dispatch({ type: CREATE_BLOG_SUCCESS });
+         // dispatch({ type: CLEAR_VALUES });  red MIENTRAS PRUEBO red
+      } catch (error) {
+         if (error.response.status === 401) return;
+
+         dispatch({
+            type: CREATE_BLOG_ERROR,
+            payload: { msg: error.response.data.msg },
+         });
+      }
+      clearAlert();
    };
 
    return (

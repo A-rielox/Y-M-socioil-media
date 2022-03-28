@@ -27,6 +27,10 @@ import {
    EDIT_RECIPE_ERROR,
    CLEAR_FILTERS,
    CHANGE_PAGE,
+   // ===== BLOG
+   CREATE_BLOG_BEGIN,
+   CREATE_BLOG_SUCCESS,
+   CREATE_BLOG_ERROR,
 } from './actions';
 
 const reducer = (state, action) => {
@@ -306,6 +310,31 @@ const reducer = (state, action) => {
    //
    if (action.type === CHANGE_PAGE) {
       return { ...state, page: action.payload.page };
+   }
+
+   // ========================================
+   // ================= BLOG =================
+   // ========================================
+   if (action.type === CREATE_BLOG_BEGIN) {
+      return { ...state, isLoading: true };
+   }
+   if (action.type === CREATE_BLOG_SUCCESS) {
+      return {
+         ...state,
+         isLoading: false,
+         showAlert: true,
+         alertType: 'success',
+         alertText: 'Blog creado 💪!',
+      };
+   }
+   if (action.type === CREATE_BLOG_ERROR) {
+      return {
+         ...state,
+         isLoading: false,
+         showAlert: true,
+         alertType: 'danger',
+         alertText: action.payload.msg,
+      };
    }
 
    throw new Error(`no such action :${action.type}`);
