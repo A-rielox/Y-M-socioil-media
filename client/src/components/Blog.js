@@ -27,8 +27,7 @@ import styled from 'styled-components';
 // _id: "622f5b68b8796847b28a315f"
 
 const Blog = ({ _id, title, desc, category, createdAt, createdBy }) => {
-   const { /* setEditRecipe, */ /* deleteRecipe, */ user, authFetch } =
-      useAppContext();
+   const { /* setEditRecipe, */ deleteBlog, user, authFetch } = useAppContext();
 
    const [blogUser, setBlogUser] = useState(null);
 
@@ -114,8 +113,7 @@ const Blog = ({ _id, title, desc, category, createdAt, createdBy }) => {
                      <button
                         type="button"
                         className="btn delete-btn"
-                        // onClick={() => deleteRecipe(_id)}
-                        onClick={() => console.log('borrar ', _id)}
+                        onClick={() => deleteBlog(_id)}
                      >
                         borrar
                      </button>
@@ -145,6 +143,47 @@ const Wrapper = styled.article`
    grid-template-rows: 100px auto;
 
    box-shadow: var(--shadow-2);
+
+   // PRUEBA
+   margin-left: auto;
+   margin-right: auto;
+
+   .content {
+      padding: 1rem 1.5rem;
+      display: grid;
+      grid-template-rows: 1fr auto;
+   }
+   .content-center {
+      border-bottom: 1px solid var(--grey-100);
+
+      p {
+         margin-bottom: 0.5rem;
+         max-width: 40em;
+         color: #6e7785;
+      }
+
+      ul {
+         list-style-type: disc;
+         /* padding: 1rem; */
+         margin-top: 0;
+         padding-top: 0;
+         padding-bottom: 0.5rem;
+         padding-left: 2rem;
+      }
+   }
+
+   .content-center > p > img {
+      max-width: 100% !important;
+      height: auto !important;
+   }
+
+   @media (min-width: 700px) {
+      padding: 1rem;
+   }
+
+   @media (min-width: 992px) {
+      padding: 2rem;
+   }
 
    header {
       padding: 1rem 1.5rem;
@@ -229,20 +268,6 @@ const Wrapper = styled.article`
    .real {
       color: var(--textColor);
       background: rgba(101, 0, 163, 0.3);
-   }
-
-   .content {
-      padding: 1rem 1.5rem;
-      display: grid;
-      grid-template-rows: 1fr auto;
-   }
-   .content-center {
-      border-bottom: 1px solid var(--grey-100);
-   }
-
-   .content-center > p > img {
-      width: 100% !important;
-      height: auto !important;
    }
 
    .status {

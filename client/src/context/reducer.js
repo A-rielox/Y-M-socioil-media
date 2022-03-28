@@ -33,6 +33,7 @@ import {
    CREATE_BLOG_ERROR,
    GET_BLOGS_BEGIN,
    GET_BLOGS_SUCCESS,
+   DELETE_BLOG_BEGIN,
 } from './actions';
 
 const reducer = (state, action) => {
@@ -348,10 +349,6 @@ const reducer = (state, action) => {
    if (action.type === GET_BLOGS_SUCCESS) {
       const { totalBlogs, numOfBlogPages, blogs } = action.payload;
 
-      // let tempRecipes = [...recipes];
-      // let list4Problems = tempRecipes.map(recipe => recipe.problemsList);
-      // list4Problems = [...new Set(list4Problems.flat())];
-
       return {
          ...state,
          isLoading: false,
@@ -359,6 +356,12 @@ const reducer = (state, action) => {
          totalBlogs,
          numOfBlogPages,
       };
+   }
+
+   //
+   if (action.type === DELETE_BLOG_BEGIN) {
+      // en la fcn llamo a getRecipes() q va a poner isLoading:false
+      return { ...state, isLoading: true };
    }
 
    throw new Error(`no such action :${action.type}`);

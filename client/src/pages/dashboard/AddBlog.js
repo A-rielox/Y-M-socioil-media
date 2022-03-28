@@ -43,7 +43,7 @@ const AddBlog = () => {
       changeStateValues({ name, value });
    };
 
-   // handleJoditEditorInput
+   // handle-Input para el editor
    useEffect(() => {
       const name = 'descBlog';
       const value = content;
@@ -70,6 +70,9 @@ const AddBlog = () => {
 
       // lo manda a crear con los valores q tiene en el state
       createBlog();
+
+      // limpia campos tras crear blog
+      clearValues();
    };
 
    return (
@@ -124,8 +127,6 @@ const AddBlog = () => {
                      limpiar
                   </button>
                </div>
-
-               <div className="XXXXXX">{content}</div>
             </div>
          </form>
       </Wrapper>
@@ -133,9 +134,6 @@ const AddBlog = () => {
 };
 
 export default AddBlog;
-
-// const testContent =
-//       '<h2>El titulazo</h2><p><img src="https://images.pexels.com/photos/161599/scent-sticks-fragrance-aromatic-161599.jpeg?cs=srgb&amp;dl=pexels-pixabay-161599.jpg&amp;fm=jpg" width="400px" style="width: 400px; height: 266px; display: block; margin-left: auto; margin-right: auto;"></p><p>Como dijo Gary</p><blockquote>Abundance for me</blockquote><p>Las props:</p><ul><li>2 gotas de limon</li><li>2 gotas sandalo</li></ul><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique neque sed a minima minus necessitatibus dolorem blanditiis inventore. Ducimus molestias excepturi repudiandae error repellendus sed qui sunt harum optio earum!</p>';
 
 const Wrapper = styled.section`
    border-radius: var(--borderRadius);

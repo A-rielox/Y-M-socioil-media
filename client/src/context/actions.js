@@ -45,10 +45,10 @@ export const CREATE_BLOG_ERROR = 'CREATE_BLOG_ERROR';
 
 export const GET_BLOGS_BEGIN = 'GET_BLOGS_BEGIN';
 export const GET_BLOGS_SUCCESS = 'GET_BLOGS_SUCCESS';
-//
+
 // export const SET_EDIT_BLOG = 'SET_EDIT_BLOG';
-//
-// export const DELETE_BLOG_BEGIN = 'DELETE_BLOG_BEGIN';
+
+export const DELETE_BLOG_BEGIN = 'DELETE_BLOG_BEGIN';
 //
 // export const EDIT_BLOG_BEGIN = 'EDIT_BLOG_BEGIN';
 // export const EDIT_BLOG_SUCCESS = 'EDIT_BLOG_SUCCESS';

@@ -36,6 +36,7 @@ import {
    CREATE_BLOG_ERROR,
    GET_BLOGS_BEGIN,
    GET_BLOGS_SUCCESS,
+   DELETE_BLOG_BEGIN,
 } from './actions';
 
 const token = localStorage.getItem('token');
@@ -436,6 +437,17 @@ const AppProvider = ({ children }) => {
       clearAlert();
    };
 
+   const deleteBlog = async blogId => {
+      dispatch({ type: DELETE_BLOG_BEGIN });
+
+      try {
+         await authFetch.delete(`/blogs/${blogId}`);
+         getBlogs(); // este va a poner isLoadin: false
+      } catch (error) {
+         // logoutUser(); red MIENTRAS PRUEBO red
+      }
+   };
+
    return (
       <AppContext.Provider
          value={{
@@ -459,6 +471,7 @@ const AppProvider = ({ children }) => {
             // ====== BLOG
             createBlog,
             getBlogs,
+            deleteBlog,
          }}
       >
          {children}
