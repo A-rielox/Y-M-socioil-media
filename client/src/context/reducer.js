@@ -304,6 +304,9 @@ const reducer = (state, action) => {
          searchOil: 'todos',
          searchProblem: 'todos',
          sort: 'recientes',
+         //===== BLOG
+         searchBlog: '',
+         searchCategory: 'todas',
       };
    }
 

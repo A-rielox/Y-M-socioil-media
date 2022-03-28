@@ -1,36 +1,32 @@
-// import { useAppContext } from '../context/appContext';
+import { useAppContext } from '../context/appContext';
 import { InputSimple, InputSelect } from '.';
 import styled from 'styled-components';
 
 const SearchContainer = () => {
-   const isLoading = false;
-   const sortOptions = ['a-z', 'recientes', 'antiguos'];
-   const categorias = ['salud', 'limpieza', 'belleza'];
+   const {
+      isLoading,
+      categoryOptions,
+      searchCategory,
+      searchBlog,
+      sort,
+      sortOptions,
+      changeStateValues,
+      clearFilters,
+   } = useAppContext();
 
-   // const {
-   // isLoading,
-   // list4Problems,
-   // oilsOptions,
-   // search,
-   // searchOil,
-   // searchProblem,
-   // sort,
-   // sortOptions,
-   // changeStateValues,
-   // clearFilters,
-   // } = useAppContext();
+   // SOLO CAMBIO LOS VALORES EN EL STATE, SE TIENEN Q BUSCAR EN EL BLOGSCONTAINER CON UN USEEFFECT CADA Q CAMBIE UNO DE ESTOS VALORES, VER RECIPESCONTAINER
 
    const handleSearch = e => {
       if (isLoading) return;
-      // const name = e.target.name;
-      // const value = e.target.value;
+      const name = e.target.name;
+      const value = e.target.value;
       // la fcn q cambia dinámicamente los valores en el state
-      // changeStateValues({ name, value });
+      changeStateValues({ name, value });
    };
 
    const handleSubmit = e => {
       e.preventDefault();
-      // clearFilters();
+      clearFilters();
    };
 
    return (
@@ -43,25 +39,25 @@ const SearchContainer = () => {
                <InputSimple
                   labelText="en el titulo"
                   type="text"
-                  name="search"
-                  // value={search}
+                  name="searchBlog"
+                  value={searchBlog}
                   changeStateValues={handleSearch}
                ></InputSimple>
 
                {/* search by oil */}
                <InputSelect
                   labelText="categoria"
-                  name="searchOil"
-                  // value={searchOil}
+                  name="searchCategory"
+                  value={searchCategory}
                   changeStateValues={handleSearch}
-                  list={categorias}
+                  list={['todas', ...categoryOptions]}
                ></InputSelect>
 
                {/* sort */}
                <InputSelect
                   labelText="orden"
                   name="sort"
-                  // value={sort}
+                  value={sort}
                   changeStateValues={handleSearch}
                   list={sortOptions}
                ></InputSelect>
