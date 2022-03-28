@@ -37,3 +37,23 @@ export const EDIT_RECIPE_ERROR = 'EDIT_RECIPE_ERROR';
 export const CLEAR_FILTERS = 'CLEAR_FILTERS';
 
 export const CHANGE_PAGE = 'CHANGE_PAGE';
+
+// =============== BLOG
+export const CREATE_BLOG_BEGIN = 'CREATE_BLOG_BEGIN';
+export const CREATE_BLOG_SUCCESS = 'CREATE_BLOG_SUCCESS';
+export const CREATE_BLOG_ERROR = 'CREATE_BLOG_ERROR';
+
+// export const GET_BLOGS_BEGIN = 'GET_BLOGS_BEGIN';
+// export const GET_BLOGS_SUCCESS = 'GET_BLOGS_SUCCESS';
+//
+// export const SET_EDIT_BLOG = 'SET_EDIT_BLOG';
+//
+// export const DELETE_BLOG_BEGIN = 'DELETE_BLOG_BEGIN';
+//
+// export const EDIT_BLOG_BEGIN = 'EDIT_BLOG_BEGIN';
+// export const EDIT_BLOG_SUCCESS = 'EDIT_BLOG_SUCCESS';
+// export const EDIT_BLOG_ERROR = 'EDIT_BLOG_ERROR';
+//
+// export const CLEAR_FILTERS = 'CLEAR_FILTERS';
+//
+// export const CHANGE_PAGE = 'CHANGE_PAGE';

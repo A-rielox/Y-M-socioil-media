@@ -1,7 +1,7 @@
 import React, { useReducer, useContext } from 'react';
 import reducer from './reducer';
 import axios from 'axios';
-import { oilsList } from '../utils/optionLists';
+import { oilsList, categoryList } from '../utils/optionLists';
 import {
    DISPLAY_ALERT,
    CLEAR_ALERT,
@@ -48,7 +48,7 @@ export const initialState = {
    jobLocation: userLocation || '',
    //sideBar
    showSidebar: false,
-   // create recipe ( TODO LO DE RECIPESCHEMA )
+   //================ RECIPE
    isEditing: false,
    editRecipeId: '',
    title: '',
@@ -78,6 +78,22 @@ export const initialState = {
    searchProblem: 'todos',
    sort: 'recientes',
    sortOptions: ['recientes', 'viejos', 'a-z', 'z-a'],
+   //================ BLOG
+   isEditingBlog: false,
+   editBlogId: '',
+   titleBlog: '',
+   descBlog: '',
+   category: 'general',
+   categoryOptions: categoryList,
+   totalBlogs: 0,
+   numOfBlogPages: 1,
+   blogs: [],
+   pageBlogs: 1,
+   // para busqueda y sort
+   searchBlog: '',
+   searchCategory: 'todas',
+   // sort: 'recientes',  es =
+   // sortOptions: ['recientes', 'viejos', 'a-z', 'z-a'], es =
 };
 
 // search (en title) - searchOil  - searchProblem - sort
@@ -362,6 +378,10 @@ const AppProvider = ({ children }) => {
    // yellow ======= BLOG ======= yellow //
    // yellow yellow //  // yellow yellow //
 
+   const createBlog = async () => {
+      console.log('blog creado');
+   };
+
    return (
       <AppContext.Provider
          value={{
@@ -382,6 +402,8 @@ const AppProvider = ({ children }) => {
             editRecipe,
             clearFilters,
             changePage,
+            // ====== BLOG
+            createBlog,
          }}
       >
          {children}

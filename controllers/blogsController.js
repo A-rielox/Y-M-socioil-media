@@ -94,16 +94,16 @@ const getAllBlogs = async (req, res) => {
    const blogs = await result;
 
    const totalBlogs = await Blog.countDocuments(queryObject);
-   const numOfPages = Math.ceil(totalBlogs / limit);
+   const numOfBlogPages = Math.ceil(totalBlogs / limit);
 
    // res.status(StatusCodes.OK).json({
    //    totalRecipes: recipes.length,
-   //    numOfPages: 1,
+   //    numOfBlogPages: 1,
    //    recipes,
    // });
    res.status(StatusCodes.OK).json({
       totalBlogs,
-      numOfPages,
+      numOfBlogPages,
       blogs,
    });
 };

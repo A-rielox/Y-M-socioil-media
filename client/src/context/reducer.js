@@ -194,6 +194,12 @@ const reducer = (state, action) => {
          problem1: '',
          problem2: '',
          problem3: '',
+         // ========= BLOG
+         isEditingBlog: false,
+         editBlogId: '',
+         titleBlog: '',
+         descBlog: '',
+         category: 'general',
       };
 
       return { ...state, ...initialState };
