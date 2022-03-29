@@ -8,24 +8,6 @@ import moment from 'moment';
 import RecipeInfo from './RecipeInfo';
 import styled from 'styled-components';
 
-// BLOG
-// category: "malestares"
-// createdAt: "2022-03-28T03:30:41.586Z"
-// createdBy: "622f5b68b8796847b28a315f"
-// desc: "<h2>titulo 1</h2> ... 4 gotas de crema</li></ul>"
-// title: "titulo desde front 1"
-// updatedAt: "2022-03-28T03:30:41.586Z"
-// __v: 0
-// _id: "62412be1794a849b90d3ccb0"
-
-// BLOGUSER
-// lastName: "Mi Apellido"
-// level: "distribuidor"
-// name: "ayi nicolas godoy"
-// profilePicture: ""
-// role: "user"
-// _id: "622f5b68b8796847b28a315f"
-
 const Blog = ({ _id, title, desc, category, createdAt, createdBy }) => {
    const { setEditBlog, deleteBlog, user, authFetch } = useAppContext();
    const [blogUser, setBlogUser] = useState(null);

@@ -41,6 +41,7 @@ import {
    EDIT_BLOG_BEGIN,
    EDIT_BLOG_SUCCESS,
    EDIT_BLOG_ERROR,
+   CHANGE_BLOGS_PAGE,
 } from './actions';
 
 const token = localStorage.getItem('token');
@@ -64,7 +65,6 @@ export const initialState = {
    editRecipeId: '',
    title: '',
    desc: '',
-   // problems: 'general',
    oilsOptions: oilsList,
    // para pasar a la lista
    oilsList: [],
@@ -480,6 +480,11 @@ const AppProvider = ({ children }) => {
       }
    };
 
+   // pageBlogs
+   const changeBlogsPage = pageBlogs => {
+      dispatch({ type: CHANGE_BLOGS_PAGE, payload: { pageBlogs } });
+   };
+
    return (
       <AppContext.Provider
          value={{
@@ -506,6 +511,7 @@ const AppProvider = ({ children }) => {
             deleteBlog,
             setEditBlog,
             editBlog,
+            changeBlogsPage,
          }}
       >
          {children}

@@ -1,7 +1,7 @@
 import { useAppContext } from '../context/appContext';
 import Loading from './Loading';
 import { useEffect } from 'react';
-// import PageBtnContainer from './PageBtnContainer';
+import PageBtnContainerBlogs from './PageBtnContainerBlogs';
 import Blog from './Blog';
 import styled from 'styled-components';
 
@@ -48,7 +48,7 @@ const BlogsContainer = () => {
             })}
          </div>
 
-         {/* {numOfPages > 1 && <PageBtnContainer />} */}
+         {numOfBlogPages > 1 && <PageBtnContainerBlogs />}
       </Wrapper>
    );
 };

@@ -54,4 +54,4 @@ export const EDIT_BLOG_BEGIN = 'EDIT_BLOG_BEGIN';
 export const EDIT_BLOG_SUCCESS = 'EDIT_BLOG_SUCCESS';
 export const EDIT_BLOG_ERROR = 'EDIT_BLOG_ERROR';
 //
-// export const CHANGE_PAGE = 'CHANGE_PAGE';
+export const CHANGE_BLOGS_PAGE = 'CHANGE_BLOGS_PAGE';

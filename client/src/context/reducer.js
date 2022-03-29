@@ -38,6 +38,7 @@ import {
    EDIT_BLOG_BEGIN,
    EDIT_BLOG_SUCCESS,
    EDIT_BLOG_ERROR,
+   CHANGE_BLOGS_PAGE,
 } from './actions';
 
 const reducer = (state, action) => {
@@ -409,6 +410,11 @@ const reducer = (state, action) => {
          alertType: 'danger',
          alertText: action.payload.msg,
       };
+   }
+
+   //
+   if (action.type === CHANGE_BLOGS_PAGE) {
+      return { ...state, pageBlogs: action.payload.pageBlogs };
    }
 
    throw new Error(`no such action :${action.type}`);

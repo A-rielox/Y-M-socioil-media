@@ -14,6 +14,7 @@ import Navbar from './Navbar';
 import BlogsContainer from './BlogsContainer';
 import SearchBlogsContainer from './SearchBlogsContainer';
 import Editor from './Editor';
+import PageBtnContainerBlogs from './PageBtnContainerBlogs';
 
 export {
    PageBtnContainer,
@@ -31,4 +32,5 @@ export {
    BlogsContainer,
    SearchBlogsContainer,
    Editor,
+   PageBtnContainerBlogs,
 };
