@@ -373,15 +373,6 @@ const reducer = (state, action) => {
    if (action.type === SET_EDIT_BLOG) {
       const blog = state.blogs.find(blog => blog._id === action.payload.id);
 
-      // category: "piel"
-      // createdAt: "2022-03-28T01:03:38.853Z"
-      // createdBy: "622f5b68b8796847b28a315f"
-      // desc: "descripcion blog 3 ayi"
-      // title: "A titulo blog 3 ayi"
-      // updatedAt: "2022-03-28T01:03:38.853Z"
-      // __v: 0
-      // _id: "6241096a63d29665be92d110"
-
       // prettier-ignore
       const { _id, category, desc, title } = blog;
 
@@ -420,16 +411,3 @@ const reducer = (state, action) => {
    throw new Error(`no such action :${action.type}`);
 };
 export default reducer;
-
-// title:
-// desc: "DESCRIPCION pepi"
-// oilsList: (3) ['Angelica', 'Cassia', 'Copaiba']
-// oil1: '',
-// oil2: '',
-// oil3: '',
-// oil4: '',
-// oil5: '',
-// problemsList: (2) ['espalda', 'pie']
-// problem1: '',
-// problem2: '',
-// problem3: '',

@@ -12,7 +12,6 @@ const PageBtnContainer = () => {
          newPage = numOfPages;
       }
       changePage(newPage);
-      console.log(newPage);
    };
 
    const nextPage = () => {
@@ -22,7 +21,6 @@ const PageBtnContainer = () => {
          newPage = 1;
       }
       changePage(newPage);
-      console.log(newPage);
    };
 
    const pages = Array.from({ length: numOfPages }, (_, index) => {

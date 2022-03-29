@@ -12,7 +12,6 @@ const PageBtnContainerBlogs = () => {
          newPage = numOfBlogPages;
       }
       changeBlogsPage(newPage);
-      console.log(newPage);
    };
 
    const nextPage = () => {
@@ -22,7 +21,6 @@ const PageBtnContainerBlogs = () => {
          newPage = 1;
       }
       changeBlogsPage(newPage);
-      console.log(newPage);
    };
 
    const pages = Array.from({ length: numOfBlogPages }, (_, index) => {
