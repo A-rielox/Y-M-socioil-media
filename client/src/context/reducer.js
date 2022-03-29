@@ -192,9 +192,6 @@ const reducer = (state, action) => {
          editRecipeId: '',
          title: '',
          desc: '',
-         // problems: 'general',
-         // oils: 'digize pal Adri',
-         // para pasar a la lista
          oilsList: [],
          problemsList: [],
          oil1: '',
