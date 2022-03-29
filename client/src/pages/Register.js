@@ -5,6 +5,13 @@ import { useAppContext } from '../context/appContext';
 import { LogoBig, InputSimple, Alert } from '../components';
 import styled from 'styled-components';
 
+import { motion } from 'framer-motion';
+import {
+   animationTwo,
+   animationInputRegistro,
+   transition,
+} from '../animations';
+
 const initialState = {
    name: '',
    email: '',
@@ -60,69 +67,88 @@ function Register() {
    };
 
    return (
-      <Wrapper className="full-page">
-         <form className="form" onSubmit={onSubmit}>
-            <LogoBig />
-            {!values.isMember ? <h3>Registro</h3> : <h3>Login</h3>}
-            {showAlert && (
-               <Alert
-                  alertType="danger"
-                  alertText="favor introducir todos los datos"
-               />
-            )}
+      <motion.div
+         variants={animationTwo}
+         initial="out"
+         animate="in"
+         exit="out"
+         transition={transition}
+      >
+         <Wrapper className="full-page">
+            <form className="form" onSubmit={onSubmit}>
+               <LogoBig />
+               {!values.isMember ? <h3>Registro</h3> : <h3>Login</h3>}
+               {showAlert && (
+                  <Alert
+                     alertType="danger"
+                     alertText="favor introducir todos los datos"
+                  />
+               )}
 
-            {/* NOMBRE */}
-            {!values.isMember && (
+               {/* NOMBRE */}
+               {!values.isMember && (
+                  <motion.div
+                     variants={animationInputRegistro}
+                     initial="out"
+                     animate="in"
+                     exit="out"
+                     transition={transition}
+                  >
+                     <InputSimple
+                        type="text"
+                        name="name"
+                        value={values.name}
+                        changeStateValues={changeStateValues}
+                        labelText="Nombre"
+                     />
+                  </motion.div>
+               )}
+
+               {/* EMAIL */}
                <InputSimple
-                  type="text"
-                  name="name"
-                  value={values.name}
+                  type="email"
+                  name="email"
+                  value={values.email}
                   changeStateValues={changeStateValues}
-                  labelText="Nombre"
                />
-            )}
 
-            {/* EMAIL */}
-            <InputSimple
-               type="email"
-               name="email"
-               value={values.email}
-               changeStateValues={changeStateValues}
-            />
-
-            {/* PASSWORD */}
-            <InputSimple
-               type="password"
-               name="password"
-               value={values.password}
-               changeStateValues={changeStateValues}
-            />
-
-            <button
-               type="submit"
-               className="btn btn-block"
-               disabled={isLoading}
-            >
-               enviar
-            </button>
-
-            <p>
-               {values.isMember ? 'Aún no te unes? ' : 'Ya eres miembro?'}
+               {/* PASSWORD */}
+               <InputSimple
+                  type="password"
+                  name="password"
+                  value={values.password}
+                  changeStateValues={changeStateValues}
+               />
 
                <button
-                  type="button"
-                  onClick={toggleMember}
-                  className="member-btn"
+                  type="submit"
+                  className="btn btn-block"
+                  disabled={isLoading}
                >
-                  {values.isMember ? 'Registro' : 'Login'}
+                  enviar
                </button>
-            </p>
-         </form>
-      </Wrapper>
+
+               <p>
+                  {values.isMember ? 'Aún no te unes? ' : 'Ya eres miembro?'}
+
+                  <button
+                     type="button"
+                     onClick={toggleMember}
+                     className="member-btn"
+                  >
+                     {values.isMember ? 'Registro' : 'Login'}
+                  </button>
+               </p>
+            </form>
+         </Wrapper>
+      </motion.div>
    );
 }
 
 export default Register;
+
+//////// //////
+/////// /////
 
 const Wrapper = styled.section`
    display: grid;

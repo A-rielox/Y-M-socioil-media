@@ -4,34 +4,46 @@ import { Link } from 'react-router-dom';
 import fondo from '../assets/images/fondo2.svg';
 import styled from 'styled-components';
 
+import { motion } from 'framer-motion';
+import { animationOne, transition } from '../animations';
+
 const Landing = () => {
    return (
-      <Wrapper>
-         <nav>
-            <LogoBig />
-         </nav>
+      <motion.div
+         variants={animationOne}
+         initial="out"
+         animate="in"
+         exit="out"
+         transition={transition}
+      >
+         <Wrapper>
+            <nav>
+               <LogoBig />
+            </nav>
 
-         <div className="container page">
-            <div className="info">
-               <h1>
-                  soci<span>oil</span> media
-               </h1>
-               <p>
-                  Tus recetas, posts y el estilo de vida que estabas buscando.
-               </p>
+            <div className="container page">
+               <div className="info">
+                  <h1>
+                     soci<span>oil</span> media
+                  </h1>
+                  <p>
+                     Tus recetas, posts y el estilo de vida que estabas
+                     buscando.
+                  </p>
 
-               <Link to="/register" className="btn btn-hero">
-                  Login / Registro
-               </Link>
+                  <Link to="/register" className="btn btn-hero">
+                     Login / Registro
+                  </Link>
+               </div>
+
+               <img
+                  src={fondo}
+                  alt="fondo de la página"
+                  className="img main-img"
+               />
             </div>
-
-            <img
-               src={fondo}
-               alt="fondo de la página"
-               className="img main-img"
-            />
-         </div>
-      </Wrapper>
+         </Wrapper>
+      </motion.div>
    );
 };
 

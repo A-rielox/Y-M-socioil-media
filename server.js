@@ -75,6 +75,9 @@ import moment from 'moment';
 
 npm i jodit-react
 
+npm install framer-motion
+import { motion } from "framer-motion"
+
 
 
 
