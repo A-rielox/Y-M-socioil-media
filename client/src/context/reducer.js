@@ -35,6 +35,9 @@ import {
    GET_BLOGS_SUCCESS,
    DELETE_BLOG_BEGIN,
    SET_EDIT_BLOG,
+   EDIT_BLOG_BEGIN,
+   EDIT_BLOG_SUCCESS,
+   EDIT_BLOG_ERROR,
 } from './actions';
 
 const reducer = (state, action) => {
@@ -383,6 +386,29 @@ const reducer = (state, action) => {
 
       // prettier-ignore
       return { ...state, isEditingBlog: true, editBlogId: _id, titleBlog: title, descBlog: desc, category  };
+   }
+
+   //
+   if (action.type === EDIT_BLOG_BEGIN) {
+      return { ...state, isLoading: true };
+   }
+   if (action.type === EDIT_BLOG_SUCCESS) {
+      return {
+         ...state,
+         isLoading: false,
+         showAlert: true,
+         alertType: 'success',
+         alertText: 'Blog editado 🐱!',
+      };
+   }
+   if (action.type === EDIT_BLOG_ERROR) {
+      return {
+         ...state,
+         isLoading: false,
+         showAlert: true,
+         alertType: 'danger',
+         alertText: action.payload.msg,
+      };
    }
 
    throw new Error(`no such action :${action.type}`);

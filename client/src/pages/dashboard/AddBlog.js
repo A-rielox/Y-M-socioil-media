@@ -1,21 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useAppContext } from '../../context/appContext';
 import { Alert, Editor, InputSimple, InputSelect } from '../../components';
 import styled from 'styled-components';
 
 const AddBlog = () => {
-   // red red PRUEBA red red
-   useEffect(() => {
-      // Anything in here is fired on component mount.
-      return () => {
-         // Anything in here is fired on component unmount.
-         console.log('desmontado');
-         clearValues();
-      };
-   }, []);
-
-   // para el editor
-   const [content, setContent] = useState('');
+   // para el editor inicialmente ocupaba este
+   // const [content, setContent] = useState('');
 
    const {
       isLoading,
@@ -28,12 +18,23 @@ const AddBlog = () => {
       categoryOptions,
       changeStateValues,
       isEditingBlog,
-      // editRecipe,
+      editBlog,
       clearValues,
       createBlog,
    } = useAppContext();
-   // PRIMERO CAMBIO TODO EN EL STATE ( LOS DATOS DE LA RECETA ), Y LUEGO LO MANDO
 
+   // red red PRUEBA red red
+   useEffect(() => {
+      // Anything in here is fired on component mount.
+      return () => {
+         // Anything in here is fired on component unmount.
+         console.log('desmontado');
+         clearValues();
+      };
+      // si pongo la dependencia "clearValues" se hace render infinito
+   }, []);
+
+   // PRIMERO CAMBIO TODO EN EL STATE ( LOS DATOS DE LA RECETA ), Y LUEGO LO MANDO
    const handleBlogInput = e => {
       // console.log(e.target);
       // console.log(e);
@@ -64,10 +65,10 @@ const AddBlog = () => {
          return;
       }
 
-      // if (isEditing) {
-      //    editRecipe({ oilsList, problemsList });
-      //    return;
-      // }
+      if (isEditingBlog) {
+         editBlog();
+         return;
+      }
 
       // lo manda a crear con los valores q tiene en el state
       createBlog();

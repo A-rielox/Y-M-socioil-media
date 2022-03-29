@@ -38,6 +38,9 @@ import {
    GET_BLOGS_SUCCESS,
    DELETE_BLOG_BEGIN,
    SET_EDIT_BLOG,
+   EDIT_BLOG_BEGIN,
+   EDIT_BLOG_SUCCESS,
+   EDIT_BLOG_ERROR,
 } from './actions';
 
 const token = localStorage.getItem('token');
@@ -275,7 +278,6 @@ const AppProvider = ({ children }) => {
 
    const createRecipe = async ({ oilsList, problemsList }) => {
       dispatch({ type: CREATE_RECIPE_BEGIN });
-      console.log(oilsList, problemsList);
 
       try {
          // prettier-ignore
@@ -442,33 +444,29 @@ const AppProvider = ({ children }) => {
       dispatch({ type: SET_EDIT_BLOG, payload: { id } });
    };
 
-   // prettier-ignore
-   const editBlog = async (/* {oilsList,problemsList} */) => {
-      console.log('EditBlog CONTEXT')
-      // dispatch({ type: EDIT_RECIPE_BEGIN });
-      // 
-      // try {
-         // prettier-ignore
-         // const {
-            // title, desc, oil1, oil2, oil3, oil4, oil5, problem1, problem2, problem3
-         // } = state;
-         // 
-         // prettier-ignore
-         // await authFetch.patch(`/recipes/${state.editRecipeId}`, {
-            // oilsList, problemsList, title, desc, oil1, oil2, oil3, oil4, oil5, problem1, problem2, problem3,
-         // });
-         // 
-         // dispatch({ type: EDIT_RECIPE_SUCCESS });
-         // dispatch({ type: CLEAR_VALUES });
-      // } catch (error) {
-         // if (error.response.status === 401) return;
-         // dispatch({
-            // type: EDIT_RECIPE_ERROR,
-            // payload: { msg: error.response.data.msg },
-         // });
-      // }
-      // 
-      // clearAlert();
+   const editBlog = async () => {
+      dispatch({ type: EDIT_BLOG_BEGIN });
+
+      try {
+         const { titleBlog, descBlog, category } = state;
+
+         await authFetch.patch(`/blogs/${state.editBlogId}`, {
+            title: titleBlog,
+            desc: descBlog,
+            category,
+         });
+
+         dispatch({ type: EDIT_BLOG_SUCCESS });
+         dispatch({ type: CLEAR_VALUES });
+      } catch (error) {
+         if (error.response.status === 401) return;
+         dispatch({
+            type: EDIT_BLOG_ERROR,
+            payload: { msg: error.response.data.msg },
+         });
+      }
+
+      clearAlert();
    };
 
    const deleteBlog = async blogId => {

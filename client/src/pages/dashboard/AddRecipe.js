@@ -44,8 +44,6 @@ const AddRecipe = () => {
       const name = e.target.name;
       const value = e.target.value;
 
-      console.log(e.target.name);
-
       changeStateValues({ name, value });
    };
 
@@ -57,8 +55,7 @@ const AddRecipe = () => {
       // LISTAS -- oils y problems
       let oilsList = [oil1, oil2, oil3, oil4, oil5];
       let problemsList = [problem1, problem2, problem3];
-      console.log(oilsList);
-      console.log(problemsList);
+
       oilsList = oilsList.filter(oil => oil.length > 1);
 
       problemsList = problemsList.filter(problem => problem.length > 1);
@@ -77,6 +74,9 @@ const AddRecipe = () => {
 
       // lo manda a crear con los valores q tiene en el state
       createRecipe({ oilsList, problemsList });
+
+      // limpia campos tras crear receta
+      clearValues();
    };
 
    //////////////////////
