@@ -74,10 +74,6 @@ function Register() {
          exit="out"
          transition={transition}
       >
-         {/*  */}
-         {/*  */}
-
-         {/*  */}
          <Wrapper className="full-page">
             <LayoutGroup>
                <motion.form layout className="form" onSubmit={onSubmit}>
