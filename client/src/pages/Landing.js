@@ -31,9 +31,19 @@ const Landing = () => {
                      buscando.
                   </p>
 
-                  <Link to="/register" className="btn btn-hero">
-                     Login / Registro
-                  </Link>
+                  <motion.div
+                     whileHover={{ scale: 1.1 }}
+                     whileTap={{ scale: 1.05 }}
+                     transition={{
+                        type: 'spring',
+                        stiffness: 150,
+                        ease: 'easeInOut',
+                     }}
+                  >
+                     <Link to="/register" className="btn btn-hero">
+                        Login / Registro
+                     </Link>
+                  </motion.div>
                </div>
 
                <img
@@ -47,7 +57,27 @@ const Landing = () => {
    );
 };
 
+/* 
+type: "spring", stiffness: 100
+
+
+<motion.button
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.9 }}
+  />
+
+
+  whileHover={{ scale: 2, rotate: 90 }}
+      whileTap={{
+        scale: 0.8,
+        rotate: -90,
+        borderRadius: "100%"
+      }}
+*/
+
 export default Landing;
+
+const MLink = styled(Link)``;
 
 const Wrapper = styled.main`
    nav {

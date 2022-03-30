@@ -51,5 +51,5 @@ export const animationInputRegistro = {
 };
 
 export const transition = {
-   duration: 0.4,
+   duration: 0.6,
 };
