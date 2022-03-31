@@ -37,12 +37,12 @@ export const animationThree = {
 
 export const animationInputRegistro = {
    in: {
-      opacity: 1,
-      scale: 1,
+      // opacity: 1,
+      x: 0,
    },
    out: {
-      opacity: 0,
-      scale: 0,
+      // opacity: 0,
+      x: '110vw',
    },
    end: {
       opacity: 1,

@@ -90,6 +90,7 @@ const Wrapper = styled.section`
    .form {
       width: 100%;
       max-width: 100%;
+      box-shadow: var(--shadow-2);
    }
    .form-input,
    .form-select,

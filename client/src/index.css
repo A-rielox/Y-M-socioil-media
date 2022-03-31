@@ -221,7 +221,7 @@ ul {
    max-width: var(--fixed-width);
    background: var(--white);
    border-radius: var(--borderRadius);
-   box-shadow: var(--shadow-2);
+   box-shadow: var(--shadow-4);
    padding: 2rem 2.5rem;
    margin: 3rem auto;
    transition: var(--transition);

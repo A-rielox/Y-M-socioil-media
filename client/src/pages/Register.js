@@ -11,6 +11,7 @@ import {
    animationInputRegistro,
    transition,
 } from '../animations';
+import Fondo2 from '../components/Fondo2.js';
 
 const initialState = {
    name: '',
@@ -66,16 +67,6 @@ function Register() {
       setValues({ ...values, isMember: !values.isMember });
    };
 
-   /* 
-   initial={{ x: -1000 }}
-    animate={{ x: 0 }}
-    transition={{
-        type: "tween",
-        duration: "2",
-        delay: "1"
-    }}>
-   */
-
    return (
       <motion.div
          variants={animationTwo}
@@ -85,6 +76,10 @@ function Register() {
          transition={transition}
       >
          <Wrapper className="full-page">
+            <div className="main-img">
+               <Fondo2 className="img" />
+            </div>
+
             <LayoutGroup>
                <motion.form
                   layout
@@ -201,6 +196,20 @@ export default Register;
 const Wrapper = styled.section`
    display: grid;
    align-items: center;
+   background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+   );
+
+   .form {
+      max-width: 400px;
+      /* border-top: 5px solid var(--primary-500); */
+
+      background: linear-gradient(
+         rgba(255, 255, 255, 0.7),
+         rgba(255, 255, 255, 0.7)
+      );
+   }
 
    .logo {
       width: 80%;
@@ -208,10 +217,10 @@ const Wrapper = styled.section`
       margin: 0 auto;
       margin-bottom: 1.38rem;
    }
-   .form {
+   /* .form {
       max-width: 400px;
       border-top: 5px solid var(--primary-500);
-   }
+   } */
 
    h3 {
       text-align: center;
@@ -230,5 +239,12 @@ const Wrapper = styled.section`
       color: var(--primary-500);
       cursor: pointer;
       letter-spacing: var(--letterSpacing);
+   }
+
+   .main-img {
+      display: block;
+      width: 100%;
+      position: absolute;
+      z-index: -1;
    }
 `;
