@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Logo from './Logo';
 import { useAppContext } from '../context/appContext';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
    const { toggleSidebar, logoutUser, user } = useAppContext();
@@ -11,9 +12,19 @@ const Navbar = () => {
    return (
       <Wrapper>
          <div className="nav-center">
-            <button className="toggle-btn" onClick={toggleSidebar}>
+            <motion.button
+               whileHover={{ scale: 1.2 }}
+               whileTap={{ scale: 1.05 }}
+               transition={{
+                  type: 'spring',
+                  stiffness: 150,
+                  ease: 'easeInOut',
+               }}
+               className="toggle-btn"
+               onClick={toggleSidebar}
+            >
                <FaAlignLeft />
-            </button>
+            </motion.button>
 
             <div>
                <Logo />
