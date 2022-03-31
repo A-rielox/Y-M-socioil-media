@@ -2,6 +2,8 @@ import { useAppContext } from '../context/appContext';
 import { HiChevronDoubleLeft, HiChevronDoubleRight } from 'react-icons/hi';
 import styled from 'styled-components';
 
+import { motion } from 'framer-motion';
+
 const PageBtnContainerBlogs = () => {
    const { numOfBlogPages, pageBlogs, changeBlogsPage } = useAppContext();
 
@@ -29,12 +31,23 @@ const PageBtnContainerBlogs = () => {
 
    return (
       <Wrapper>
-         <button className="prev-btn" onClick={prevPage}>
+         <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1.05 }}
+            transition={{ duration: 0.15 }}
+            className="prev-btn"
+            onClick={prevPage}
+         >
             <HiChevronDoubleLeft />
             prev
-         </button>
+         </motion.button>
 
-         <div className="btn-container">
+         <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1.05 }}
+            transition={{ duration: 0.15 }}
+            className="btn-container"
+         >
             {pages.map(pageNumber => {
                return (
                   <button
@@ -49,12 +62,18 @@ const PageBtnContainerBlogs = () => {
                   </button>
                );
             })}
-         </div>
+         </motion.div>
 
-         <button className="next-btn" onClick={nextPage}>
+         <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1.05 }}
+            transition={{ duration: 0.15 }}
+            className="next-btn"
+            onClick={nextPage}
+         >
             sig
             <HiChevronDoubleRight />
-         </button>
+         </motion.button>
       </Wrapper>
    );
 };
@@ -85,6 +104,11 @@ const Wrapper = styled.section`
       border-radius: var(--borderRadius);
       cursor: pointer;
    }
+   .pageBtn:hover {
+      color: var(--white);
+      background: var(--primary-500);
+   }
+
    .active {
       background: var(--primary-500);
       color: var(--white);

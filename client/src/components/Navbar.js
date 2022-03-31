@@ -48,8 +48,6 @@ const Navbar = () => {
                   <button
                      className="btn"
                      // onClick={() => setShowLogout(!showLogout)}
-                     // onMouseEnter={() => setShowLogout(true)}
-                     // onMouseLeave={() => setShowLogout(false)}
                   >
                      <FaUserCircle />
                      {user?.name}
@@ -57,7 +55,14 @@ const Navbar = () => {
                   </button>
                </motion.div>
 
-               <div
+               <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 1.05 }}
+                  transition={{
+                     type: 'spring',
+                     stiffness: 950,
+                     ease: 'easeInOut',
+                  }}
                   className={`dropdown ${showLogout ? 'show-dropdown' : null} `}
                >
                   <button
@@ -67,7 +72,7 @@ const Navbar = () => {
                   >
                      logout
                   </button>
-               </div>
+               </motion.div>
             </div>
          </div>
       </Wrapper>
