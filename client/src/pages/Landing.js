@@ -2,6 +2,7 @@ import { LogoBig } from '../components';
 import { Link } from 'react-router-dom';
 
 import fondo from '../assets/images/fondo2.svg';
+import Fondo2 from '../components/Fondo2.js';
 import styled from 'styled-components';
 
 import { motion } from 'framer-motion';
@@ -46,11 +47,14 @@ const Landing = () => {
                   </motion.div>
                </div>
 
-               <img
+               {/* <img
                   src={fondo}
                   alt="fondo de la página"
                   className="img main-img"
-               />
+               /> */}
+               <div className="main-img">
+                  <Fondo2 className="img" />
+               </div>
             </div>
          </Wrapper>
       </motion.div>
@@ -76,8 +80,6 @@ type: "spring", stiffness: 100
 */
 
 export default Landing;
-
-const MLink = styled(Link)``;
 
 const Wrapper = styled.main`
    nav {
@@ -118,6 +120,7 @@ const Wrapper = styled.main`
       }
       .main-img {
          display: block;
+         width: 100%;
       }
    }
 `;

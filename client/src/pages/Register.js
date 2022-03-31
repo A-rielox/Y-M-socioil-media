@@ -66,6 +66,16 @@ function Register() {
       setValues({ ...values, isMember: !values.isMember });
    };
 
+   /* 
+   initial={{ x: -1000 }}
+    animate={{ x: 0 }}
+    transition={{
+        type: "tween",
+        duration: "2",
+        delay: "1"
+    }}>
+   */
+
    return (
       <motion.div
          variants={animationTwo}
@@ -76,7 +86,17 @@ function Register() {
       >
          <Wrapper className="full-page">
             <LayoutGroup>
-               <motion.form layout className="form" onSubmit={onSubmit}>
+               <motion.form
+                  layout
+                  initial={{ height: 'auto' }}
+                  animate={{ height: 'auto' }}
+                  transition={{
+                     // duration: '0.4',
+                     ease: 'easeIn',
+                  }}
+                  className="form"
+                  onSubmit={onSubmit}
+               >
                   <motion.div layout>
                      <LogoBig />
                   </motion.div>
@@ -137,13 +157,23 @@ function Register() {
                   </motion.div>
 
                   <motion.div layout>
-                     <button
-                        type="submit"
-                        className="btn btn-block"
-                        disabled={isLoading}
+                     <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 1.05 }}
+                        transition={{
+                           type: 'spring',
+                           stiffness: 150,
+                           ease: 'easeInOut',
+                        }}
                      >
-                        enviar
-                     </button>
+                        <button
+                           type="submit"
+                           className="btn btn-block"
+                           disabled={isLoading}
+                        >
+                           enviar
+                        </button>
+                     </motion.div>
 
                      <p>
                         {values.isMember
@@ -173,7 +203,7 @@ const Wrapper = styled.section`
    align-items: center;
 
    .logo {
-      width: 100%;
+      width: 80%;
       display: block;
       margin: 0 auto;
       margin-bottom: 1.38rem;
