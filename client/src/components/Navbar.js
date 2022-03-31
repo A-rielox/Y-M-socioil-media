@@ -17,7 +17,7 @@ const Navbar = () => {
                whileTap={{ scale: 1.05 }}
                transition={{
                   type: 'spring',
-                  stiffness: 150,
+                  stiffness: 950,
                   ease: 'easeInOut',
                }}
                className="toggle-btn"
@@ -36,16 +36,26 @@ const Navbar = () => {
                onMouseEnter={() => setShowLogout(true)}
                onMouseLeave={() => setShowLogout(false)}
             >
-               <button
-                  className="btn"
-                  // onClick={() => setShowLogout(!showLogout)}
-                  // onMouseEnter={() => setShowLogout(true)}
-                  // onMouseLeave={() => setShowLogout(false)}
+               <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 1.05 }}
+                  transition={{
+                     type: 'spring',
+                     stiffness: 950,
+                     ease: 'easeInOut',
+                  }}
                >
-                  <FaUserCircle />
-                  {user?.name}
-                  <FaCaretDown />
-               </button>
+                  <button
+                     className="btn"
+                     // onClick={() => setShowLogout(!showLogout)}
+                     // onMouseEnter={() => setShowLogout(true)}
+                     // onMouseLeave={() => setShowLogout(false)}
+                  >
+                     <FaUserCircle />
+                     {user?.name}
+                     <FaCaretDown />
+                  </button>
+               </motion.div>
 
                <div
                   className={`dropdown ${showLogout ? 'show-dropdown' : null} `}
