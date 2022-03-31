@@ -31,10 +31,16 @@ const Navbar = () => {
                <h3 className="logo-text">"Frase de la semana"</h3>
             </div>
 
-            <div className="btn-container">
+            <div
+               className="btn-container"
+               onMouseEnter={() => setShowLogout(true)}
+               onMouseLeave={() => setShowLogout(false)}
+            >
                <button
                   className="btn"
-                  onClick={() => setShowLogout(!showLogout)}
+                  // onClick={() => setShowLogout(!showLogout)}
+                  // onMouseEnter={() => setShowLogout(true)}
+                  // onMouseLeave={() => setShowLogout(false)}
                >
                   <FaUserCircle />
                   {user?.name}
@@ -92,8 +98,11 @@ const Wrapper = styled.nav`
       align-items: center;
    }
    background: var(--white);
+
    .btn-container {
       position: relative;
+      padding-bottom: 7px;
+      padding-top: 7px;
    }
    .btn {
       display: flex;
@@ -106,16 +115,32 @@ const Wrapper = styled.nav`
 
    .dropdown {
       position: absolute;
-      top: 40px;
+      margin-top: 10;
+      top: 43px;
       left: 0;
       width: 100%;
+      /* background: red; */
       background: var(--primary-100);
       box-shadow: var(--shadow-2);
       padding: 0.5rem;
       text-align: center;
-      visibility: hidden;
       border-radius: var(--borderRadius);
+      visibility: hidden;
    }
+   .dropdown::before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid var(--primary-100);
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+   }
+
    .show-dropdown {
       visibility: visible;
    }
