@@ -5,6 +5,10 @@ import PageBtnContainer from './PageBtnContainer';
 import Recipe from './Recipe';
 import styled from 'styled-components';
 
+///////  ///////  ////////
+///////  ///////  ////////
+
+import { AnimateSharedLayout, AnimatePresence, motion } from 'framer-motion';
 import Modal from './modal/Modal';
 
 const RecipesContainer = () => {
@@ -16,10 +20,12 @@ const RecipesContainer = () => {
    // ♏♏♏♏
    const [modalOpen, setModalOpen] = useState(false);
    const [recipeOpened, setRecipeOpened] = useState('');
+   const [idForLayout, setIdForLayout] = useState(null);
    const close = () => setModalOpen(false);
    const open = recipeId => {
       console.log('MODAL MODAL ', recipeId);
 
+      setIdForLayout(recipeId);
       setModalOpen(true);
 
       const recipeSelected = recipes.filter(recipe => recipe._id === recipeId);
@@ -51,23 +57,35 @@ const RecipesContainer = () => {
             {recipes.length > 1 && 's'}
          </h5>
 
-         <div className="recipes">
-            {recipes.map(recipe => {
-               return <Recipe key={recipe._id} {...recipe} openModal={open} />;
-               // return <Recipe key={recipe._id} {...recipe} />;
-            })}
-         </div>
+         <AnimateSharedLayout>
+            <div className="recipes">
+               {recipes.map(recipe => {
+                  return (
+                     <Recipe
+                        key={recipe._id}
+                        {...recipe}
+                        openModal={open}
+                        layoutId={recipe._id}
+                     />
+                  );
+                  // return <Recipe key={recipe._id} {...recipe} />;
+               })}
+            </div>
 
-         {numOfPages > 1 && <PageBtnContainer />}
+            {numOfPages > 1 && <PageBtnContainer />}
 
-         {/* ♏♏♏♏                      👇 */}
-         {modalOpen && recipeOpened && (
-            <Modal
-               modalOpen={modalOpen}
-               handleClose={close}
-               recipeOpened={recipeOpened}
-            />
-         )}
+            {/* ♏♏♏♏                      👇 */}
+            <AnimatePresence>
+               {modalOpen && recipeOpened && (
+                  <Modal
+                     modalOpen={modalOpen}
+                     handleClose={close}
+                     recipeOpened={recipeOpened}
+                     layoutId={idForLayout}
+                  />
+               )}
+            </AnimatePresence>
+         </AnimateSharedLayout>
       </Wrapper>
    );
 };

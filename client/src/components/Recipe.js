@@ -11,16 +11,7 @@ import moment from 'moment';
 import RecipeInfo from './RecipeInfo';
 import styled from 'styled-components';
 
-// createdAt: "2022-03-06T18:43:51.211Z"
-// createdBy: "62215237822281526699bee3"
-// desc: "DESCRIPCION pepi"
-// oil1: "Angelica" --> a 5
-// oilsList: (3) ['Angelica', 'Cassia', 'Copaiba']
-// problem1: "espalda" --> a 3
-// problemsList: (2) ['espalda', 'pie']
-// title: "TITULO pepi"
-// updatedAt: "2022-03-06T18:43:51.211Z"
-// _id: "622500e7d92400c2e34d395d"
+import { motion } from 'framer-motion';
 
 const Recipe = ({
    _id,
@@ -33,6 +24,7 @@ const Recipe = ({
    userNane, // quitar
    userLevel, // quitar
    openModal,
+   layoutId,
 }) => {
    const { setEditRecipe, deleteRecipe, user, authFetch } = useAppContext();
    const [recipeUser, setRecipeUser] = useState(null);
@@ -89,7 +81,7 @@ const Recipe = ({
    date = date.format('MMM, YYYY');
 
    return (
-      <Wrapper onClick={() => openModal(_id)}>
+      <Wrapper onClick={() => openModal(_id)} layoutId={layoutId}>
          <header>
             <div className="info">
                <h5>{title}</h5>
@@ -166,7 +158,7 @@ const Recipe = ({
 
 export default Recipe;
 
-const Wrapper = styled.article`
+const Wrapper = styled(motion.article)`
    background: var(--white);
    border-radius: var(--borderRadius);
    display: grid;
