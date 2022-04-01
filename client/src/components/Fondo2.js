@@ -10,7 +10,7 @@ const svgVariant = {
       opacity: 1,
       pathLength: 1,
       transition: {
-         duration: 2,
+         duration: 3,
          ease: 'easeInOut',
          delay: 0.5,
       },
@@ -37,8 +37,8 @@ const Fondo2 = () => {
          <svg
             // xmlns="http://www.w3.org/2000/svg"
             data-name="Layer 1"
-            width="auto"
-            height="auto"
+            width="100%"
+            // height= "auto" // por el error ( Error: <svg> attribute width: Expected length, "auto" )
             viewBox="0 0 1083.41955 818.46997"
             // xmlns:xlink="http://www.w3.org/1999/xlink"
          >
