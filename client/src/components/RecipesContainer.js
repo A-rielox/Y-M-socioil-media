@@ -146,8 +146,8 @@ const Wrapper = styled.section`
          border-radius: 30px;
          width: 100%;
          height: 100%;
-         top: -1.5rem;
-         left: -2.5rem;
+         top: -3.5rem;
+         left: -3rem;
          z-index: -1;
       }
 
@@ -159,9 +159,9 @@ const Wrapper = styled.section`
          border-radius: 20px;
          width: 100%;
          height: 100%;
-         bottom: -2.5rem;
-         right: -3.5rem;
-         z-index: -1;
+         bottom: -3.5rem;
+         right: -3rem;
+         z-index: -2;
       }
    }
 `;
