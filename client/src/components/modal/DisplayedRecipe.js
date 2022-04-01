@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 // import axios from 'axios';
-import Loading from './Loading';
+import Loading from '../Loading';
 
 import { FaCalendarAlt } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
 import { BsFillDropletFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import { useAppContext } from '../context/appContext';
+import { useAppContext } from '../../context/appContext';
 import moment from 'moment';
-import RecipeInfo from './RecipeInfo';
+import RecipeInfo from '../RecipeInfo';
 import styled from 'styled-components';
 
 // createdAt: "2022-03-06T18:43:51.211Z"
@@ -22,7 +22,7 @@ import styled from 'styled-components';
 // updatedAt: "2022-03-06T18:43:51.211Z"
 // _id: "622500e7d92400c2e34d395d"
 
-const Recipe = ({
+const DisplayedRecipe = ({
    _id,
    oilsList,
    problemsList,
@@ -30,8 +30,6 @@ const Recipe = ({
    desc,
    createdAt,
    createdBy,
-   userNane, // quitar
-   userLevel, // quitar
    openModal,
 }) => {
    const { setEditRecipe, deleteRecipe, user, authFetch } = useAppContext();
@@ -89,7 +87,7 @@ const Recipe = ({
    date = date.format('MMM, YYYY');
 
    return (
-      <Wrapper onClick={() => openModal(_id)}>
+      <Wrapper /* onClick={() => openModal(_id)} */>
          <header>
             <div className="info">
                <h5>{title}</h5>
@@ -153,8 +151,6 @@ const Recipe = ({
                         {levelToDisplay}
                      </button>
                   )}
-
-                  {/* <div className={`status ${status}`}>{status}</div> */}
                </div>
 
                <RecipeInfo icon={<FaCalendarAlt />} text={date} />
@@ -164,7 +160,7 @@ const Recipe = ({
    );
 };
 
-export default Recipe;
+export default DisplayedRecipe;
 
 const Wrapper = styled.article`
    background: var(--white);
@@ -354,5 +350,15 @@ const Wrapper = styled.article`
    }
    &:hover .actions {
       visibility: visible;
+   }
+
+   @media (min-width: 576px) {
+      padding: 0.5rem;
+   }
+   @media (min-width: 992px) {
+      padding: 1rem;
+   }
+   @media (min-width: 1120px) {
+      padding: 1.5rem;
    }
 `;
